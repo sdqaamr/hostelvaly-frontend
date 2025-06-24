@@ -27,14 +27,13 @@ StaySphere is a modern mobile application designed to help users easily browse, 
 
 ---
 
-## 📂 Project Structure (Highlights)
+## 📂 Project Structure
 
+```text
 StaySphere/
-├── assets/ # Images and static assets
-├── app/ # Routing and navigation structure
+├── assets/                # Images and static assets
+├── app/                   # Routing and navigation structure
 ├── src/
-│ ├── components/ # Reusable UI components (LogoText, TabIcons, etc.)
-│ └── styles/ # Global styles (colors, layout)
-└── README.md # You're here!
-
----
+│   ├── components/        # Reusable UI components (LogoText, TabIcons, etc.)
+│   └── styles/            # Global styles (colors, layout)
+└── README.md              # You're here!
