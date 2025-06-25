@@ -6,17 +6,16 @@ import CurrentStayCard from "./currentstaycard";
 
 export default function CurrentStay() {
   return (
-    <View style={styles.container}>
+    <View>
       <View style={styles.cardsHeadingContainer}>
         <Text style={styles.cardsHeadingText}>Your Current Stay{"  "}</Text>
         <TouchableOpacity>
           <AntDesign name="arrowright" size={24} color="black" />
         </TouchableOpacity>
       </View>
-
-      
-            <CurrentStayCard />
-          
+      <View style={styles.cardsContainer}>
+        <CurrentStayCard />
+      </View>
     </View>
   );
 }

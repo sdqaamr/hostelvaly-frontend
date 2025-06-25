@@ -21,14 +21,14 @@ const _layout = () => {
         {/* <Stack.Screen name="register" /> */}
         {/* <Stack.Screen name="otp" /> */}
         {/* <Stack.Screen name="verify" /> */}
-        {/* <Stack.Screen name="home" /> */}
+        <Stack.Screen name="home" />
         {/* <Stack.Screen name="schedule-visit" /> */}
         {/* <Stack.Screen name="property-details" /> */}
         {/* <Stack.Screen name="booking" /> */}
         {/* <Stack.Screen name="checkout" /> */}
         {/* <Stack.Screen name="payment" /> */}
         {/* <Stack.Screen name="payment-success" /> */}
-        <Stack.Screen name="home-page2" />
+        {/* <Stack.Screen name="home-page2" /> */}
       </Stack>
     </View>
   );

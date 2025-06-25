@@ -2,11 +2,11 @@ import React from "react";
 import styles from "../styles/global";
 import { View, Text, TouchableOpacity, ScrollView } from "react-native";
 import AntDesign from "@expo/vector-icons/AntDesign";
-import HostelCard from "./hostelcard";
+import HostelCard from './hostelcard';
 
 export default function ViewedHostels() {
   return (
-    <View style={styles.container}>
+    <View>
       <View style={styles.cardsHeadingContainer}>
         <Text style={styles.cardsHeadingText}>Most Viewed Hostel's{"  "}</Text>
         <TouchableOpacity>

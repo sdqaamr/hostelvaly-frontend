@@ -6,7 +6,7 @@ import FeedbackCard from "./feedbackcard";
 
 export default function VisitorsFeedback() {
   return (
-    <View style={styles.container}>
+    <View>
       <View style={styles.cardsHeadingContainer}>
         <Text style={styles.cardsHeadingText}>Visitor's Feedback{"  "}</Text>
         <TouchableOpacity>

@@ -6,19 +6,17 @@ import AntDesign from "@expo/vector-icons/AntDesign";
 import Entypo from "@expo/vector-icons/Entypo";
 import Feather from "@expo/vector-icons/Feather";
 import MaterialCommunityIcons from "@expo/vector-icons/MaterialCommunityIcons";
-import FontAwesome6 from "@expo/vector-icons/FontAwesome6";
 import MaterialIcons from "@expo/vector-icons/MaterialIcons";
 import Octicons from "@expo/vector-icons/Octicons";
 import FontAwesome from "@expo/vector-icons/FontAwesome";
 import Ionicons from "@expo/vector-icons/Ionicons";
-
+import RecommendedHostels from '../src/components/recommendedhostels';
+import VisitorsFeedback from '../src/components/visitorsfeedback';
 import { Image } from "expo-image";
-import RecommendedHostels from "../src/components/recommendedhostels";
-import TabIcons from "../src/components/tabicons";
 import { useRouter } from "expo-router";
-import VisitorsFeedback from "../src/components/visitorsfeedback";
 
 export default function PropertyDetails() {
+  const primarycolor = "#8100d1";
   const router = useRouter();
   return (
     <SafeAreaView style={styles.safeArea}>
@@ -128,7 +126,6 @@ export default function PropertyDetails() {
               </View>
             </View>
             <VisitorsFeedback />
-            
           </View>
 
           <RecommendedHostels />

@@ -3,26 +3,17 @@ import styles from "../src/styles/global";
 import {
   View,
   Text,
-  TextInput,
   TouchableOpacity,
   ScrollView,
 } from "react-native";
 import { SafeAreaView } from "react-native-safe-area-context";
-import AntDesign from "@expo/vector-icons/AntDesign";
 import Entypo from "@expo/vector-icons/Entypo";
 import Feather from "@expo/vector-icons/Feather";
-import MaterialCommunityIcons from "@expo/vector-icons/MaterialCommunityIcons";
-import FontAwesome6 from "@expo/vector-icons/FontAwesome6";
-import MaterialIcons from "@expo/vector-icons/MaterialIcons";
-import Octicons from "@expo/vector-icons/Octicons";
 import EvilIcons from '@expo/vector-icons/EvilIcons';
 import FontAwesome from "@expo/vector-icons/FontAwesome";
 import Ionicons from "@expo/vector-icons/Ionicons";
-import Foundation from '@expo/vector-icons/Foundation';
 
 import { Image } from "expo-image";
-import RecommendedHostels from "../src/components/recommendedhostels";
-import TabIcons from "../src/components/tabicons";
 import { useRouter } from "expo-router";
 
 export default function Checkout() {

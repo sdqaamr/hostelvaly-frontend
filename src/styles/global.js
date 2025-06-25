@@ -19,6 +19,10 @@ const styles = StyleSheet.create({
     flex: 1,
     backgroundColor: "white",
   },
+  activityIndicator: {
+    margin: 10,
+    alignSelf: "center",
+  },
   splashLogo: {
     height: 160,
     width: 160,
@@ -304,6 +308,7 @@ const styles = StyleSheet.create({
     alignItems: "center",
     justifyContent: "space-between",
     marginTop: 20,
+    marginLeft: 15,
   },
   cardsHeadingText: {
     fontSize: 17,
@@ -847,7 +852,7 @@ const styles = StyleSheet.create({
   },
   currentCard: { 
     height: 500,
-    width: 350,
+    width: 355,
     borderStyle: "solid",
     backgroundColor: "white",
     borderRadius: 10,

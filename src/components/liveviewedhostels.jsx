@@ -6,7 +6,7 @@ import ViewingCard from "./viewingcard";
 
 export default function LiveViewedHostels() {
   return (
-    <View style={styles.container}>
+    <View>
       <View style={styles.cardsHeadingContainer}>
         <Text style={styles.cardsHeadingText}>Most Viewed Hostel's{"  "}</Text>
         <TouchableOpacity>
