@@ -1,11 +1,14 @@
-import React from "react";
+import React, { useState } from "react";
 import styles from "../src/styles/global";
 import { View, Text, TouchableOpacity, Image, TextInput } from "react-native";
 import { SafeAreaView } from "react-native-safe-area-context";
 import { useRouter } from "expo-router";
+import { Feather } from "@expo/vector-icons";
 
 export default function PasswordReset() {
   const router = useRouter();
+  const [showPassword, setShowPassword] = useState(false);
+  const [showConfirmPassword, setShowConfirmPassword] = useState(false);
   return (
     <SafeAreaView style={styles.safeArea}>
       <View style={styles.container}>
@@ -14,8 +17,46 @@ export default function PasswordReset() {
         </Text>
         <Text style={styles.simpleText}>Please enter yout new password and then confirm it.</Text>
         <Text></Text>
-        <TextInput style={styles.textInput} placeholder="Enter Password" secureTextEntry />
-        <TextInput style={styles.textInput} placeholder="Confirm Password" secureTextEntry />
+        <View style={styles.passwordOuterContainer}>
+          <View style={styles.passwordInnerContainer}>
+            <TextInput
+              style={styles.textInput}
+              placeholder="Enter Password"
+              secureTextEntry={!showPassword}
+            />
+            <TouchableOpacity
+              onPress={() => setShowPassword((prev) => !prev)}
+              style={styles.eyeContainer}
+              accessibilityLabel={showPassword ? "Hide password" : "Show password"}
+            >
+              <Feather
+                name={showPassword ? "eye" : "eye-off"}
+                size={22}
+                color="#888"
+              />
+            </TouchableOpacity>
+          </View>
+        </View>
+        <View style={passwordOuterContainer}>
+          <View style={passwordInnerContainer}>
+            <TextInput
+              style={styles.textInput}
+              placeholder="Confirm Password"
+              secureTextEntry={!showConfirmPassword}
+            />
+            <TouchableOpacity
+              onPress={() => setShowConfirmPassword((prev) => !prev)}
+              style={styles.eyeContainer}
+              accessibilityLabel={showConfirmPassword ? "Hide password" : "Show password"}
+            >
+              <Feather
+                name={showConfirmPassword ? "eye" : "eye-off"}
+                size={22}
+                color="#888"
+              />
+            </TouchableOpacity>
+          </View>
+        </View>
         <TouchableOpacity onPress={() => {
           router.navigate("login");
         }} style={styles.primaryButton}>

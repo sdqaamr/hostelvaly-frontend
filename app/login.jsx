@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import styles from "../src/styles/global";
 import { View, Text, TouchableOpacity, Image, TextInput } from "react-native";
 import { SafeAreaView } from "react-native-safe-area-context";
@@ -6,9 +6,11 @@ import FontAwesome5 from "@expo/vector-icons/FontAwesome5";
 import AntDesign from "@expo/vector-icons/AntDesign";
 import GoogleIcon from "../assets/SVG/Google";
 import { useRouter } from "expo-router";
+import { Feather } from "@expo/vector-icons";
 
 export default function Login() {
   const router = useRouter();
+  const [showPassword, setShowPassword] = useState(false);
   return (
     <SafeAreaView style={styles.safeArea}>
       <View style={styles.container}>
@@ -17,11 +19,26 @@ export default function Login() {
         </Text>
         <Text></Text>
         <TextInput style={styles.textInput} placeholder="Enter your email" />
-        <TextInput
-          style={styles.textInput}
-          placeholder="Enter your password"
-          secureTextEntry
-        />
+        <View style={styles.passwordOuterContainer}>
+          <View style={styles.passwordInnerContainer}>
+            <TextInput
+              style={styles.textInput}
+              placeholder="Enter your password"
+              secureTextEntry={!showPassword}
+            />
+            <TouchableOpacity
+              onPress={() => setShowPassword((prev) => !prev)}
+              style={styles.eyeContainer}
+              accessibilityLabel={showPassword ? "Hide password" : "Show password"}
+            >
+              <Feather
+                name={showPassword ? "eye" : "eye-off"}
+                size={22}
+                color="#888"
+              />
+            </TouchableOpacity>
+          </View>
+        </View>
         <TouchableOpacity style={styles.additionalTextContainer} onPress={() => {
           router.navigate("password-forget");
         }}>

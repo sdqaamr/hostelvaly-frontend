@@ -163,6 +163,20 @@ const styles = StyleSheet.create({
     fontSize: 15,
     marginTop: 8,
   },
+  passwordOuterContainer: {
+    width: "100%",
+    alignItems: "center",
+  },
+  passwordInnerContainer: {
+    width: 330,
+    position: "relative",
+  },
+  eyeContainer: {
+    position:"absolute",
+    right: 20,
+    top: 22,
+    zIndex: 1,
+  },
   additionalTextContainer: {
     width: 300,
     alignItems: "flex-end",
