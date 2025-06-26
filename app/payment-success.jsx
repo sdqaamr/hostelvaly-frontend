@@ -4,7 +4,7 @@ import { View, Text, TouchableOpacity, Image, TextInput } from "react-native";
 import { SafeAreaView } from "react-native-safe-area-context";
 import { useRouter } from "expo-router";
 
-export default function Verify() {
+export default function PaymentSuccess() {
   const router = useRouter();
   return (
     <SafeAreaView style={styles.safeArea}>
@@ -16,7 +16,7 @@ export default function Verify() {
         <Text></Text>
         
         <TouchableOpacity onPress={() => {
-          router.navigate("/");
+          router.navigate("home-page2");
         }} style={styles.primaryButton}>
           <Text style={styles.primaryButtonText}>Done</Text>
         </TouchableOpacity>
