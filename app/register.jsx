@@ -19,8 +19,8 @@ export default function Register() {
         <Text></Text>
         <TextInput style={styles.textInput} placeholder="Username" />
         <TextInput style={styles.textInput} placeholder="Email" />
-        <View style={passwordOuterContainer}>
-          <View style={passwordInnerContainer}>
+        <View style={styles.passwordOuterContainer}>
+          <View style={styles.passwordInnerContainer}>
             <TextInput
               style={styles.textInput}
               placeholder="Password"
@@ -39,8 +39,8 @@ export default function Register() {
             </TouchableOpacity>
           </View>
         </View>
-        <View style={passwordOuterContainer}>
-          <View style={passwordInnerContainer}>
+        <View style={styles.passwordOuterContainer}>
+          <View style={styles.passwordInnerContainer}>
             <TextInput
               style={styles.textInput}
               placeholder="Confirm password"
