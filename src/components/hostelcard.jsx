@@ -10,7 +10,7 @@ import Octicons from "@expo/vector-icons/Octicons";
 import { Image } from "expo-image";
 import { useRouter } from "expo-router";
 
-export default function HostelCard() {
+export default function HostelCard({ openBottomSheet }) {
   const router = useRouter();
   return (
     <View>
@@ -84,19 +84,19 @@ export default function HostelCard() {
         </View>
         <TouchableOpacity>
           <View style={styles.cardsSmallButton}>
-            <Text style={styles.cardsCategoryButtonText}>+ 2</Text>
+            <Text style={styles.cardsCategoryButtonText}> + 2 </Text>
           </View>
         </TouchableOpacity>
         <TouchableOpacity
-          onPress={() => {
-            router.navigate("schedule-visit");
-        }}>
+          onPress={openBottomSheet} // open the bottom sheet on press
+        >
           <Text style={styles.cardsPrimaryButton}>SCHEDULE VISIT</Text>
         </TouchableOpacity>
         <TouchableOpacity
           onPress={() => {
             router.navigate("property-details");
-        }}>
+          }}
+        >
           <Text style={styles.cardsSecondaryButton}>BOOK NOW</Text>
         </TouchableOpacity>
       </View>
