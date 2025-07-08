@@ -49,9 +49,9 @@ const styles = StyleSheet.create({
     color: secondarycolor,
   },
   onboardingImg: {
-    height: 210,
+    height: 230,
     marginTop: 5,
-    width: 300,
+    width: 280,
   },
   onboardingDescription: {
     fontSize: 15,
