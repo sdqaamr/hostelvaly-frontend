@@ -1,15 +1,18 @@
-import React from 'react';
-import { View } from 'react-native';
+import React, { useEffect } from 'react';
+import { View, Text } from 'react-native';
 import styles from '../src/styles/global';
 import { useRouter } from 'expo-router';
 import { Image } from 'expo-image';
 
 export default function Splash() {
   const router = useRouter();
-  setTimeout(() => {
-    router.navigate("onboarding");
-  }, 3000);
-
+  useEffect(() => {
+    const timer = setTimeout(() => {
+      router.navigate("onboarding");
+    }, 3000);
+    return () => clearTimeout(timer);
+  }, []);
+  console.log("Splash screen loaded");
   return (
     <View style={styles.container}>
       <Image source={require("../assets/images/logo.png")}
