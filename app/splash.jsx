@@ -7,7 +7,7 @@ import { Image } from 'expo-image';
 export default function Splash() {
   const router = useRouter();
   setTimeout(() => {
-    router.navigate("onboarding-a");
+    router.navigate("onboarding");
   }, 3000);
 
   return (
