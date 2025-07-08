@@ -37,7 +37,7 @@ const Home = () => {
   };
 
   return (
-    <SafeAreaView style={styles.safeArea}>
+    <SafeAreaView style={styles.safeArea2}>
       <GestureHandlerRootView style={styles.container}>
         <ScrollView>
           <View style={styles.container}>
