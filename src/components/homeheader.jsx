@@ -31,11 +31,9 @@ export default function HomeHeader({
           <FontAwesome style={styles.sliderIcon} name="sliders" />
         </TouchableOpacity>
         <GenderPill
-          genderOptions={gender}
           openGenderBottomSheet={openGenderBottomSheet}
         />
         <SortbyPill
-          sortOptions={sort}
           openSortBottomSheet={openSortBottomSheet}
         />
       </View>
