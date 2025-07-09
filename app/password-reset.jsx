@@ -37,8 +37,8 @@ export default function PasswordReset() {
             </TouchableOpacity>
           </View>
         </View>
-        <View style={passwordOuterContainer}>
-          <View style={passwordInnerContainer}>
+        <View style={styles.passwordOuterContainer}>
+          <View style={styles.passwordInnerContainer}>
             <TextInput
               style={styles.textInput}
               placeholder="Confirm Password"
