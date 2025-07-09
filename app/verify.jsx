@@ -9,15 +9,17 @@ export default function Verify() {
   return (
     <SafeAreaView style={styles.safeArea}>
       <View style={styles.container}>
-        <Text style={styles.mainTitle}>
-          Verified!
+        <Text style={styles.mainTitle}>Verified!</Text>
+        <Text style={styles.verifyText}>
+          Your account has been verified successfully
         </Text>
-        <Text style={styles.verifyText}>Your account has been verified successfully</Text>
         <Text></Text>
-        
-        <TouchableOpacity onPress={() => {
-          router.navigate("home");
-        }} style={styles.primaryButton}>
+        <TouchableOpacity
+          onPress={() => {
+            router.navigate("/tabs/home");
+          }}
+          style={styles.primaryButton}
+        >
           <Text style={styles.primaryButtonText}>Done</Text>
         </TouchableOpacity>
       </View>
