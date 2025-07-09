@@ -381,7 +381,7 @@ const styles = StyleSheet.create({
     gap: 15,
   },
   card: {
-    height: 500,
+    height: 495,
     width: 260,
     borderStyle: "solid",
     backgroundColor: "white",
@@ -725,6 +725,7 @@ const styles = StyleSheet.create({
     justifyContent: "center",
     gap: 10,
     paddingVertical: 5,
+    backgroundColor: "white",
   },
   propertyDetailsPrimaryButton: {
     paddingVertical: 10,
@@ -842,10 +843,11 @@ const styles = StyleSheet.create({
   },
   bookingFooterContainer: {
     padding: 5,
-    width: 365,
+    width: 380,
     alignSelf: "center",
     flexDirection:"row",
     justifyContent: "space-between",
+    backgroundColor: "white",
   },
   bookingButton: {
     paddingVertical: 12,
@@ -878,7 +880,7 @@ const styles = StyleSheet.create({
   },
   checkoutFooterContainer: {
     alignItems: "center",
-    paddingVertical: 5,
+    paddingVertical: 15,
   },
   paymentButton: {
     width: 355,
