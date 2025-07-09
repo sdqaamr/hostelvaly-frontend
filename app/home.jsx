@@ -6,7 +6,6 @@ import { SafeAreaView } from "react-native-safe-area-context";
 import HomeHeader from "../src/components/homeheader";
 import RecommendedHostels from "../src/components/recommendedhostels";
 import ViewedHostels from "../src/components/viewedhostels";
-import TabIcons from "../src/components/tabicons";
 import ScheduleBottomSheet from "../src/components/schedulebottomsheet";
 import SortbyBottomSheet from "../src/components/sortbybottomsheet";
 import GenderBottomSheet from "../src/components/genderbottomsheet";
@@ -62,7 +61,6 @@ const Home = () => {
           closeBottomSheet={closeSortBottomSheet}
         />
       </GestureHandlerRootView>
-      <TabIcons />
     </SafeAreaView>
   );
 };
