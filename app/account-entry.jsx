@@ -37,7 +37,7 @@ export default function AccountEntry() {
           <TouchableOpacity
             style={styles.footerContainer}
             onPress={() => {
-              router.navigate("home");
+              router.navigate("/tabs/home");
             }}
           >
             <Text style={styles.footerText}> Continue as a guest </Text>
