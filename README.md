@@ -1,8 +1,8 @@
-# 🏨 StaySphere
+# 🏨 HostelValy
 
 > A smart and seamless hostel-finding app built using React Native and Expo.
 
-StaySphere is a modern mobile application designed to help users easily browse, explore, and book hostels — especially for students and travelers seeking affordable stays. With a user-friendly interface and features like onboarding, OTP-based login, and property detail screens, StaySphere aims to make accommodation hunting easier, faster, and more reliable.
+HostelValy is a modern mobile application designed to help users easily browse, explore, and book hostels — especially for students and travelers seeking affordable stays. With a user-friendly interface and features like onboarding, OTP-based login, and property detail screens, HostelValy aims to make accommodation hunting easier, faster, and more reliable.
 
 ---
 
@@ -30,7 +30,7 @@ StaySphere is a modern mobile application designed to help users easily browse, 
 ## 📂 Project Structure
 
 ```text
-StaySphere/
+HostelValy/
 ├── assets/                # Images and static assets
 ├── app/                   # Routing and navigation structure
 ├── src/
