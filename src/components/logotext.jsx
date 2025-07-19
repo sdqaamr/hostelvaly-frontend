@@ -4,8 +4,8 @@ import styles from "../styles/global";
 export default function LogoText() {
   return (
     <Text style={styles.logoText}>
-      Stay
-      <Text style={styles.logoText2}>Sphere</Text>
+      Hostel
+      <Text style={styles.logoText2}>Valy</Text>
     </Text>
   );
 }
