@@ -25,7 +25,6 @@ const _layout = () => {
         <Stack.Screen name="otp" />
         <Stack.Screen name="verify" />
         <Stack.Screen name="tabs" />
-        <Stack.Screen name="schedule-visit" />
         <Stack.Screen name="property-details" />
         <Stack.Screen name="booking" />
         <Stack.Screen name="checkout" />
