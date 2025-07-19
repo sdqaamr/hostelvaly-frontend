@@ -154,7 +154,7 @@ export default function PropertyDetails() {
         </TouchableOpacity>
         <TouchableOpacity
           onPress={() => {
-            router.navigate("schedule-visit");
+            router.navigate("/");
           }}
           style={styles.propertyDetailsSecondaryButton}
         >

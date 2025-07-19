@@ -93,7 +93,7 @@ export default function ViewingCard() {
         </TouchableOpacity>
         <TouchableOpacity
           onPress={() => {
-            router.navigate("schedule-visit");
+            router.navigate("/");
         }}>
           <Text style={styles.cardsPrimaryButton}>SCHEDULE VISIT</Text>
         </TouchableOpacity>
