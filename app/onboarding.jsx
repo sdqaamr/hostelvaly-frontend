@@ -62,7 +62,7 @@ const OnBoarding = () => {
                   style={styles.onboardingImg}
                 />
                 <Text style={styles.onboardingDescription}>
-                  Welcome to StaySphere, your app for budget-friendly
+                  Welcome to HostelValy, a hostel-searching app for budget-friendly
                   accomodation.
                 </Text>
               </View>
