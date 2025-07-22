@@ -1,5 +1,5 @@
-import React from "react";
-import styles from "../src/styles/global";
+
+import styles from "@styles/global";
 import { View, Text, TouchableOpacity, TextInput } from "react-native";
 import { SafeAreaView } from "react-native-safe-area-context";
 import { useRouter } from "expo-router";

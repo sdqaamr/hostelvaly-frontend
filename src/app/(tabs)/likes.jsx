@@ -1,5 +1,5 @@
 import React from "react";
-import styles from "../../src/styles/global";
+import styles from "@styles/global";
 import { View, Text } from "react-native";
 import { SafeAreaView } from "react-native-safe-area-context";
 import { useRouter } from "expo-router";
@@ -10,7 +10,7 @@ export default function Verify() {
     <SafeAreaView style={styles.safeArea}>
       <View style={styles.container}>
         <Text style={styles.mainTitle}>
-          Messages!
+          Likes!
         </Text>
         {/* <Text style={styles.verifyText}>Your account has been verified successfully</Text>
         <Text></Text> */}

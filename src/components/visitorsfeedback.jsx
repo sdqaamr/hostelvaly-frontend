@@ -1,5 +1,5 @@
 import React from "react";
-import styles from "../../src/styles/global";
+import styles from "@/styles/global";
 import { View, Text, TouchableOpacity, ScrollView } from "react-native";
 import AntDesign from "@expo/vector-icons/AntDesign";
 import FeedbackCard from "./feedbackcard";
@@ -15,13 +15,11 @@ export default function VisitorsFeedback() {
       </View>
 
       <View style={styles.feedbackCardsContainer}>
-              <ScrollView horizontal showsHorizontalScrollIndicator={false}>
-                <FeedbackCard />
-                <FeedbackCard />
-
-                
-              </ScrollView>
-            </View>
+        <ScrollView horizontal showsHorizontalScrollIndicator={false}>
+          <FeedbackCard />
+          <FeedbackCard />
+        </ScrollView>
+      </View>
     </View>
   );
 }

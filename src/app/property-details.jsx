@@ -1,6 +1,6 @@
 import React from "react";
-import styles from "../src/styles/global";
-import { View, Text, TouchableOpacity, ScrollView } from "react-native";
+import styles from "../styles/global";
+import { View, Text, TouchableOpacity, ScrollView, ToastAndroid, Alert } from "react-native";
 import { SafeAreaView } from "react-native-safe-area-context";
 import AntDesign from "@expo/vector-icons/AntDesign";
 import Entypo from "@expo/vector-icons/Entypo";
@@ -10,8 +10,8 @@ import MaterialIcons from "@expo/vector-icons/MaterialIcons";
 import Octicons from "@expo/vector-icons/Octicons";
 import FontAwesome from "@expo/vector-icons/FontAwesome";
 import Ionicons from "@expo/vector-icons/Ionicons";
-import RecommendedHostels from '../src/components/recommendedhostels';
-import VisitorsFeedback from '../src/components/visitorsfeedback';
+import RecommendedHostels from '@components/recommendedhostels';
+import VisitorsFeedback from '@components/visitorsfeedback';
 import { Image } from "expo-image";
 import { useRouter } from "expo-router";
 
@@ -154,7 +154,8 @@ export default function PropertyDetails() {
         </TouchableOpacity>
         <TouchableOpacity
           onPress={() => {
-            router.navigate("/");
+           alert("Schedule visit feature is coming soon!");
+            // router.navigate("/");
           }}
           style={styles.propertyDetailsSecondaryButton}
         >

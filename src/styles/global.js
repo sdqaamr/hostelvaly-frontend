@@ -172,7 +172,7 @@ const styles = StyleSheet.create({
     position: "relative",
   },
   eyeContainer: {
-    position:"absolute",
+    position: "absolute",
     right: 20,
     top: 22,
     zIndex: 1,
@@ -525,7 +525,7 @@ const styles = StyleSheet.create({
     backgroundColor: "white",
     alignItems: "center",
     flexDirection: "column",
-    justifyContent: "space-between"
+    justifyContent: "space-between",
   },
   scheduleInnerContainer: {
     height: 280,
@@ -584,10 +584,10 @@ const styles = StyleSheet.create({
     marginVertical: 10,
   },
   handleIndicatorStyle: {
-    backgroundColor: primarycolor, 
-    height: 5, 
-    width: 50, 
-    borderRadius: 5
+    backgroundColor: primarycolor,
+    height: 5,
+    width: 50,
+    borderRadius: 5,
   },
   propertyDetailsHeaderContainer: {
     flexDirection: "row",
@@ -845,7 +845,7 @@ const styles = StyleSheet.create({
     padding: 5,
     width: 380,
     alignSelf: "center",
-    flexDirection:"row",
+    flexDirection: "row",
     justifyContent: "space-between",
     backgroundColor: "white",
   },
@@ -876,7 +876,7 @@ const styles = StyleSheet.create({
   checkoutPriceText: {
     fontSize: 15,
     marginLeft: 170,
-    position: "absolute"
+    position: "absolute",
   },
   checkoutFooterContainer: {
     alignItems: "center",
@@ -906,7 +906,7 @@ const styles = StyleSheet.create({
     fontWeight: 600,
     fontStyle: "italic",
   },
-  currentCard: { 
+  currentCard: {
     height: 500,
     width: 355,
     borderStyle: "solid",
@@ -996,8 +996,3 @@ export const colors = {
   primary: primarycolor,
   secondary: secondarycolor,
 };
-
-
-
-
-

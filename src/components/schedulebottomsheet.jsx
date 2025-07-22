@@ -1,12 +1,12 @@
 import React, { useMemo, useCallback, useState } from "react";
-import styles, { colors } from "../styles/global";
+import styles, { colors } from "@styles/global";
 import { View, Text, TouchableOpacity, Switch } from "react-native";
 import BottomSheet, {
   BottomSheetBackdrop,
   BottomSheetTextInput,
   BottomSheetView,
 } from "@gorhom/bottom-sheet";
-import SvgComponent from "../../assets/SVG/WhatsApp";
+import SvgComponent from "@assets/SVG/WhatsApp";
 import AntDesign from "@expo/vector-icons/AntDesign";
 
 const ScheduleBottomSheet = ({ bottomSheetRef, closeBottomSheet }) => {

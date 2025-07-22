@@ -1,6 +1,6 @@
 import React, { useEffect } from "react";
 import { View, Text } from "react-native";
-import styles from "../src/styles/global";
+import styles from "@styles/global";
 import { useRouter } from "expo-router";
 import { Image } from "expo-image";
 

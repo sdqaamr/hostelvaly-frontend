@@ -2,14 +2,17 @@ import { Tabs } from "expo-router";
 import { Ionicons } from "@expo/vector-icons";
 import AntDesign from "@expo/vector-icons/AntDesign";
 import { Platform } from "react-native";
+import {colors} from "../../styles/global"
 
 export default function TabLayout() {
+  console.log(colors);
+  
   return (
     <Tabs
       screenOptions={{
         headerShown: false,
-        tabBarActiveTintColor: "#8100d1",
-        tabBarInactiveTintColor: "#ce80ff",
+        tabBarActiveTintColor: colors.primary,
+        tabBarInactiveTintColor: colors.secondary,
         tabBarLabelStyle: { fontSize: 11, fontWeight: "bold" },
         tabBarStyle: {
           backgroundColor: "white",

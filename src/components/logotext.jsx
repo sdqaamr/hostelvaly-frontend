@@ -1,6 +1,6 @@
 import React from "react";
 import { Text } from "react-native";
-import styles from "../styles/global";
+import styles from "@styles/global";
 export default function LogoText() {
   return (
     <Text style={styles.logoText}>

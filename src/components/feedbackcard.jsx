@@ -1,5 +1,5 @@
 import React from "react";
-import styles from "../../src/styles/global";
+import styles from "@styles/global";
 import { View, Text, TouchableOpacity, ScrollView } from "react-native";
 import AntDesign from "@expo/vector-icons/AntDesign";
 

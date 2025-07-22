@@ -1,5 +1,5 @@
 import React from "react";
-import styles from "../styles/global";
+import styles from "@styles/global";
 import { View, Text, TouchableOpacity } from "react-native";
 import Ionicons from "@expo/vector-icons/Ionicons";
 import Feather from "@expo/vector-icons/Feather";

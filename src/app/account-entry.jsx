@@ -2,7 +2,7 @@ import React from "react";
 import { View, Text, TouchableOpacity } from "react-native";
 import { Image } from "expo-image";
 import { SafeAreaView } from "react-native-safe-area-context";
-import styles from "../src/styles/global";
+import styles from "@styles/global";
 import { useRouter } from "expo-router";
 
 export default function AccountEntry() {
@@ -37,7 +37,7 @@ export default function AccountEntry() {
           <TouchableOpacity
             style={styles.footerContainer}
             onPress={() => {
-              router.navigate("/tabs/home");
+              router.navigate("/home");
             }}
           >
             <Text style={styles.footerText}> Continue as a guest </Text>

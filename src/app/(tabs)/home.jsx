@@ -1,14 +1,14 @@
 import React, { useRef } from "react";
-import styles from "../src/styles/global";
+import styles from "@styles/global";
 import { View, ScrollView } from "react-native";
 import { GestureHandlerRootView } from "react-native-gesture-handler";
 import { SafeAreaView } from "react-native-safe-area-context";
-import HomeHeader from "../src/components/homeheader";
-import RecommendedHostels from "../src/components/recommendedhostels";
-import ViewedHostels from "../src/components/viewedhostels";
-import ScheduleBottomSheet from "../src/components/schedulebottomsheet";
-import SortbyBottomSheet from "../src/components/sortbybottomsheet";
-import GenderBottomSheet from "../src/components/genderbottomsheet";
+import HomeHeader from "@components/homeheader";
+import RecommendedHostels from "@components/recommendedhostels";
+import ViewedHostels from "@components/viewedhostels";
+import ScheduleBottomSheet from "@components/schedulebottomsheet";
+import SortbyBottomSheet from "@components/sortbybottomsheet";
+import GenderBottomSheet from "@components/genderbottomsheet";
 
 const Home = () => {
   const bottomSheetRef = useRef(null);

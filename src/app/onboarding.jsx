@@ -1,12 +1,12 @@
 import React from "react";
 import { View, Text, TouchableOpacity } from "react-native";
-import styles from "../src/styles/global";
+import styles from "@styles/global";
 import Onboarding from "react-native-onboarding-swiper";
 import { SafeAreaView } from "react-native-safe-area-context";
-import LogoText from "../src/components/logotext";
+import LogoText from "@components/logotext";
 import { Image } from "expo-image";
 import { useRouter } from "expo-router";
-import SvgComponent from "../assets/SVG/Onboarding4";
+import SvgComponent from "@assets/SVG/Onboarding4";
 
 const CustomButton = ({ label, onPress }) => (
   <TouchableOpacity

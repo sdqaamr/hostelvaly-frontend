@@ -1,29 +1,27 @@
 import React, { useState } from "react";
-import styles from "../src/styles/global";
+import styles from "@styles/global";
 import { View, Text, TouchableOpacity, Image, TextInput } from "react-native";
 import { SafeAreaView } from "react-native-safe-area-context";
-import FontAwesome5 from "@expo/vector-icons/FontAwesome5";
-import AntDesign from "@expo/vector-icons/AntDesign";
-import SvgComponent from "../assets/SVG/Google";
 import { useRouter } from "expo-router";
 import { Feather } from "@expo/vector-icons";
 
-export default function Register() {
+export default function PasswordReset() {
   const router = useRouter();
   const [showPassword, setShowPassword] = useState(false);
   const [showConfirmPassword, setShowConfirmPassword] = useState(false);
   return (
     <SafeAreaView style={styles.safeArea}>
       <View style={styles.container}>
-        <Text style={styles.loginHeading}>Hello! Register to get started </Text>
+        <Text style={styles.loginHeading}>
+          Reset {"\n"}Password!
+        </Text>
+        <Text style={styles.simpleText}>Please enter yout new password and then confirm it.</Text>
         <Text></Text>
-        <TextInput style={styles.textInput} placeholder="Username" />
-        <TextInput style={styles.textInput} placeholder="Email" />
         <View style={styles.passwordOuterContainer}>
           <View style={styles.passwordInnerContainer}>
             <TextInput
               style={styles.textInput}
-              placeholder="Password"
+              placeholder="Enter Password"
               secureTextEntry={!showPassword}
             />
             <TouchableOpacity
@@ -43,7 +41,7 @@ export default function Register() {
           <View style={styles.passwordInnerContainer}>
             <TextInput
               style={styles.textInput}
-              placeholder="Confirm password"
+              placeholder="Confirm Password"
               secureTextEntry={!showConfirmPassword}
             />
             <TouchableOpacity
@@ -60,42 +58,10 @@ export default function Register() {
           </View>
         </View>
         <TouchableOpacity onPress={() => {
-          router.navigate("otp");
-        }} style={styles.primaryButton}>
-          <Text style={styles.primaryButtonText}>Register</Text>
-        </TouchableOpacity>
-        <View style={styles.intermediateContainer}>
-          <View style={styles.intermediateLine} />
-          <Text style={styles.intermediateText}>or register with</Text>
-          <View style={styles.intermediateLine} />
-        </View>
-        <View style={styles.allIconsContainer}>
-          <View style={styles.iconContainer}>
-            <TouchableOpacity>
-              <FontAwesome5 name="facebook" size={35} color="#1877F2" />
-            </TouchableOpacity>
-          </View>
-          <View style={styles.iconContainer}>
-            <TouchableOpacity>
-              <View>
-                <SvgComponent />
-              </View>
-            </TouchableOpacity>
-          </View>
-          <View style={styles.iconContainer}>
-            <TouchableOpacity>
-              <AntDesign name="apple1" size={35} color="black" />
-            </TouchableOpacity>
-          </View>
-        </View>
-        <View style={styles.footerContainer}>
-          <Text>Already have an account? </Text>
-          <TouchableOpacity onPress={() => {
           router.navigate("login");
-        }}>
-            <Text style={styles.footerText}>Login Now </Text>
-          </TouchableOpacity>
-        </View>
+        }} style={styles.primaryButton}>
+          <Text style={styles.primaryButtonText}>Submit</Text>
+        </TouchableOpacity>
       </View>
     </SafeAreaView>
   );

@@ -1,10 +1,10 @@
 import React, { useState } from "react";
-import styles from "../src/styles/global";
+import styles from "@styles/global";
 import { View, Text, TouchableOpacity, Image, TextInput } from "react-native";
 import { SafeAreaView } from "react-native-safe-area-context";
 import FontAwesome5 from "@expo/vector-icons/FontAwesome5";
 import AntDesign from "@expo/vector-icons/AntDesign";
-import GoogleIcon from "../assets/SVG/Google";
+import GoogleIcon from "@assets/SVG/Google";
 import { useRouter } from "expo-router";
 import { Feather } from "@expo/vector-icons";
 

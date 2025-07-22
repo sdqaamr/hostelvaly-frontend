@@ -1,7 +1,7 @@
 import React from "react";
 import { Stack } from "expo-router";
 import { SafeAreaView } from "react-native-safe-area-context";
-import useCustomFonts from "../src/components/usecustomfonts";
+import useCustomFonts from "@components/usecustomfonts";
 import { StatusBar } from "react-native";
 
 const _layout = () => {
