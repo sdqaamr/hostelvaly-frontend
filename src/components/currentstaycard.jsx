@@ -6,11 +6,12 @@ import MaterialCommunityIcons from "@expo/vector-icons/MaterialCommunityIcons";
 import Octicons from "@expo/vector-icons/Octicons";
 import { Image } from "expo-image";
 import { useRouter } from "expo-router";
+import { colors } from "@constants/global";
 
-export default function CurrentStayCard() {
+const CurrentStayCard = () => {
   const router = useRouter();
   return (
-    <View>
+    <>
       <View style={styles.currentCard}>
         <Image
           source="https://tse2.mm.bing.net/th?id=OIP.ix8gl1euNehctcXK-QTxFwHaE7&pid=Api&P=0&h=220"
@@ -32,11 +33,19 @@ export default function CurrentStayCard() {
           </TouchableOpacity>
         </View>
         <View style={styles.stayButton}>
-            <Text>On Going Stay{" "}</Text>
+          <Text>On Going Stay </Text>
         </View>
         <View style={styles.viewingPeopleContainer}>
-            <Ionicons name="eye" size={18} color="white" style={{ alignSelf: "center" }} />
-            <Text style={[styles.primaryButtonText, { alignSelf: "center" }]}>{" "}43 People Viewing Now </Text>
+          <Ionicons
+            name="eye"
+            size={18}
+            color="white"
+            style={styles.selfAlignment}
+          />
+          <Text style={[styles.primaryButtonText, styles.selfAlignment]}>
+            {" "}
+            43 People Viewing Now{" "}
+          </Text>
         </View>
         <View style={styles.nameAndLocContainer}>
           <View>
@@ -55,10 +64,10 @@ export default function CurrentStayCard() {
           </View>
         </View>
         <View style={styles.daysLeftContainer}>
-            <Text style={styles.cardsSimpleText}>Joined on: 1-July-2024{" "}</Text>
-            <View style={styles.currentDaysLeftButton}>
+          <Text style={styles.cardsSimpleText}>Joined on: 1-July-2024 </Text>
+          <View style={styles.currentDaysLeftButton}>
             <Text>20 Days Left</Text>
-        </View>
+          </View>
         </View>
         <View style={styles.currentCardsCategoryButtonContainer}>
           <TouchableOpacity>
@@ -66,7 +75,7 @@ export default function CurrentStayCard() {
               <MaterialCommunityIcons
                 name="bed-queen"
                 size={24}
-                color="#8100d1"
+                color={colors.primary}
               />
               <Text style={styles.cardsCategoryButtonText}>Single </Text>
             </View>
@@ -76,31 +85,35 @@ export default function CurrentStayCard() {
               <MaterialCommunityIcons
                 name="bed-queen"
                 size={24}
-                color="#8100d1"
+                color={colors.primary}
               />
               <Text style={styles.cardsCategoryButtonText}>Double </Text>
             </View>
           </TouchableOpacity>
           <TouchableOpacity>
-          <View style={[styles.currentCardsCategoryButton, { width: 50 }]}>
-            <Text style={styles.cardsCategoryButtonText}>+ 2</Text>
-          </View>
-        </TouchableOpacity>
+            <View style={[styles.currentCardsCategoryButton, styles.extraWidth]}>
+              <Text style={styles.cardsCategoryButtonText}>+ 2</Text>
+            </View>
+          </TouchableOpacity>
         </View>
-        
+
         <TouchableOpacity
           onPress={() => {
-            router.navigate("schedule-visit");
-        }}>
+            alert("Schedule visit feature is coming soon!");
+            // router.navigate("/");
+          }}
+        >
           <Text style={styles.cardsPrimaryButton}>RESCHEDULE</Text>
         </TouchableOpacity>
         <TouchableOpacity
           onPress={() => {
             router.navigate("property-details");
-        }}>
+          }}
+        >
           <Text style={styles.cardsSecondaryButton}>CHECK OUT</Text>
         </TouchableOpacity>
       </View>
-    </View>
+    </>
   );
-}
+};
+export default CurrentStayCard;

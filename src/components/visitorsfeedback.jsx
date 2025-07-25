@@ -1,12 +1,12 @@
 import React from "react";
-import styles from "@/styles/global";
+import styles from "@styles/global";
 import { View, Text, TouchableOpacity, ScrollView } from "react-native";
 import AntDesign from "@expo/vector-icons/AntDesign";
-import FeedbackCard from "./feedbackcard";
+import FeedbackCard from "./FeedbackCard";
 
-export default function VisitorsFeedback() {
+const VisitorsFeedback = () => {
   return (
-    <View>
+    <>
       <View style={styles.cardsHeadingContainer}>
         <Text style={styles.cardsHeadingText}>Visitor's Feedback{"  "}</Text>
         <TouchableOpacity>
@@ -20,6 +20,7 @@ export default function VisitorsFeedback() {
           <FeedbackCard />
         </ScrollView>
       </View>
-    </View>
+    </>
   );
-}
+};
+export default VisitorsFeedback;

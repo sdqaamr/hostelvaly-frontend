@@ -4,7 +4,7 @@ import AntDesign from "@expo/vector-icons/AntDesign";
 import styles from "@styles/global";
 import { colors } from "@constants/global";
 
-const TabLayout = () => {
+const TabLayout2 = () => {
   return (
     <Tabs
       screenOptions={{
@@ -16,7 +16,7 @@ const TabLayout = () => {
       }}
     >
       <Tabs.Screen
-        name="home"
+        name="home-page2"
         options={{
           tabBarLabel: "Home",
           tabBarIcon: ({ color, size }) => (
@@ -54,4 +54,4 @@ const TabLayout = () => {
     </Tabs>
   );
 };
-export default TabLayout;
+export default TabLayout2;

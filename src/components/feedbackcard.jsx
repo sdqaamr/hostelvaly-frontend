@@ -1,11 +1,11 @@
 import React from "react";
 import styles from "@styles/global";
-import { View, Text, TouchableOpacity, ScrollView } from "react-native";
+import { View, Text } from "react-native";
 import AntDesign from "@expo/vector-icons/AntDesign";
-
+import { colors } from "@constants/global";
 import { Image } from "expo-image";
 
-export default function FeedbackCard() {
+const FeedbackCard = () => {
   return (
     <View style={styles.feedbackCard}>
       <View style={styles.feedbackCardContentContainer}>
@@ -17,10 +17,10 @@ export default function FeedbackCard() {
         <View style={styles.feedbackContentContainer}>
           <Text style={styles.cardsHeadingText}>Visitor name </Text>
           <View style={styles.feedbackRatingContainer}>
-            <AntDesign name="star" size={16} color="#FCD003" />
-            <AntDesign name="star" size={16} color="#FCD003" />
-            <AntDesign name="star" size={16} color="#FCD003" />
-            <AntDesign name="star" size={16} color="#FCD003" />
+            <AntDesign name="star" size={16} color={colors.ratingStar} />
+            <AntDesign name="star" size={16} color={colors.ratingStar} />
+            <AntDesign name="star" size={16} color={colors.ratingStar} />
+            <AntDesign name="star" size={16} color={colors.ratingStar} />
             <AntDesign name="staro" size={16} color="gray" />
             <Text style={styles.feedbackRatingText}>4/5 rating </Text>
           </View>
@@ -31,4 +31,5 @@ export default function FeedbackCard() {
       </View>
     </View>
   );
-}
+};
+export default FeedbackCard;

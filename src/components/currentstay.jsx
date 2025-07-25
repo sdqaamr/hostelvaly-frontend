@@ -1,10 +1,10 @@
 import React from "react";
 import styles from "@styles/global";
-import { View, Text, TouchableOpacity, ScrollView } from "react-native";
+import { View, Text, TouchableOpacity } from "react-native";
 import AntDesign from "@expo/vector-icons/AntDesign";
-import CurrentStayCard from "./currentstaycard";
+import CurrentStayCard from "./CurrentStayCard";
 
-export default function CurrentStay() {
+const CurrentStay = () => {
   return (
     <View>
       <View style={styles.cardsHeadingContainer}>
@@ -18,4 +18,5 @@ export default function CurrentStay() {
       </View>
     </View>
   );
-}
+};
+export default CurrentStay;

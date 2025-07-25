@@ -1,15 +1,12 @@
 import { StyleSheet } from "react-native";
-
-const primarycolor = "#8100d1";
-const secondarycolor = "#ce80ff";
-const backgroundcolor = "#F0F0F0";
+import { colors } from "@constants/global";
 
 const styles = StyleSheet.create({
   container: {
     flex: 1,
     alignItems: "center",
     justifyContent: "center",
-    backgroundColor: backgroundcolor,
+    backgroundColor: colors.background,
   },
   safeArea: {
     flex: 1,
@@ -31,6 +28,11 @@ const styles = StyleSheet.create({
   onboardingTitleContainer: {
     alignItems: "center",
   },
+  onboardingImgContainer: {
+    flex: 1,
+    justifyContent: "center",
+    alignItems: "center",
+  },
   onboardingTitle: {
     fontSize: 18,
     textAlign: "center",
@@ -38,15 +40,15 @@ const styles = StyleSheet.create({
   mainTitle: {
     fontFamily: "Roboto-Bold",
     fontSize: 30,
-    color: primarycolor,
+    color: colors.primary,
   },
   logoText: {
     fontFamily: "Roboto-BlackItalic",
     fontSize: 25,
-    color: primarycolor,
+    color: colors.primary,
   },
   logoText2: {
-    color: secondarycolor,
+    color: colors.secondary,
   },
   onboardingImg: {
     height: 230,
@@ -62,29 +64,15 @@ const styles = StyleSheet.create({
     paddingTop: 15,
   },
   onboardingButton: {
-    paddingVertical: 8,
-    paddingHorizontal: 28,
-    backgroundColor: primarycolor,
-    borderRadius: 30,
-    position: "absolute",
-    bottom: 0,
-    alignSelf: "center",
-    marginBottom: 80,
+    marginHorizontal: 15,
+    padding: 8,
+    backgroundColor: colors.primary,
+    borderRadius: 8,
   },
-  onboardingButtonText: {
-    color: "white",
-    fontSize: 16,
-    textAlign: "center",
-    paddingBottom: 3,
-  },
-  logoWithTextContainer: {
-    flexDirection: "row",
-    gap: 10,
-  },
-  logoImg: {
-    width: 50,
-    height: 50,
-    contentFit: "contain",
+  onboardingLabel: {
+    color: "#fff", 
+    fontWeight: "bold", 
+    marginHorizontal: 10
   },
   screensImgContainer: {
     flex: 1,
@@ -103,32 +91,34 @@ const styles = StyleSheet.create({
   primaryButton: {
     width: 325,
     borderRadius: 8,
-    backgroundColor: primarycolor,
-    paddingVertical: 12,
+    backgroundColor: colors.primary,
+    paddingVertical: 10,
     marginTop: 30,
   },
   primaryButtonText: {
     fontSize: 16,
     color: "#fff",
     textAlign: "center",
+    paddingBottom: 1,
   },
   primaryLightButton: {
     width: 325,
     borderRadius: 8,
     backgroundColor: "transparent",
-    paddingVertical: 9,
-    borderColor: primarycolor,
+    paddingVertical: 7.5,
+    borderColor: colors.primary,
     borderStyle: "solid",
     borderWidth: 2,
   },
   primaryLightButtonText: {
     fontSize: 16,
-    color: primarycolor,
+    color: colors.primary,
     textAlign: "center",
+    paddingBottom: 1,
   },
   footerContainer: {
     position: "absolute",
-    bottom: 20,
+    bottom: 10,
     left: 0,
     right: 0,
     alignItems: "center",
@@ -138,13 +128,13 @@ const styles = StyleSheet.create({
   footerText: {
     fontSize: 15,
     textAlign: "center",
-    color: secondarycolor,
+    color: colors.secondary,
   },
-  loginContainer: {
-    flex: 1,
-    justifyContent: "center",
-    backgroundColor: "orange",
-  },
+  // loginContainer: {
+  //   flex: 1,
+  //   justifyContent: "center",
+  //   backgroundColor: "orange",
+  // },
   loginHeading: {
     justifyContent: "center",
     textAlign: "left",
@@ -157,7 +147,7 @@ const styles = StyleSheet.create({
     width: 330,
     paddingVertical: 13,
     color: "black",
-    backgroundColor: "#E0E1E6",
+    backgroundColor: colors.textInput,
     borderRadius: 10,
     paddingLeft: 20,
     fontSize: 15,
@@ -183,7 +173,7 @@ const styles = StyleSheet.create({
     marginTop: 8,
   },
   additionalText: {
-    color: secondarycolor,
+    color: colors.secondary,
     fontSize: 15,
   },
   intermediateContainer: {
@@ -194,7 +184,7 @@ const styles = StyleSheet.create({
   intermediateLine: {
     width: 95,
     height: 2,
-    backgroundColor: "#c7c7c7",
+    backgroundColor: colors.radio,
     borderRadius: 40,
     marginTop: 11,
   },
@@ -210,7 +200,7 @@ const styles = StyleSheet.create({
     paddingVertical: 10,
     borderRadius: 5,
     borderStyle: "solid",
-    borderColor: "#c7c7c7",
+    borderColor: colors.radio,
     borderWidth: 1,
     width: 90,
     alignItems: "center",
@@ -238,7 +228,7 @@ const styles = StyleSheet.create({
     borderStyle: "solid",
     borderWidth: 1,
     borderRadius: 10,
-    borderColor: primarycolor,
+    borderColor: colors.primary,
     fontSize: 30,
     fontFamily: "NotoSans-SemiBold",
     marginVertical: 30,
@@ -278,7 +268,7 @@ const styles = StyleSheet.create({
   searchButton: {
     height: 40,
     width: 40,
-    backgroundColor: primarycolor,
+    backgroundColor: colors.primary,
     borderRadius: 40,
   },
   searchIcon: {
@@ -404,7 +394,7 @@ const styles = StyleSheet.create({
   },
   tabIcons: {
     fontSize: 26,
-    color: primarycolor,
+    color: colors.primary,
   },
   cardImgIconsContainer: {
     flexDirection: "row-reverse",
@@ -465,16 +455,16 @@ const styles = StyleSheet.create({
     width: 100,
     borderStyle: "solid",
     borderWidth: 1.2,
-    borderColor: primarycolor,
+    borderColor: colors.primary,
     borderRadius: 40,
-    backgroundColor: backgroundcolor,
+    backgroundColor: colors.background,
     flexDirection: "row",
     gap: 5,
     justifyContent: "center",
     alignItems: "center",
   },
   cardsCategoryButtonText: {
-    color: primarycolor,
+    color: colors.primary,
     textAlign: "center",
     justifyContent: "center",
     fontFamily: "Roboto-Medium",
@@ -484,9 +474,9 @@ const styles = StyleSheet.create({
     width: 55,
     borderStyle: "solid",
     borderWidth: 1.2,
-    borderColor: primarycolor,
+    borderColor: colors.primary,
     borderRadius: 40,
-    backgroundColor: "#F0F0F0",
+    backgroundColor: colors.background,
     justifyContent: "center",
     alignItems: "center",
     marginLeft: 15,
@@ -494,7 +484,7 @@ const styles = StyleSheet.create({
   },
   cardsPrimaryButton: {
     color: "white",
-    backgroundColor: primarycolor,
+    backgroundColor: colors.primary,
     paddingVertical: 7,
     width: "90%",
     borderRadius: 10,
@@ -506,14 +496,14 @@ const styles = StyleSheet.create({
     fontFamily: "Roboto-Regular",
   },
   cardsSecondaryButton: {
-    color: primarycolor,
-    borderColor: primarycolor,
+    color: colors.primary,
+    borderColor: colors.primary,
     paddingVertical: 6,
     width: "90%",
     borderRadius: 10,
     borderStyle: "solid",
     borderWidth: 1.5,
-    borderColor: primarycolor,
+    borderColor: colors.primary,
     alignSelf: "center",
     textAlign: "center",
     fontSize: 15,
@@ -530,7 +520,7 @@ const styles = StyleSheet.create({
   scheduleInnerContainer: {
     height: 280,
     width: 345,
-    backgroundColor: backgroundcolor,
+    backgroundColor: colors.background,
     marginTop: 25,
     alignItems: "center",
     padding: 8,
@@ -560,7 +550,7 @@ const styles = StyleSheet.create({
   scheduleButton: {
     width: 325,
     borderRadius: 8,
-    backgroundColor: primarycolor,
+    backgroundColor: colors.primary,
     paddingVertical: 12,
     marginTop: 10,
     alignSelf: "center",
@@ -584,7 +574,7 @@ const styles = StyleSheet.create({
     marginVertical: 10,
   },
   handleIndicatorStyle: {
-    backgroundColor: primarycolor,
+    backgroundColor: colors.primary,
     height: 5,
     width: 50,
     borderRadius: 5,
@@ -730,7 +720,7 @@ const styles = StyleSheet.create({
   propertyDetailsPrimaryButton: {
     paddingVertical: 10,
     width: 178,
-    backgroundColor: primarycolor,
+    backgroundColor: colors.primary,
     borderRadius: 8,
   },
   propertyDetailsPrimaryButtonText: {
@@ -745,11 +735,11 @@ const styles = StyleSheet.create({
     borderRadius: 8,
     borderStyle: "solid",
     borderWidth: 2,
-    borderColor: primarycolor,
+    borderColor: colors.primary,
   },
   propertyDetailsSecondaryButtonText: {
     fontSize: 16,
-    color: primarycolor,
+    color: colors.primary,
     textAlign: "center",
   },
   bookingHeaderText: {
@@ -787,7 +777,7 @@ const styles = StyleSheet.create({
     borderStyle: "solid",
     borderWidth: 1,
     borderRadius: 6,
-    borderColor: backgroundcolor,
+    borderColor: colors.background,
     paddingHorizontal: 12,
     paddingVertical: 10,
   },
@@ -801,7 +791,7 @@ const styles = StyleSheet.create({
   intermediateLine2: {
     width: 1.5,
     height: 60,
-    backgroundColor: "#c7c7c7",
+    backgroundColor: colors.radio,
     borderRadius: 40,
     position: "absolute",
     top: "50%",
@@ -818,7 +808,7 @@ const styles = StyleSheet.create({
     width: 18,
     height: 18,
     borderWidth: 1.5,
-    borderColor: "#c7c7c7",
+    borderColor: colors.radio,
     borderRadius: 10,
     marginHorizontal: 6,
   },
@@ -831,7 +821,7 @@ const styles = StyleSheet.create({
     width: 25,
     borderRadius: 6,
     borderWidth: 1,
-    borderColor: "#c7c7c7",
+    borderColor: colors.radio,
     marginVertical: 8,
   },
   operators: {
@@ -852,7 +842,7 @@ const styles = StyleSheet.create({
   bookingButton: {
     paddingVertical: 12,
     width: 120,
-    backgroundColor: primarycolor,
+    backgroundColor: colors.primary,
     borderRadius: 8,
   },
   checkoutContainer: {
@@ -885,7 +875,7 @@ const styles = StyleSheet.create({
   paymentButton: {
     width: 355,
     borderRadius: 8,
-    backgroundColor: secondarycolor,
+    backgroundColor: colors.secondary,
     paddingVertical: 8,
     paddingHorizontal: 20,
     marginVertical: 10,
@@ -975,9 +965,9 @@ const styles = StyleSheet.create({
     paddingHorizontal: 10,
     borderStyle: "solid",
     borderWidth: 1.2,
-    borderColor: primarycolor,
+    borderColor: colors.primary,
     borderRadius: 40,
-    backgroundColor: backgroundcolor,
+    backgroundColor: colors.background,
     flexDirection: "row",
     gap: 5,
     justifyContent: "center",
@@ -989,10 +979,45 @@ const styles = StyleSheet.create({
     gap: 10,
     paddingVertical: 10,
   },
+  tabBar: {
+    backgroundColor: "white",
+    maxHeight: 80,
+  },
+  tabBarLabel: {
+    fontSize: 11, 
+    fontWeight: "bold",
+  }, 
+  selfAlignment: {
+    alignSelf: "center",
+  },
+  extraWidth: {
+    width: 50,
+  },
+  extraTopMargin: {
+    marginTop: 132,
+  },
+  extraVerticalMargin: {
+    marginVertical: 8,
+  },
+  extraVerticalPadding: {
+    paddingVertical: 50,
+  },
+  fontPadding: {
+    includeFontPadding: false,
+  },
+  flexDirection: {
+    flexDirection: "row",
+  },
+  flex: {
+    flex: 1,
+  },
+  notFoundButton: {
+    width: 200,
+    borderRadius: 8,
+    backgroundColor: colors.primary,
+    paddingVertical: 8.5,
+    marginTop: 20,
+    alignSelf: "center",
+  }
 });
 export default styles;
-
-export const colors = {
-  primary: primarycolor,
-  secondary: secondarycolor,
-};

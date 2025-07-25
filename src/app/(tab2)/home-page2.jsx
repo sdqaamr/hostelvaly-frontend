@@ -3,14 +3,13 @@ import styles from "@styles/global";
 import { View, Text, ScrollView } from "react-native";
 import { SafeAreaView } from "react-native-safe-area-context";
 import { useRouter } from "expo-router";
-import HomeHeader from '@components/homeheader';
-import RecommendedHostels from '@components/recommendedhostels';
-import LiveViewedHostels from '@components/liveviewedhostels';
-import TabIcons from '@components/tabicons';
-import VisitorsFeedback from '@components/visitorsfeedback';
-import CurrentStay from '@components/currentstay';
+import HomeHeader from "@components/HomeHeader";
+import RecommendedHostels from "@components/RecommendedHostels";
+import LiveViewedHostels from "@components/LiveViewedHostels";
+import VisitorsFeedback from "@components/VisitorsFeedback";
+import CurrentStay from "@components/CurrentStay";
 
-export default function HomePage2() {
+const HomePage2 = () => {
   const router = useRouter();
   return (
     <SafeAreaView style={styles.safeArea}>
@@ -24,7 +23,7 @@ export default function HomePage2() {
           <Text> </Text>
         </View>
       </ScrollView>
-      <TabIcons />
     </SafeAreaView>
   );
-}
+};
+export default HomePage2;

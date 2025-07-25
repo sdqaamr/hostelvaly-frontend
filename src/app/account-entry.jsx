@@ -5,8 +5,8 @@ import { SafeAreaView } from "react-native-safe-area-context";
 import styles from "@styles/global";
 import { useRouter } from "expo-router";
 
-export default function AccountEntry() {
-    const router = useRouter();
+const AccountEntry = () => {
+  const router = useRouter();
   return (
     <SafeAreaView style={styles.safeArea}>
       <View style={styles.container}>
@@ -21,7 +21,7 @@ export default function AccountEntry() {
           <TouchableOpacity
             style={styles.primaryButton}
             onPress={() => {
-              router.navigate("login");
+              router.navigate("(auth)/login");
             }}
           >
             <Text style={styles.primaryButtonText}>Login</Text>
@@ -29,7 +29,7 @@ export default function AccountEntry() {
           <TouchableOpacity
             style={styles.primaryLightButton}
             onPress={() => {
-              router.navigate("register");
+              router.navigate("(auth)/register");
             }}
           >
             <Text style={styles.primaryLightButtonText}>Register</Text>
@@ -46,4 +46,5 @@ export default function AccountEntry() {
       </View>
     </SafeAreaView>
   );
-}
+};
+export default AccountEntry;

@@ -1,12 +1,13 @@
 import React, { useMemo, useCallback, useState } from "react";
-import styles, { colors } from "@styles/global";
+import styles from "@styles/global";
+import { colors } from "@constants/global";
 import { View, Text, TouchableOpacity, Switch } from "react-native";
 import BottomSheet, {
   BottomSheetBackdrop,
   BottomSheetTextInput,
   BottomSheetView,
 } from "@gorhom/bottom-sheet";
-import SvgComponent from "@assets/SVG/WhatsApp";
+import SvgComponent from "@assets/images/SVG/WhatsApp";
 import AntDesign from "@expo/vector-icons/AntDesign";
 
 const ScheduleBottomSheet = ({ bottomSheetRef, closeBottomSheet }) => {
@@ -75,7 +76,7 @@ const ScheduleBottomSheet = ({ bottomSheetRef, closeBottomSheet }) => {
                 value={isEnabled}
                 onValueChange={() => setIsEnabled((prev) => !prev)}
                 trackColor={{ false: colors.secondary, true: colors.primary }}
-                thumbColor={isEnabled ? "#ffffff" : "#f4f3f4"}
+                thumbColor={isEnabled ? colors.switchEnabled : colors.switchDisabled}
                 ios_backgroundColor={colors.secondary}
                 style={styles.switch}
               />

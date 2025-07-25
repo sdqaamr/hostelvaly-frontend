@@ -1,21 +1,22 @@
 import React, { useState } from "react";
 import styles from "@styles/global";
-import { View, Text, TouchableOpacity, Image, TextInput } from "react-native";
+import { View, Text, TouchableOpacity, TextInput } from "react-native";
 import { SafeAreaView } from "react-native-safe-area-context";
 import { useRouter } from "expo-router";
 import { Feather } from "@expo/vector-icons";
+import { colors } from "@constants/global";
 
-export default function PasswordReset() {
+const PasswordReset = () => {
   const router = useRouter();
   const [showPassword, setShowPassword] = useState(false);
   const [showConfirmPassword, setShowConfirmPassword] = useState(false);
   return (
     <SafeAreaView style={styles.safeArea}>
       <View style={styles.container}>
-        <Text style={styles.loginHeading}>
-          Reset {"\n"}Password!
+        <Text style={styles.loginHeading}>Reset {"\n"}Password!</Text>
+        <Text style={styles.simpleText}>
+          Please enter yout new password and then confirm it.
         </Text>
-        <Text style={styles.simpleText}>Please enter yout new password and then confirm it.</Text>
         <Text></Text>
         <View style={styles.passwordOuterContainer}>
           <View style={styles.passwordInnerContainer}>
@@ -27,12 +28,14 @@ export default function PasswordReset() {
             <TouchableOpacity
               onPress={() => setShowPassword((prev) => !prev)}
               style={styles.eyeContainer}
-              accessibilityLabel={showPassword ? "Hide password" : "Show password"}
+              accessibilityLabel={
+                showPassword ? "Hide password" : "Show password"
+              }
             >
               <Feather
                 name={showPassword ? "eye" : "eye-off"}
                 size={22}
-                color="#888"
+                color={colors.eye}
               />
             </TouchableOpacity>
           </View>
@@ -47,22 +50,28 @@ export default function PasswordReset() {
             <TouchableOpacity
               onPress={() => setShowConfirmPassword((prev) => !prev)}
               style={styles.eyeContainer}
-              accessibilityLabel={showConfirmPassword ? "Hide password" : "Show password"}
+              accessibilityLabel={
+                showConfirmPassword ? "Hide password" : "Show password"
+              }
             >
               <Feather
                 name={showConfirmPassword ? "eye" : "eye-off"}
                 size={22}
-                color="#888"
+                color={colors.eye}
               />
             </TouchableOpacity>
           </View>
         </View>
-        <TouchableOpacity onPress={() => {
-          router.navigate("login");
-        }} style={styles.primaryButton}>
+        <TouchableOpacity
+          onPress={() => {
+            router.navigate("login");
+          }}
+          style={styles.primaryButton}
+        >
           <Text style={styles.primaryButtonText}>Submit</Text>
         </TouchableOpacity>
       </View>
     </SafeAreaView>
   );
-}
+};
+export default PasswordReset;

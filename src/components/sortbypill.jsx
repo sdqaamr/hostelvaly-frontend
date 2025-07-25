@@ -3,7 +3,7 @@ import styles from "@styles/global";
 import { View, Text, TouchableOpacity } from "react-native";
 import Entypo from "@expo/vector-icons/Entypo";
 
-export default function SortbyPill(props) {
+const SortbyPill = (props) => {
   const { openSortBottomSheet } = props;
   return (
     <View>
@@ -16,4 +16,5 @@ export default function SortbyPill(props) {
       </TouchableOpacity>
     </View>
   );
-}
+};
+export default SortbyPill;

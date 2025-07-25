@@ -1,8 +1,8 @@
-// assets/SVG/Google.js
+// assets/images/SVG/Google.js
 import React from 'react';
 import Svg, { Path } from 'react-native-svg';
 
-export default function GoogleIcon({ width = 35, height = 35 }) {
+const GoogleIcon = ({ width = 35, height = 35 }) => {
   return (
     <Svg
       width={35}
@@ -28,4 +28,5 @@ export default function GoogleIcon({ width = 35, height = 35 }) {
       />
     </Svg>
   );
-}
+};
+export default GoogleIcon;

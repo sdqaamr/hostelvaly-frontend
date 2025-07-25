@@ -1,11 +1,13 @@
 import React from "react";
 import { Text } from "react-native";
 import styles from "@styles/global";
-export default function LogoText() {
+
+const LogoText = () => {
   return (
     <Text style={styles.logoText}>
       Hostel
-      <Text style={styles.logoText2}>Valy</Text>
+      <Text style={styles.logoText2}>Valy </Text>
     </Text>
   );
-}
+};
+export default LogoText;

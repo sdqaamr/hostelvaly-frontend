@@ -1,14 +1,15 @@
 import React, { useState } from "react";
 import styles from "@styles/global";
-import { View, Text, TouchableOpacity, Image, TextInput } from "react-native";
+import { View, Text, TouchableOpacity, TextInput } from "react-native";
 import { SafeAreaView } from "react-native-safe-area-context";
 import FontAwesome5 from "@expo/vector-icons/FontAwesome5";
 import AntDesign from "@expo/vector-icons/AntDesign";
-import SvgComponent from "@assets/SVG/Google";
+import SvgComponent from "@assets/images/SVG/Google";
 import { useRouter } from "expo-router";
 import { Feather } from "@expo/vector-icons";
+import { colors } from "@constants/global";
 
-export default function Register() {
+const Register = () => {
   const router = useRouter();
   const [showPassword, setShowPassword] = useState(false);
   const [showConfirmPassword, setShowConfirmPassword] = useState(false);
@@ -34,7 +35,7 @@ export default function Register() {
               <Feather
                 name={showPassword ? "eye" : "eye-off"}
                 size={22}
-                color="#888"
+                color={colors.eye}
               />
             </TouchableOpacity>
           </View>
@@ -54,7 +55,7 @@ export default function Register() {
               <Feather
                 name={showConfirmPassword ? "eye" : "eye-off"}
                 size={22}
-                color="#888"
+                color={colors.eye}
               />
             </TouchableOpacity>
           </View>
@@ -72,7 +73,7 @@ export default function Register() {
         <View style={styles.allIconsContainer}>
           <View style={styles.iconContainer}>
             <TouchableOpacity>
-              <FontAwesome5 name="facebook" size={35} color="#1877F2" />
+              <FontAwesome5 name="facebook" size={35} color={colors.facebook} />
             </TouchableOpacity>
           </View>
           <View style={styles.iconContainer}>
@@ -99,4 +100,5 @@ export default function Register() {
       </View>
     </SafeAreaView>
   );
-}
+};
+export default Register;

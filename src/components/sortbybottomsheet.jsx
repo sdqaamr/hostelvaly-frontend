@@ -60,11 +60,3 @@ const SortbyBottomSheet = ({ bottomSheetRef, closeBottomSheet }) => {
   );
 };
 export default SortbyBottomSheet;
-
-// {
-//   sortOptions.map((option) => (
-//     <View key={option.id}>
-//       <Text>{option.name}</Text>
-//     </View>
-//   ));
-// }

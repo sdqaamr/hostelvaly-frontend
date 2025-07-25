@@ -4,26 +4,26 @@ import { View, Text, TouchableOpacity } from "react-native";
 import { SafeAreaView } from "react-native-safe-area-context";
 import { useRouter } from "expo-router";
 
-const Verify = () => {
+const NotFound = () => {
   const router = useRouter();
   return (
     <SafeAreaView style={styles.safeArea}>
       <View style={styles.container}>
-        <Text style={styles.mainTitle}>Verified!</Text>
+        <Text style={styles.mainTitle}>Unmatched Route!</Text>
         <Text style={styles.verifyText}>
-          Your account has been verified successfully
+          The page you're looking for doesn't exist.
         </Text>
         <Text></Text>
         <TouchableOpacity
           onPress={() => {
             router.navigate("/home");
           }}
-          style={styles.primaryButton}
+          style={styles.notFoundButton}
         >
-          <Text style={styles.primaryButtonText}>Done</Text>
+          <Text style={styles.primaryButtonText}>Go to Home </Text>
         </TouchableOpacity>
       </View>
     </SafeAreaView>
   );
 };
-export default Verify;
+export default NotFound;

@@ -9,8 +9,9 @@ import MaterialCommunityIcons from "@expo/vector-icons/MaterialCommunityIcons";
 import Octicons from "@expo/vector-icons/Octicons";
 import { Image } from "expo-image";
 import { useRouter } from "expo-router";
+import { colors } from "@constants/global";
 
-export default function ViewingCard() {
+const ViewingCard = () => {
   const router = useRouter();
   return (
     <View>
@@ -34,9 +35,17 @@ export default function ViewingCard() {
             </View>
           </TouchableOpacity>
         </View>
-        <View style={[styles.viewingPeopleContainer, { marginTop: 132 }]}>
-            <Ionicons name="eye" size={18} color="white" style={{ alignSelf: "center" }} />
-            <Text style={[styles.primaryButtonText, { alignSelf: "center" }]}>{" "}30+ People Viewing Now </Text>
+        <View style={[styles.viewingPeopleContainer, styles.extraTopMargin]}>
+          <Ionicons
+            name="eye"
+            size={18}
+            color="white"
+            style={styles.selfAlignment}
+          />
+          <Text style={[styles.primaryButtonText, styles.selfAlignment]}>
+            {" "}
+            30+ People Viewing Now{" "}
+          </Text>
         </View>
         <View style={styles.nameAndLocContainer}>
           <View>
@@ -45,13 +54,6 @@ export default function ViewingCard() {
               <Ionicons name="location-outline" size={20} color="gray" />
               <Text style={styles.cardsSimpleText}>Islamabad </Text>
             </View>
-          </View>
-          <View style={styles.cardsPriceContainer}>
-            <Text style={styles.cardsSimpleText}>Starts from </Text>
-            <Text>
-              <Text style={styles.cardsHeadingText}>Rs 18000 </Text>
-              <Text style={styles.cardsSimpleText}>/mo* </Text>
-            </Text>
           </View>
         </View>
         <View style={styles.cardIconsContainer}>
@@ -70,7 +72,7 @@ export default function ViewingCard() {
               <MaterialCommunityIcons
                 name="bed-queen"
                 size={24}
-                color="#8100d1"
+                color={colors.primary}
               />
               <Text style={styles.cardsCategoryButtonText}>Single </Text>
             </View>
@@ -80,7 +82,7 @@ export default function ViewingCard() {
               <MaterialCommunityIcons
                 name="bed-queen"
                 size={24}
-                color="#8100d1"
+                color={colors.primary}
               />
               <Text style={styles.cardsCategoryButtonText}>Double </Text>
             </View>
@@ -93,17 +95,21 @@ export default function ViewingCard() {
         </TouchableOpacity>
         <TouchableOpacity
           onPress={() => {
-            router.navigate("/");
-        }}>
+            alert("Schedule visit feature is coming soon!");
+            // router.navigate("/");
+          }}
+        >
           <Text style={styles.cardsPrimaryButton}>SCHEDULE VISIT</Text>
         </TouchableOpacity>
         <TouchableOpacity
           onPress={() => {
             router.navigate("property-details");
-        }}>
+          }}
+        >
           <Text style={styles.cardsSecondaryButton}>BOOK NOW</Text>
         </TouchableOpacity>
       </View>
     </View>
   );
-}
+};
+export default ViewingCard;

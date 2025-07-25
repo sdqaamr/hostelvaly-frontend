@@ -7,7 +7,7 @@ import Entypo from "@expo/vector-icons/Entypo";
 import AntDesign from "@expo/vector-icons/AntDesign";
 import MaterialCommunityIcons from "@expo/vector-icons/MaterialCommunityIcons";
 
-export default function TabIcons() {
+const TabIcons = () => {
   return (
     <View style={styles.tabIconsContainer}>
       <TouchableOpacity>
@@ -30,4 +30,5 @@ export default function TabIcons() {
       </TouchableOpacity>
     </View>
   );
-}
+};
+export default TabIcons;

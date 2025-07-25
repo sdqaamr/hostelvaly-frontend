@@ -15,10 +15,11 @@ import Ionicons from "@expo/vector-icons/Ionicons";
 import { Image } from "expo-image";
 import { useRouter } from "expo-router";
 import { useState } from "react";
+import { colors } from "@constants/global";
 
-export default function Booking() {
+const Booking = () => {
   const router = useRouter();
-  let [sharing, setSharing] = useState(1);
+  const [sharing, setSharing] = useState(1);
   function increment() {
     setSharing(sharing + 1);
   }
@@ -32,7 +33,9 @@ export default function Booking() {
       <ScrollView>
         <View style={styles.container}>
           <View style={styles.propertyDetailsHeaderContainer}>
-            <FontAwesome name="angle-left" size={26} color="black" />
+            <TouchableOpacity onPress={() => router.back()}>
+              <FontAwesome name="angle-left" size={26} color="black" />
+            </TouchableOpacity>
             <View style={styles.propertyDetailsHeaderTextContainer}>
               <Text style={styles.bookingHeaderText}>Booking </Text>
             </View>
@@ -72,7 +75,7 @@ export default function Booking() {
                 </View>
                 <View style={styles.propertyRatingContainer}>
                   <Text style={styles.cardsHeadingText}>
-                    <AntDesign name="star" size={16} color="#FCD003" /> 8.5
+                    <AntDesign name="star" size={16} color={colors.ratingStar} /> 8.5
                     rating{" "}
                   </Text>
                   <Text style={styles.cardsSimpleText}> (1234 reviews)</Text>
@@ -101,50 +104,56 @@ export default function Booking() {
             </View>
             <Text style={styles.cardsHeadingText}>{"  "}Room Details</Text>
             <View style={styles.bookingDetailsContainer}>
-                <View style={styles.bookingDetailsContainerDouble}>
-              <View>
-                <Text>Room Type</Text>
-                <View style={styles.radioContainer}>
-                  <View style={styles.radio} />
-                  <Text>AC</Text>
-                  <View style={styles.radio} />
-                  <Text>Non AC </Text>
+              <View style={styles.bookingDetailsContainerDouble}>
+                <View>
+                  <Text>Room Type</Text>
+                  <View style={styles.radioContainer}>
+                    <View style={styles.radio} />
+                    <Text>AC</Text>
+                    <View style={styles.radio} />
+                    <Text>Non AC </Text>
+                  </View>
+                </View>
+                <View style={styles.intermediateLine2} />
+                <View style={styles.bookingDetailsContainer2}>
+                  <Text>Room Sharing </Text>
+                  <View style={styles.sharingContainer}>
+                    <TouchableOpacity
+                      style={styles.operatorsContainer}
+                      onPress={increment}
+                    >
+                      <Text style={styles.operators}>+</Text>
+                    </TouchableOpacity>
+                    <Text style={styles.extraVerticalMargin}>{sharing}</Text>
+                    <TouchableOpacity
+                      style={styles.operatorsContainer}
+                      onPress={decrement}
+                    >
+                      <Text style={styles.operators}>-</Text>
+                    </TouchableOpacity>
+                  </View>
                 </View>
               </View>
-              <View style={styles.intermediateLine2} />
-              <View style={styles.bookingDetailsContainer2}>
-                <Text>Room Sharing </Text>
-                <View style={styles.sharingContainer}>
-                  <TouchableOpacity style={styles.operatorsContainer} onPress={increment}>
-                    <Text style={styles.operators}>+</Text>
-                  </TouchableOpacity>
-                  <Text style={{ marginVertical: 8 }}>{sharing}</Text>
-                  <TouchableOpacity style={styles.operatorsContainer} onPress={decrement}>
-                    <Text style={styles.operators}>-</Text>
-                  </TouchableOpacity>
-                </View>
-              </View>
-               </View>
             </View>
-            <Text>{" "}</Text>
+            <Text> </Text>
             <Text style={styles.cardsHeadingText}>
-                {"  "}Stay Duration{"  "}
-              </Text>
-              <View style={styles.bookingDetailsContainer}>
-                <Text>Date</Text>
-                <TextInput
-                  style={styles.bookingDetailsTextInput}
-                  placeholder="dd-mm-yyyy to dd-mm-yyyy"
-                ></TextInput>
-              </View>
+              {"  "}Stay Duration{"  "}
+            </Text>
+            <View style={styles.bookingDetailsContainer}>
+              <Text>Date</Text>
+              <TextInput
+                style={styles.bookingDetailsTextInput}
+                placeholder="dd-mm-yyyy to dd-mm-yyyy"
+              ></TextInput>
+            </View>
           </View>
           <View style={styles.extraPadding} />
         </View>
       </ScrollView>
       <View style={styles.bookingFooterContainer}>
         <View>
-            <Text style={styles.cardsSimpleText}>Total Pricing </Text>
-            <Text style={styles.cardsHeadingText}>Rs. 18000/M </Text>
+          <Text style={styles.cardsSimpleText}>Total Pricing </Text>
+          <Text style={styles.cardsHeadingText}>Rs. 18000/M </Text>
         </View>
         <TouchableOpacity
           onPress={() => {
@@ -157,4 +166,5 @@ export default function Booking() {
       </View>
     </SafeAreaView>
   );
-}
+};
+export default Booking;

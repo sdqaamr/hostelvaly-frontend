@@ -9,8 +9,9 @@ import MaterialCommunityIcons from "@expo/vector-icons/MaterialCommunityIcons";
 import Octicons from "@expo/vector-icons/Octicons";
 import { Image } from "expo-image";
 import { useRouter } from "expo-router";
+import { colors } from "@constants/global";
 
-export default function HostelCard({ openBottomSheet }) {
+const HostelCard = ({ openBottomSheet }) => {
   const router = useRouter();
   return (
     <View>
@@ -35,20 +36,13 @@ export default function HostelCard({ openBottomSheet }) {
           </TouchableOpacity>
         </View>
         <View style={styles.nameAndLocContainer}>
-          <View>
-            <Text style={styles.cardsHeadingText}>Aroma Hostel </Text>
-            <View style={styles.locationContainer}>
-              <Ionicons name="location-outline" size={20} color="gray" />
-              <Text style={styles.cardsSimpleText}>Islamabad </Text>
-            </View>
+        <View>
+          <Text style={styles.cardsHeadingText}>Aroma Hostel </Text>
+          <View style={styles.locationContainer}>
+            <Ionicons name="location-outline" size={20} color="gray" />
+            <Text style={styles.cardsSimpleText}>Islamabad </Text>
           </View>
-          <View style={styles.cardsPriceContainer}>
-            <Text style={styles.cardsSimpleText}>Starts from </Text>
-            <Text>
-              <Text style={styles.cardsHeadingText}>Rs 18000 </Text>
-              <Text style={styles.cardsSimpleText}>/mo* </Text>
-            </Text>
-          </View>
+        </View>
         </View>
         <View style={styles.cardIconsContainer}>
           <Feather name="wifi" size={24} color="gray" />
@@ -66,7 +60,7 @@ export default function HostelCard({ openBottomSheet }) {
               <MaterialCommunityIcons
                 name="bed-queen"
                 size={24}
-                color="#8100d1"
+                color={colors.primary}
               />
               <Text style={styles.cardsCategoryButtonText}>Single </Text>
             </View>
@@ -76,7 +70,7 @@ export default function HostelCard({ openBottomSheet }) {
               <MaterialCommunityIcons
                 name="bed-queen"
                 size={24}
-                color="#8100d1"
+                color={colors.primary}
               />
               <Text style={styles.cardsCategoryButtonText}>Double </Text>
             </View>
@@ -87,14 +81,12 @@ export default function HostelCard({ openBottomSheet }) {
             <Text style={styles.cardsCategoryButtonText}> + 2 </Text>
           </View>
         </TouchableOpacity>
-        <TouchableOpacity
-          onPress={openBottomSheet} // open the bottom sheet on press
-        >
+        <TouchableOpacity onPress={openBottomSheet}>
           <Text style={styles.cardsPrimaryButton}>SCHEDULE VISIT</Text>
         </TouchableOpacity>
         <TouchableOpacity
           onPress={() => {
-            router.navigate("property-details");
+            router.navigate("(booking-flow)/property-details");
           }}
         >
           <Text style={styles.cardsSecondaryButton}>BOOK NOW</Text>
@@ -102,4 +94,5 @@ export default function HostelCard({ openBottomSheet }) {
       </View>
     </View>
   );
-}
+};
+export default HostelCard;

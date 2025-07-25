@@ -3,26 +3,20 @@ import { View, Text, TouchableOpacity } from "react-native";
 import styles from "@styles/global";
 import Onboarding from "react-native-onboarding-swiper";
 import { SafeAreaView } from "react-native-safe-area-context";
-import LogoText from "@components/logotext";
+import LogoText from "@components/LogoText";
 import { Image } from "expo-image";
 import { useRouter } from "expo-router";
-import SvgComponent from "@assets/SVG/Onboarding4";
+import SvgComponent from "@assets/images/SVG/Onboarding4";
+import { colors } from "@constants/global";
 
 const CustomButton = ({ label, onPress }) => (
   <TouchableOpacity
-    style={{
-      marginHorizontal: 15,
-      padding: 8,
-      backgroundColor: "#8100d1",
-      borderRadius: 8,
-    }}
+    style={styles.onboardingButton}
     onPress={onPress}
     accessible
     accessibilityRole="button"
   >
-    <Text style={{ color: "#fff", fontWeight: "bold", marginHorizontal: 10 }}>
-      {label}
-    </Text>
+    <Text style={styles.onboardingLabel}>{label}</Text>
   </TouchableOpacity>
 );
 
@@ -31,7 +25,7 @@ const OnBoarding = () => {
   return (
     <SafeAreaView style={styles.safeArea}>
       <Onboarding
-        bottomBarColor="#F0F0F0"
+        bottomBarColor={colors.background}
         onDone={() => router.navigate("/account-entry")}
         onSkip={() => router.navigate("/account-entry")}
         SkipButtonComponent={(props) => (
@@ -41,14 +35,10 @@ const OnBoarding = () => {
           <CustomButton {...props} label="Next" />
         )}
         DoneButtonComponent={(props) => <CustomButton {...props} label="Go!" />}
-        imageContainerStyles={{
-          flex: 1,
-          justifyContent: "center",
-          alignItems: "center",
-        }}
+        imageContainerStyles={styles.onboardingImgContainer}
         pages={[
           {
-            backgroundColor: "#F0F0F0",
+            backgroundColor: colors.background,
             image: (
               <View style={styles.container}>
                 <View style={styles.onboardingTitleContainer}>
@@ -62,14 +52,14 @@ const OnBoarding = () => {
                   style={styles.onboardingImg}
                 />
                 <Text style={styles.onboardingDescription}>
-                  Welcome to HostelValy, a hostel-searching app for budget-friendly
-                  accomodation.
+                  Welcome to HostelValy, a hostel-searching app for
+                  budget-friendly accomodation.
                 </Text>
               </View>
             ),
           },
           {
-            backgroundColor: "#F0F0F0",
+            backgroundColor: colors.background,
             image: (
               <View style={styles.container}>
                 <View style={styles.onboardingTitleContainer}>
@@ -91,7 +81,7 @@ const OnBoarding = () => {
             ),
           },
           {
-            backgroundColor: "#F0F0F0",
+            backgroundColor: colors.background,
             image: (
               <View style={styles.container}>
                 <View style={styles.onboardingTitleContainer}>
@@ -113,11 +103,11 @@ const OnBoarding = () => {
             ),
           },
           {
-            backgroundColor: "#F0F0F0",
+            backgroundColor: colors.background,
             image: (
               <View style={styles.container}>
                 <LogoText />
-                <View style={{ paddingVertical: 50 }}>
+                <View style={styles.extraVerticalPadding}>
                   <SvgComponent />
                 </View>
                 <Text style={styles.onboardingDescription}>

@@ -1,10 +1,10 @@
 import React, { useEffect } from "react";
-import { View, Text } from "react-native";
+import { View } from "react-native";
 import styles from "@styles/global";
 import { useRouter } from "expo-router";
 import { Image } from "expo-image";
 
-export default function Splash() {
+const Splash = () => {
   const router = useRouter();
   useEffect(() => {
     const timer = setTimeout(() => {
@@ -12,7 +12,6 @@ export default function Splash() {
     }, 3000);
     return () => clearTimeout(timer);
   }, []);
-  console.log("Splash screen loaded");
   return (
     <View style={styles.container}>
       <Image
@@ -23,4 +22,5 @@ export default function Splash() {
       />
     </View>
   );
-}
+};
+export default Splash;

@@ -1,4 +1,4 @@
-    module.exports = function(api) {
+    export default function(api) {
       api.cache(true);
       return {
         presets: ['babel-preset-expo'],
@@ -6,13 +6,13 @@
           [
             'module-resolver',
             {
-              root: ['./src'], // Adjust if your source code is in a different root
+              root: ['./src'],
               extensions: ['.js', '.jsx', '.ts', '.tsx', '.json'],
               alias: {
                 '@components': './src/components',
                 '@assets': './src/assets',
                 '@styles': './src/styles',
-                // Add more aliases as needed
+                '@constants': './src/constants',
               },
             },
           ],

@@ -1,4 +1,4 @@
-import React, { useMemo, useCallback, useState } from "react";
+import React, { useMemo, useCallback } from "react";
 import styles from "@styles/global";
 import { View, Text } from "react-native";
 import BottomSheet, {
@@ -24,7 +24,6 @@ const GenderBottomSheet = ({ bottomSheetRef, closeBottomSheet }) => {
     ),
     []
   );
-  const [isEnabled, setIsEnabled] = useState(false);
   return (
     <BottomSheet
       snapPoints={snapPoints}
@@ -58,11 +57,3 @@ const GenderBottomSheet = ({ bottomSheetRef, closeBottomSheet }) => {
   );
 };
 export default GenderBottomSheet;
-
-// {
-//   sortOptions.map((option) => (
-//     <View key={option.id}>
-//       <Text>{option.name}</Text>
-//     </View>
-//   ));
-// }

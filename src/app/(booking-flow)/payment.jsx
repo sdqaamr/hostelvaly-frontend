@@ -1,31 +1,27 @@
 import React from "react";
 import styles from "@styles/global";
-import {
-  View,
-  Text,
-  TouchableOpacity,
-  ScrollView,
-} from "react-native";
+import { View, Text, TouchableOpacity, ScrollView } from "react-native";
 import { SafeAreaView } from "react-native-safe-area-context";
 import Entypo from "@expo/vector-icons/Entypo";
 import Feather from "@expo/vector-icons/Feather";
-import EvilIcons from '@expo/vector-icons/EvilIcons';
+import EvilIcons from "@expo/vector-icons/EvilIcons";
 import FontAwesome from "@expo/vector-icons/FontAwesome";
 import Ionicons from "@expo/vector-icons/Ionicons";
-
 import { Image } from "expo-image";
 import { useRouter } from "expo-router";
 
-export default function Checkout() {
+const Payment = () => {
   const router = useRouter();
   return (
     <SafeAreaView style={styles.safeArea}>
       <ScrollView>
         <View style={styles.container}>
           <View style={styles.propertyDetailsHeaderContainer}>
-            <FontAwesome name="angle-left" size={26} color="black" />
+            <TouchableOpacity onPress={() => router.back()}>
+              <FontAwesome name="angle-left" size={26} color="black" />
+            </TouchableOpacity>
             <View style={styles.propertyDetailsHeaderTextContainer}>
-              <Text style={styles.bookingHeaderText}>Checkout Page </Text>
+              <Text style={styles.bookingHeaderText}>Payment </Text>
             </View>
           </View>
           <View style={styles.propertyDetailsHeading2}>
@@ -34,25 +30,24 @@ export default function Checkout() {
               name="chevron-small-right"
               size={20}
               color="gray"
-              style={{ includeFontPadding: false }}
+              style={styles.fontPadding}
             />
             <Text style={styles.cardsSimpleText}>Property Details </Text>
             <Entypo
               name="chevron-small-right"
               size={20}
               color="gray"
-              style={{ includeFontPadding: false }}
+              style={styles.fontPadding}
             />
             <Text style={styles.cardsSimpleText}>Booking </Text>
             <Entypo
               name="chevron-small-right"
               size={20}
               color="gray"
-              style={{ includeFontPadding: false }}
+              style={styles.fontPadding}
             />
             <Text>Checkout </Text>
           </View>
-
           <View style={styles.propertyDetailsContentContainer}>
             <View style={styles.bookingImgAndDetailsContainer}>
               <Image
@@ -61,13 +56,13 @@ export default function Checkout() {
                 contentFit="cover"
               />
               <View style={styles.bookingImgDetailsContainer}>
-                  <Text style={styles.cardsHeadingText}>Aroma Hostel </Text>
+                <Text style={styles.cardsHeadingText}>Aroma Hostel </Text>
+                <View style={styles.locationContainer}>
+                  <Ionicons name="location-outline" size={20} color="gray" />
+                  <Text style={styles.cardsSimpleText}> Islamabad </Text>
+                </View>
+                <View>
                   <View style={styles.locationContainer}>
-                    <Ionicons name="location-outline" size={20} color="gray" />
-                    <Text style={styles.cardsSimpleText}> Islamabad </Text>
-                  </View>
-                  <View>
-                    <View style={styles.locationContainer}>
                     <EvilIcons name="calendar" size={22} color="gray" />
                     <Text style={styles.cardsSimpleText}>
                       5-8-25 to 5-10-25{" "}
@@ -81,45 +76,59 @@ export default function Checkout() {
                     <Ionicons name="bed-outline" size={21} color="gray" />
                     <Text style={styles.cardsSimpleText}>1 Room Sharing </Text>
                   </View>
-                  </View>
+                </View>
               </View>
             </View>
-            <View style={styles.servicesContainer}>
-              <View style={styles.checkoutContainer}>
-                <Text style={styles.cardsHeadingText}>Billing Details </Text>
-                <Text style={styles.cardsSimpleText}>Monthly Billing </Text>
+            <View style={styles.servicesContainer}></View>
+            <View style={styles.paymentButton}>
+              <View style={styles.paymentButtonTextContainer}>
+                <View style={styles.flexDirection}>
+                  <Text>Total Amount </Text>
+                  <TouchableOpacity>
+                    <Entypo
+                      name="chevron-small-down"
+                      size={22}
+                      color="black"
+                      style={styles.fontPadding}
+                    />
+                  </TouchableOpacity>
+                </View>
+                <Text>Rs. 22000</Text>
               </View>
-              <View style={styles.checkoutAllPaymentsContainer}>
-                <View style={styles.checkoutPaymentContainer}>
-                    <Text style={styles.checkoutPaymentText}>Price </Text>
-                    <Text style={styles.checkoutPriceText}>Rs. 18000 </Text>
-                </View>
-                <View style={styles.checkoutPaymentContainer}>
-                    <Text style={styles.checkoutPaymentText}>Security </Text>
-                    <Text style={styles.checkoutPriceText}>Rs. 4000 </Text>
-                </View>
-                <View style={styles.checkoutPaymentContainer}>
-                    <Text style={styles.checkoutPaymentText}>Payable amount </Text>
-                    <Text style={styles.checkoutPriceText}>Rs. 22000 </Text>
-                </View>
-              </View>
-
-              
             </View>
-            
+            <View style={styles.checkoutContainer}>
+              <Text style={styles.cardsHeadingText}>Payment Methods </Text>
+            </View>
+            <View style={styles.bookingDetailsContainer}>
+              <View style={styles.paymentMethodsContainer}>
+                <Text style={styles.cardsHeadingText}>JazzCash</Text>
+                <TouchableOpacity>
+                  <Entypo
+                    name="chevron-small-right"
+                    size={28}
+                    color="black"
+                    style={styles.fontPadding}
+                  />
+                </TouchableOpacity>
+              </View>
+            </View>
+            <View style={styles.bookingDetailsContainer}>
+              <View style={styles.paymentMethodsContainer}>
+                <Text style={styles.cardsHeadingText}>Bank Transfer </Text>
+                <TouchableOpacity>
+                  <Entypo
+                    name="chevron-small-right"
+                    size={28}
+                    color="black"
+                    style={styles.fontPadding}
+                  />
+                </TouchableOpacity>
+              </View>
+            </View>
           </View>
         </View>
       </ScrollView>
-      <View style={styles.checkoutFooterContainer}>
-        <TouchableOpacity
-          onPress={() => {
-            router.navigate("payment");
-          }}
-          style={styles.primaryButton}
-        >
-          <Text style={styles.primaryButtonText}>Proceed to Payment</Text>
-        </TouchableOpacity>
-      </View>
     </SafeAreaView>
   );
-}
+};
+export default Payment;

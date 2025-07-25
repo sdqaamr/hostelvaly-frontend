@@ -2,11 +2,11 @@ import React from "react";
 import styles from "@styles/global";
 import { View, Text, TouchableOpacity, ScrollView } from "react-native";
 import AntDesign from "@expo/vector-icons/AntDesign";
-import HostelCard from "./hostelcard";
+import HostelCard from "./HostelCard";
 
-export default function RecommendedHostels({ openBottomSheet }) {
+const RecommendedHostels = ({ openBottomSheet }) => {
   return (
-    <View>
+    <>
       <View style={styles.cardsHeadingContainer}>
         <Text style={styles.cardsHeadingText}>Recommended Hostel's{"  "}</Text>
         <TouchableOpacity>
@@ -22,6 +22,7 @@ export default function RecommendedHostels({ openBottomSheet }) {
           </View>
         </ScrollView>
       </View>
-    </View>
+    </>
   );
-}
+};
+export default RecommendedHostels;

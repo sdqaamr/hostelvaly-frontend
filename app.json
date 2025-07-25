@@ -1,8 +1,8 @@
 {
   "expo": {
-    "name": "StaySphere",
-    "slug": "StaySphere",
-    "scheme": "StaySphere",
+    "name": "HostelValy",
+    "slug": "HostelValy",
+    "scheme": "HostelValy",
     "version": "1.0.0",
     "orientation": "portrait",
     "icon": "./assets/icon.png",
@@ -12,6 +12,9 @@
       "image": "./assets/splash-icon.png",
       "resizeMode": "contain",
       "backgroundColor": "#ffffff"
+    },
+    "experimental": {
+      "routerRoot": "src/app"
     },
     "ios": {
       "supportsTablet": true

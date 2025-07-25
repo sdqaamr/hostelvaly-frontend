@@ -1,6 +1,6 @@
 import React from "react";
-import styles from "../styles/global";
-import { View, Text, TouchableOpacity, ScrollView, ToastAndroid, Alert } from "react-native";
+import styles from "../../styles/global";
+import { View, Text, TouchableOpacity, ScrollView } from "react-native";
 import { SafeAreaView } from "react-native-safe-area-context";
 import AntDesign from "@expo/vector-icons/AntDesign";
 import Entypo from "@expo/vector-icons/Entypo";
@@ -10,20 +10,22 @@ import MaterialIcons from "@expo/vector-icons/MaterialIcons";
 import Octicons from "@expo/vector-icons/Octicons";
 import FontAwesome from "@expo/vector-icons/FontAwesome";
 import Ionicons from "@expo/vector-icons/Ionicons";
-import RecommendedHostels from '@components/recommendedhostels';
-import VisitorsFeedback from '@components/visitorsfeedback';
+import RecommendedHostels from "@components/RecommendedHostels";
+import VisitorsFeedback from "@components/VisitorsFeedback";
 import { Image } from "expo-image";
 import { useRouter } from "expo-router";
+import { colors } from "@constants/global";
 
-export default function PropertyDetails() {
-  const primarycolor = "#8100d1";
+const PropertyDetails = () => {
   const router = useRouter();
   return (
     <SafeAreaView style={styles.safeArea}>
       <ScrollView>
         <View style={styles.container}>
           <View style={styles.propertyDetailsHeaderContainer}>
-            <FontAwesome name="angle-left" size={26} color="black" />
+            <TouchableOpacity onPress={() => router.back()}>
+              <FontAwesome name="angle-left" size={26} color="black" />
+            </TouchableOpacity>
             <View style={styles.propertyDetailsHeaderTextContainer}>
               <Text style={styles.propertyDetailsHeaderText}>
                 Property Details{" "}
@@ -46,7 +48,7 @@ export default function PropertyDetails() {
               name="chevron-small-right"
               size={22}
               color="gray"
-              style={{ includeFontPadding: false }}
+              style={styles.fontPadding}
             />
             <Text>Property Details</Text>
           </View>
@@ -84,7 +86,7 @@ export default function PropertyDetails() {
             </View>
             <View style={styles.propertyRatingContainer}>
               <Text style={styles.cardsHeadingText}>
-                <AntDesign name="star" size={16} color="#FCD003" /> 8.5 rating{" "}
+                <AntDesign name="star" size={16} color={colors.ratingStar} /> 8.5 rating{" "}
               </Text>
               <Text style={styles.cardsSimpleText}> (1234 reviews)</Text>
             </View>
@@ -154,7 +156,7 @@ export default function PropertyDetails() {
         </TouchableOpacity>
         <TouchableOpacity
           onPress={() => {
-           alert("Schedule visit feature is coming soon!");
+            alert("Schedule visit feature is coming soon!");
             // router.navigate("/");
           }}
           style={styles.propertyDetailsSecondaryButton}
@@ -166,4 +168,5 @@ export default function PropertyDetails() {
       </View>
     </SafeAreaView>
   );
-}
+};
+export default PropertyDetails;

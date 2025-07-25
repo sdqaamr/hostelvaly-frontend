@@ -1,18 +1,20 @@
 import React from "react";
 import { Stack } from "expo-router";
 import { SafeAreaView } from "react-native-safe-area-context";
-import useCustomFonts from "@components/usecustomfonts";
+import useCustomFonts from "@components/UseCustomFonts";
 import { StatusBar } from "react-native";
+import { colors } from "@constants/global";
+import styles from "@styles/global";
 
 const _layout = () => {
   useCustomFonts();
   console.log("App loaded");
   return (
-    <SafeAreaView style={{ flex: 1 }} edges={["left", "right"]}>
+    <SafeAreaView style={styles.flex} edges={["left", "right"]}>
       <StatusBar
         barStyle="light-content"
         translucent
-        backgroundColor="#F0F0F0"
+        backgroundColor={colors.background}
       />
       <Stack screenOptions={{ headerShown: false, statusBarTranslucent: true }}>
         <Stack.Screen name="splash" />
@@ -24,7 +26,7 @@ const _layout = () => {
         <Stack.Screen name="register" />
         <Stack.Screen name="otp" />
         <Stack.Screen name="verify" />
-        <Stack.Screen name="tabs" />
+        <Stack.Screen name="(tabs)" />
         <Stack.Screen name="property-details" />
         <Stack.Screen name="booking" />
         <Stack.Screen name="checkout" />

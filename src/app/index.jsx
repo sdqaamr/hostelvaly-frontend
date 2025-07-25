@@ -1,17 +1,16 @@
 import React from "react";
-import Splash from "./splash";
+import Splash from "@components/Splash";
 import { SafeAreaProvider } from "react-native-safe-area-context";
 import { GestureHandlerRootView } from "react-native-gesture-handler";
+import styles from "@styles/global";
 
-function App() {
+const App = () => {
   return (
     <SafeAreaProvider>
-      <GestureHandlerRootView style={{ flex: 1 }}>
+      <GestureHandlerRootView style={styles.flex}>
         <Splash />
       </GestureHandlerRootView>
     </SafeAreaProvider>
   );
-}
+};
 export default App;
-
-// export { default } from 'expo-router';
