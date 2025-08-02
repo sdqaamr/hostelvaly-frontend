@@ -37,7 +37,7 @@ const styles = StyleSheet.create({
   onboardingTitle: {
     fontSize: 18,
     textAlign: "center",
-    color: '#666',
+    color: colors.lightText,
   },
   mainTitle: {
     fontFamily: "Roboto-Bold",
@@ -84,7 +84,7 @@ const styles = StyleSheet.create({
     textAlign: "center",
     lineHeight: 20,
     paddingTop: 15,
-    color: '#666',
+    color: colors.lightText,
   },
   onboardingButton: {
     backgroundColor: colors.primary,
@@ -93,7 +93,7 @@ const styles = StyleSheet.create({
     borderRadius: 8,
   },
   onboardingLabel: {
-    color: "#fff", 
+    color: "white", 
     fontWeight: "bold", 
     marginHorizontal: 10
   },

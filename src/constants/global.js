@@ -10,4 +10,5 @@ export const colors = {
   eye: "#888",
   textInput: "#E0E1E6",
   radio: "#c7c7c7",
+  lightText: "#666",
 };
