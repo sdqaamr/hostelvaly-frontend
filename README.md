@@ -21,8 +21,12 @@ HostelValy is a modern mobile application designed to help users easily browse, 
 
 - **React Native** (via **Expo SDK 53**)
 - **expo-router** for navigation
+- **expo-font** for using custom fonts
 - **expo-image** for high-performance image loading
+- **expo-constants** for global constants
 - **react-native-vector-icons** for rich iconography
+- **react-native-svg** for SVG usage in the app
+- **react-native-app-intro-slider** for onboarding slides
 - **Safe Area Context**, **ScrollViews**, and modern React Hooks (`useState`, `useRouter`, `useCallback`)
 
 ---
@@ -30,10 +34,11 @@ HostelValy is a modern mobile application designed to help users easily browse, 
 ## 📂 Project Structure
 
 ```text
-HostelValy/
-├── assets/                # Images and static assets
-├── app/                   # Routing and navigation structure
+HostelValy/                  # Routing and navigation structure
 ├── src/
-│   ├── components/        # Reusable UI components (LogoText, TabIcons, etc.)
-│   └── styles/            # Global styles (colors, layout)
-└── README.md              # You're here!
+│   ├── app/                 # Screens (onboarding, auth, booking-screens, etc.)  
+|   ├── assets/              # Images and static assets
+│   ├── components/          # Reusable UI components (LogoText, Splash, etc.)      
+|   ├── constants/           # Global constants (colors, etc.)
+|   ├── styles/              # Global styles (layout, etc.)
+└── README.md                # You're here!
