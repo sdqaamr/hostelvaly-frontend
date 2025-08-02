@@ -47,7 +47,7 @@ const Home = () => {
   };
 
   return (
-    <SafeAreaView style={styles.safeArea2}>
+    <SafeAreaView style={styles.safeArea2} edges={["left", "right", "top"]}>
       <GestureHandlerRootView style={styles.container}>
         <ScrollView>
           <View style={styles.container}>

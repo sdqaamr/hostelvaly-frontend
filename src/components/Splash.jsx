@@ -9,9 +9,10 @@ const Splash = () => {
   useEffect(() => {
     const timer = setTimeout(() => {
       router.navigate("onboarding");
-    }, 3000);
+    }, 4000);
     return () => clearTimeout(timer);
   }, []);
+  console.log("Splash screen rendered");
   return (
     <View style={styles.container}>
       <Image

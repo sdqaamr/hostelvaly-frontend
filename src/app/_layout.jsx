@@ -12,12 +12,12 @@ const _layout = () => {
   return (
     <SafeAreaView style={styles.flex} edges={["left", "right"]}>
       <StatusBar
-        barStyle="light-content"
+        barStyle="dark-content"
         translucent
         backgroundColor={colors.background}
       />
       <Stack screenOptions={{ headerShown: false, statusBarTranslucent: true }}>
-        <Stack.Screen name="splash" />
+        <Stack.Screen name="index" />
         <Stack.Screen name="onboarding" />
         <Stack.Screen name="account-entry" />
         <Stack.Screen name="login" />

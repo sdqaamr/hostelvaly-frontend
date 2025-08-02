@@ -1,5 +1,6 @@
-import { StyleSheet } from "react-native";
+import { StyleSheet, Dimensions } from "react-native";
 import { colors } from "@constants/global";
+const { width, height } = Dimensions.get('window');
 
 const styles = StyleSheet.create({
   container: {
@@ -25,7 +26,7 @@ const styles = StyleSheet.create({
     width: 160,
     contentFit: "contain",
   },
-  onboardingTitleContainer: {
+  onboardingTitleContainer:{
     alignItems: "center",
   },
   onboardingImgContainer: {
@@ -36,6 +37,7 @@ const styles = StyleSheet.create({
   onboardingTitle: {
     fontSize: 18,
     textAlign: "center",
+    color: '#666',
   },
   mainTitle: {
     fontFamily: "Roboto-Bold",
@@ -50,23 +52,44 @@ const styles = StyleSheet.create({
   logoText2: {
     color: colors.secondary,
   },
+  onboardingBackButton: {
+  position: 'absolute',
+  top: 50,
+  left: 20,
+  zIndex: 10,
+},
+  onboardingContainer: {
+    flex: 1,
+    paddingHorizontal: 24,
+    alignItems: 'center',
+    justifyContent: 'center',
+    paddingVertical: 50
+  },
   onboardingImg: {
-    height: 230,
-    marginTop: 5,
-    width: 280,
+    // height: 230,
+    // marginTop: 5,
+    // width: 280,
+    width: width * 0.8,
+    height: height * 0.3,
+    resizeMode: 'contain',
+    marginVertical: 30,
+  },
+  activeDotStyle: {
+    backgroundColor: colors.primary,
   },
   onboardingDescription: {
-    fontSize: 15,
-    fontWeight: 500,
+    fontSize: 16,
+    fontWeight: 600,
     width: 300,
     textAlign: "center",
     lineHeight: 20,
     paddingTop: 15,
+    color: '#666',
   },
   onboardingButton: {
-    marginHorizontal: 15,
-    padding: 8,
     backgroundColor: colors.primary,
+    paddingVertical: 8,
+    paddingHorizontal: 20,
     borderRadius: 8,
   },
   onboardingLabel: {
@@ -981,7 +1004,7 @@ const styles = StyleSheet.create({
   },
   tabBar: {
     backgroundColor: "white",
-    maxHeight: 80,
+    maxHeight: 90,
   },
   tabBarLabel: {
     fontSize: 11, 

@@ -19,7 +19,7 @@ import { colors } from "@constants/global";
 const PropertyDetails = () => {
   const router = useRouter();
   return (
-    <SafeAreaView style={styles.safeArea}>
+    <SafeAreaView style={styles.safeArea2}>
       <ScrollView>
         <View style={styles.container}>
           <View style={styles.propertyDetailsHeaderContainer}>

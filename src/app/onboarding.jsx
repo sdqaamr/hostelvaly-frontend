@@ -1,124 +1,120 @@
-import React from "react";
-import { View, Text, TouchableOpacity } from "react-native";
-import styles from "@styles/global";
-import Onboarding from "react-native-onboarding-swiper";
+import React, { useState, useRef } from "react";
 import { SafeAreaView } from "react-native-safe-area-context";
+import AppIntroSlider from "react-native-app-intro-slider";
+import { View, Text, Image, TouchableOpacity } from "react-native";
 import LogoText from "@components/LogoText";
-import { Image } from "expo-image";
-import { useRouter } from "expo-router";
+import onBoarding1 from "@assets/images/onboarding1.png";
+import onBoarding2 from "@assets/images/onboarding2.png";
+import onBoarding3 from "@assets/images/onboarding3.png";
 import SvgComponent from "@assets/images/SVG/Onboarding4";
+import { useRouter } from "expo-router";
 import { colors } from "@constants/global";
+import styles from "@styles/global";
+import { AntDesign } from "@expo/vector-icons";
 
-const CustomButton = ({ label, onPress }) => (
-  <TouchableOpacity
-    style={styles.onboardingButton}
-    onPress={onPress}
-    accessible
-    accessibilityRole="button"
-  >
-    <Text style={styles.onboardingLabel}>{label}</Text>
-  </TouchableOpacity>
+const slides = [
+  {
+    key: "one",
+    title: "Welcome to ",
+    subtitle:
+      "Welcome to HostelValy, your app for budget-friendly accommodation.",
+    image: onBoarding1,
+  },
+  {
+    key: "two",
+    title: "Book Hostel Anywhere ",
+    subtitle:
+      "Find the perfect accommodation near your location, anytime and anywhere.",
+    image: onBoarding2,
+  },
+  {
+    key: "three",
+    title: "Choose with best security ",
+    subtitle:
+      "Find the perfect accommodation near your location, anytime and anywhere.",
+    image: onBoarding3,
+  },
+  {
+    key: "four",
+    subtitle: "Effortless search, budget-friendly hostels near you.",
+    isSvg: true,
+  },
+];
+
+const CustomButton = ({ label, onPress, style }) => (
+  <View>
+    <Text
+      onPress={onPress}
+      style={[
+        styles.onboardingLabel,
+        style,
+        styles.onboardingButton
+      ]}
+    >
+      {label}
+    </Text>
+  </View>
 );
 
-const OnBoarding = () => {
+const Onboarding = () => {
   const router = useRouter();
+  const [currentIndex, setCurrentIndex] = useState(0);
+  const sliderRef = useRef(null);
   return (
-    <SafeAreaView style={styles.safeArea}>
-      <Onboarding
-        bottomBarColor={colors.background}
-        onDone={() => router.navigate("/account-entry")}
-        onSkip={() => router.navigate("/account-entry")}
-        SkipButtonComponent={(props) => (
-          <CustomButton {...props} label="Skip" />
-        )}
-        NextButtonComponent={(props) => (
-          <CustomButton {...props} label="Next" />
-        )}
-        DoneButtonComponent={(props) => <CustomButton {...props} label="Go!" />}
-        imageContainerStyles={styles.onboardingImgContainer}
-        pages={[
-          {
-            backgroundColor: colors.background,
-            image: (
-              <View style={styles.container}>
-                <View style={styles.onboardingTitleContainer}>
-                  <Text style={styles.onboardingTitle}>Welcome to </Text>
-                  <LogoText />
-                </View>
-                <Image
-                  source={require("../assets/images/onboarding1.png")}
-                  contentFit="contain"
-                  contentPosition="center"
-                  style={styles.onboardingImg}
-                />
-                <Text style={styles.onboardingDescription}>
-                  Welcome to HostelValy, a hostel-searching app for
-                  budget-friendly accomodation.
-                </Text>
-              </View>
-            ),
-          },
-          {
-            backgroundColor: colors.background,
-            image: (
-              <View style={styles.container}>
-                <View style={styles.onboardingTitleContainer}>
-                  <Text style={styles.onboardingTitle}>
-                    Book Hostel Anywhere
-                  </Text>
-                  <Text style={styles.mainTitle}>Location</Text>
-                </View>
-                <Image
-                  source={require("../assets/images/onboarding2.png")}
-                  style={styles.onboardingImg}
-                  contentFit="contain"
-                />
-                <Text style={styles.onboardingDescription}>
-                  Find the perfect accommodation near your location, anytime and
-                  anywhere.
-                </Text>
-              </View>
-            ),
-          },
-          {
-            backgroundColor: colors.background,
-            image: (
-              <View style={styles.container}>
-                <View style={styles.onboardingTitleContainer}>
-                  <Text style={styles.onboardingTitle}>
-                    Choose with best security
-                  </Text>
-                  <Text style={styles.mainTitle}>Agreement</Text>
-                </View>
-                <Image
-                  source={require("../assets/images/onboarding3.png")}
-                  contentFit="contain"
-                  style={styles.onboardingImg}
-                />
-                <Text style={styles.onboardingDescription}>
-                  Find the perfect accommodation near your location, anytime and
-                  anywhere.
-                </Text>
-              </View>
-            ),
-          },
-          {
-            backgroundColor: colors.background,
-            image: (
-              <View style={styles.container}>
-                <LogoText />
-                <View style={styles.extraVerticalPadding}>
-                  <SvgComponent />
-                </View>
-                <Text style={styles.onboardingDescription}>
-                  Effortless search, budget-friendly hostels near you.
-                </Text>
-              </View>
-            ),
-          },
-        ]}
-      />
+    <SafeAreaView style={styles.flex} edges={["bottom"]}>
+      <AppIntroSlider
+      ref={sliderRef}
+      data={slides}
+      renderItem={({ item }) => (
+        <View
+          style={[
+            styles.onboardingContainer,
+            { backgroundColor: colors.background },
+          ]}
+        >
+          {currentIndex > 0 && (
+            <TouchableOpacity
+              onPress={() => sliderRef.current?.goToSlide(currentIndex - 1)}
+              style={styles.onboardingBackButton}
+            >
+              <AntDesign name="arrowleft" size={24} color={colors.primary} />
+            </TouchableOpacity>
+          )}
+          <View style={styles.onboardingTitleContainer}>
+            <Text style={styles.onboardingTitle}>{item.title}</Text>
+            {(item.key === "one" || item.key === "four") && <LogoText />}
+            {item.key === "two" && (
+              <Text style={styles.mainTitle}>Location</Text>
+            )}
+            {item.key === "three" && (
+              <Text style={styles.mainTitle}>Agreement</Text>
+            )}
+          </View>
+          {item.isSvg ? (
+            <View style={styles.extraVerticalPadding}>
+              <SvgComponent />
+            </View>
+          ) : (
+            <Image source={item.image} style={styles.onboardingImg} />
+          )}
+          <Text style={styles.onboardingDescription}>{item.subtitle}</Text>
+        </View>
+      )}
+      renderNextButton={(props) => <CustomButton label="Next" {...props} />}
+      renderSkipButton={(props) =>
+        currentIndex < slides.length - 1 ? (
+          <CustomButton label="Skip" {...props} />
+        ) : null
+      }
+      showSkipButton={currentIndex < slides.length - 1}
+      renderDoneButton={(props) => <CustomButton label="Done" {...props} />}
+      bottomBarColor={colors.background}
+      onSlideChange={(index) => setCurrentIndex(index)}
+      onDone={() => router.navigate("/account-entry")}
+      onSkip={() => router.navigate("/account-entry")}
+      activeDotStyle={styles.activeDotStyle}
+    />
     </SafeAreaView>
   );
 };
-export default OnBoarding;
+export default Onboarding;
