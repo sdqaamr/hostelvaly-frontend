@@ -9,6 +9,7 @@ import BottomSheet, {
 } from "@gorhom/bottom-sheet";
 import SvgComponent from "@assets/images/SVG/WhatsApp";
 import AntDesign from "@expo/vector-icons/AntDesign";
+import CalendarComponent from "./Calendar";
 
 const ScheduleBottomSheet = ({ bottomSheetRef, closeBottomSheet }) => {
   const snapPoints = useMemo(() => ["25%", "60%", "70%"], []);
@@ -47,18 +48,18 @@ const ScheduleBottomSheet = ({ bottomSheetRef, closeBottomSheet }) => {
           </View>
           <View style={styles.scheduleInnerContainer}>
             <BottomSheetTextInput
-              style={styles.scheduleTextInput}
-              placeholder="Enter your name"
+              style={styles.bookingDetailsTextInput}
+              placeholder="Full Name"
             />
             <BottomSheetTextInput
-              style={styles.scheduleTextInput}
-              placeholder="Enter phone number"
+              style={styles.bookingDetailsTextInput}
+              placeholder="Phone Number"
             />
+            <CalendarComponent style={styles.scheduleTextInput} />
             <BottomSheetTextInput
-              style={styles.scheduleTextInput}
-              placeholder="DD/MM/YYYY"
+              style={styles.bookingDetailsTextInput}
+              placeholder="Write a Note (optional)"
             />
-            <Text> </Text>
             <Text style={styles.servicesText}>
               {"\n"}We are accepting bookings for stay duration of minimum 3
               months

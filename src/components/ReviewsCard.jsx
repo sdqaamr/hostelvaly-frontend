@@ -5,26 +5,26 @@ import AntDesign from "@expo/vector-icons/AntDesign";
 import { colors } from "@constants/global";
 import { Image } from "expo-image";
 
-const FeedbackCard = () => {
+const ReviewsCard = () => {
   return (
-    <View style={styles.feedbackCard}>
-      <View style={styles.feedbackCardContentContainer}>
+    <View style={styles.reviewsCard}>
+      <View style={styles.reviewsCardContentContainer}>
         <Image
           source="https://cdn2.iconfinder.com/data/icons/rcons-users-color/32/girl-1024.png"
           contentFit="cover"
-          style={styles.feedbackUserImg}
+          style={styles.reviewsUserImg}
         />
-        <View style={styles.feedbackContentContainer}>
-          <Text style={styles.cardsHeadingText}>Visitor name </Text>
-          <View style={styles.feedbackRatingContainer}>
+        <View style={styles.reviewsContentContainer}>
+          <Text style={styles.cardsHeadingText}>Person's Name </Text>
+          <View style={styles.reviewsRatingContainer}>
             <AntDesign name="star" size={16} color={colors.ratingStar} />
             <AntDesign name="star" size={16} color={colors.ratingStar} />
             <AntDesign name="star" size={16} color={colors.ratingStar} />
             <AntDesign name="star" size={16} color={colors.ratingStar} />
             <AntDesign name="staro" size={16} color="gray" />
-            <Text style={styles.feedbackRatingText}>4/5 rating </Text>
+            <Text style={styles.reviewsRatingText}>4/5 rating </Text>
           </View>
-          <Text styl={styles.feedbackCommentText}>
+          <Text styl={styles.reviewsCommentText}>
             lorem, ipsum jon dolor sit amet dolo elit. Commodi...
           </Text>
         </View>
@@ -32,4 +32,4 @@ const FeedbackCard = () => {
     </View>
   );
 };
-export default FeedbackCard;
+export default ReviewsCard;

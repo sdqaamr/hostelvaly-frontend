@@ -6,20 +6,20 @@ import { useRouter } from "expo-router";
 import HomeHeader from "@components/HomeHeader";
 import RecommendedHostels from "@components/RecommendedHostels";
 import LiveViewedHostels from "@components/LiveViewedHostels";
-import VisitorsFeedback from "@components/VisitorsFeedback";
+import Reviews from "@components/Reviews";
 import CurrentStay from "@components/CurrentStay";
 
 const HomePage2 = () => {
   const router = useRouter();
   return (
-    <SafeAreaView style={styles.safeArea}>
+    <SafeAreaView style={styles.safeArea} edges={["left", "right", "top"]}>
       <ScrollView>
         <View style={styles.container}>
           <HomeHeader />
           <CurrentStay />
           <RecommendedHostels />
           <LiveViewedHostels />
-          <VisitorsFeedback />
+          <Reviews />
           <Text> </Text>
         </View>
       </ScrollView>

@@ -128,6 +128,16 @@ const Payment = () => {
           </View>
         </View>
       </ScrollView>
+      <View style={styles.checkoutFooterContainer}>
+        <TouchableOpacity
+          onPress={() => {
+            router.navigate("home-page2");
+          }}
+          style={styles.primaryButton}
+        >
+          <Text style={styles.primaryButtonText}>Return to Home</Text>
+        </TouchableOpacity>
+      </View>
     </SafeAreaView>
   );
 };

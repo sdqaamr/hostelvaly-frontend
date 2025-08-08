@@ -16,6 +16,7 @@ import { Image } from "expo-image";
 import { useRouter } from "expo-router";
 import { useState } from "react";
 import { colors } from "@constants/global";
+import CalendarComponent from "@components/Calendar";
 
 const Booking = () => {
   const router = useRouter();
@@ -141,10 +142,7 @@ const Booking = () => {
             </Text>
             <View style={styles.bookingDetailsContainer}>
               <Text>Date</Text>
-              <TextInput
-                style={styles.bookingDetailsTextInput}
-                placeholder="dd-mm-yyyy to dd-mm-yyyy"
-              ></TextInput>
+              <CalendarComponent />
             </View>
           </View>
           <View style={styles.extraPadding} />

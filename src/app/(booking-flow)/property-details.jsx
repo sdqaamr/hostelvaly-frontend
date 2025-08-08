@@ -11,7 +11,7 @@ import Octicons from "@expo/vector-icons/Octicons";
 import FontAwesome from "@expo/vector-icons/FontAwesome";
 import Ionicons from "@expo/vector-icons/Ionicons";
 import RecommendedHostels from "@components/RecommendedHostels";
-import VisitorsFeedback from "@components/VisitorsFeedback";
+import Reviews from "@components/Reviews";
 import { Image } from "expo-image";
 import { useRouter } from "expo-router";
 import { colors } from "@constants/global";
@@ -86,7 +86,8 @@ const PropertyDetails = () => {
             </View>
             <View style={styles.propertyRatingContainer}>
               <Text style={styles.cardsHeadingText}>
-                <AntDesign name="star" size={16} color={colors.ratingStar} /> 8.5 rating{" "}
+                <AntDesign name="star" size={16} color={colors.ratingStar} />{" "}
+                8.5 rating{" "}
               </Text>
               <Text style={styles.cardsSimpleText}> (1234 reviews)</Text>
             </View>
@@ -127,11 +128,9 @@ const PropertyDetails = () => {
                 </View>
               </View>
             </View>
-            <VisitorsFeedback />
+            <Reviews />
           </View>
-
           <RecommendedHostels />
-
           <View style={styles.propertyDetailsContentContainer}>
             <View style={styles.propertyDetailsLocationContainer}>
               <Entypo name="location" size={24} color="black" />

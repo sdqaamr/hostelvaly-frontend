@@ -3,6 +3,7 @@ export const colors = {
   primary: "#8100d1",
   secondary: "#ce80ff",
   background: "#F0F0F0",
+  darkBackground: "#8e8e8e8e",
   ratingStar: "#FCD003",
   switchEnabled: "#ffffff",
   switchDisabled: "#f4f3f4",

@@ -32,7 +32,7 @@ const _layout = () => {
         <Stack.Screen name="checkout" />
         <Stack.Screen name="payment" />
         <Stack.Screen name="payment-success" />
-        <Stack.Screen name="home-page2" />
+        <Stack.Screen name="(tab2)" />
       </Stack>
     </SafeAreaView>
   );

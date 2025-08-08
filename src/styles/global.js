@@ -153,11 +153,6 @@ const styles = StyleSheet.create({
     textAlign: "center",
     color: colors.secondary,
   },
-  // loginContainer: {
-  //   flex: 1,
-  //   justifyContent: "center",
-  //   backgroundColor: "orange",
-  // },
   loginHeading: {
     justifyContent: "center",
     textAlign: "left",
@@ -541,40 +536,38 @@ const styles = StyleSheet.create({
     justifyContent: "space-between",
   },
   scheduleInnerContainer: {
-    height: 280,
-    width: 345,
-    backgroundColor: colors.background,
+    width: 350,
+    backgroundColor: colors.darkBackground,
     marginTop: 25,
     alignItems: "center",
     padding: 8,
     borderRadius: 10,
     paddingHorizontal: 15,
     alignSelf: "center",
+    marginBottom: 10,
+    paddingTop: 9,
   },
   scheduleTextInput: {
     width: 320,
-    paddingVertical: 13,
+    paddingVertical: 10,
     color: "black",
     backgroundColor: "white",
-    borderRadius: 8,
+    borderRadius: 7,
     paddingHorizontal: 20,
     fontSize: 15,
-    marginTop: 8,
-    borderWidth: 0.5,
-    borderStyle: "solid",
-    borderColor: "gray",
+    marginBottom: 8,
   },
   scheduleFooter: {
     alignItems: "center",
     justifyContent: "center",
-    paddingTop: 80,
+    paddingTop: 60,
     paddingBottom: 10,
   },
   scheduleButton: {
     width: 325,
     borderRadius: 8,
     backgroundColor: colors.primary,
-    paddingVertical: 12,
+    paddingVertical: 10,
     marginTop: 10,
     alignSelf: "center",
   },
@@ -673,25 +666,25 @@ const styles = StyleSheet.create({
   servicesText: {
     paddingTop: 3,
   },
-  feedbackCardsContainer: {
+  reviewsCardsContainer: {
     flexDirection: "row",
     width: 380,
     paddingVertical: 8,
     paddingLeft: 5,
   },
-  feedbackCard: {
+  reviewsCard: {
     height: 100,
     width: 265,
     backgroundColor: "white",
     borderRadius: 10,
     margin: 7,
   },
-  feedbackCardContentContainer: {
+  reviewsCardContentContainer: {
     flexDirection: "row",
     justifyContent: "space-between",
     width: "100%",
   },
-  feedbackUserImg: {
+  reviewsUserImg: {
     marginTop: 8,
     marginLeft: 10,
     height: 55,
@@ -699,21 +692,21 @@ const styles = StyleSheet.create({
     borderRadius: 50,
     backgroundColor: "gray",
   },
-  feedbackContentContainer: {
+  reviewsContentContainer: {
     width: 200,
     flexDirection: "column",
     gap: 3,
     paddingHorizontal: 8,
     paddingTop: 4,
   },
-  feedbackRatingContainer: {
+  reviewsRatingContainer: {
     flexDirection: "row",
     gap: 3,
   },
-  feedbackRatingText: {
+  reviewsRatingText: {
     color: "gray",
   },
-  feedbackCommentText: {
+  reviewsCommentText: {
     fontSize: 10,
   },
 
@@ -741,7 +734,7 @@ const styles = StyleSheet.create({
     backgroundColor: "white",
   },
   propertyDetailsPrimaryButton: {
-    paddingVertical: 10,
+    paddingVertical: 9,
     width: 178,
     backgroundColor: colors.primary,
     borderRadius: 8,
@@ -753,7 +746,7 @@ const styles = StyleSheet.create({
     paddingTop: 2,
   },
   propertyDetailsSecondaryButton: {
-    paddingVertical: 10,
+    paddingVertical: 9,
     width: 175,
     borderRadius: 8,
     borderStyle: "solid",
@@ -799,10 +792,13 @@ const styles = StyleSheet.create({
     marginVertical: 5,
     borderStyle: "solid",
     borderWidth: 1,
-    borderRadius: 6,
+    borderRadius: 7,
     borderColor: colors.background,
     paddingHorizontal: 12,
     paddingVertical: 10,
+    backgroundColor: "white",
+    width: 330,
+    alignSelf: "center",
   },
   bookingDetailsContainerDouble: {
     flexDirection: "row",
@@ -853,6 +849,25 @@ const styles = StyleSheet.create({
   },
   extraPadding: {
     padding: 30,
+  },
+  calendarContainer: {
+    flex: 1, 
+    justifyContent: "center", 
+    backgroundColor: colors.darkBackground,
+  },
+  calendar: {
+    margin: 20, 
+    backgroundColor: "white", 
+    borderRadius: 10, 
+    padding: 15,
+  },
+  calendarCloseText: {
+    fontSize: 16,
+    color: colors.primary,
+    textAlign: "center",
+    paddingBottom: 2,
+    paddingTop: 10,
+    fontWeight: 400,
   },
   bookingFooterContainer: {
     padding: 5,

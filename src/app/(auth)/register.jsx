@@ -18,7 +18,7 @@ const Register = () => {
       <View style={styles.container}>
         <Text style={styles.loginHeading}>Hello! Register to get started </Text>
         <Text></Text>
-        <TextInput style={styles.textInput} placeholder="Username" />
+        <TextInput style={styles.textInput} placeholder="Full Name" />
         <TextInput style={styles.textInput} placeholder="Email" />
         <View style={styles.passwordOuterContainer}>
           <View style={styles.passwordInnerContainer}>

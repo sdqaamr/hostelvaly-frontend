@@ -1,12 +1,14 @@
 // assets/images/SVG/Google.js
 import React from 'react';
 import Svg, { Path } from 'react-native-svg';
+import { responsiveHeight, responsiveWidth } from 'react-native-responsive-dimensions';
+const isWeb = (responsiveWidth(100) > responsiveHeight(100));
 
 const GoogleIcon = ({ width = 35, height = 35 }) => {
   return (
     <Svg
-      width={35}
-      height={35}
+      width={ isWeb? responsiveWidth(4.5) : responsiveHeight(9) }
+      height={ isWeb? responsiveWidth(1.9) : responsiveWidth(9) }
       viewBox="0 0 256 262"
       preserveAspectRatio="xMidYMid"
     >
