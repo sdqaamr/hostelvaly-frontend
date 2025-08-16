@@ -22,7 +22,6 @@ const ReviewsCard = () => {
             <AntDesign name="star" size={16} color={colors.ratingStar} />
             <AntDesign name="star" size={16} color={colors.ratingStar} />
             <AntDesign name="staro" size={16} color="gray" />
-            <Text style={styles.reviewsRatingText}>4/5 rating </Text>
           </View>
           <Text styl={styles.reviewsCommentText}>
             lorem, ipsum jon dolor sit amet dolo elit. Commodi...

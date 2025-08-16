@@ -10,7 +10,7 @@ import SvgComponent from "@assets/images/SVG/Onboarding4";
 import { useRouter } from "expo-router";
 import { colors } from "@constants/global";
 import styles from "@styles/global";
-import { AntDesign } from "@expo/vector-icons";
+import AntDesign from '@expo/vector-icons/AntDesign';
 
 const slides = [
   {

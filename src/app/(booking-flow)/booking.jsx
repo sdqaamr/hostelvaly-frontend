@@ -3,146 +3,133 @@ import styles from "@styles/global";
 import {
   View,
   Text,
-  TextInput,
   TouchableOpacity,
   ScrollView,
 } from "react-native";
 import { SafeAreaView } from "react-native-safe-area-context";
 import AntDesign from "@expo/vector-icons/AntDesign";
 import Entypo from "@expo/vector-icons/Entypo";
+import MaterialIcons from "@expo/vector-icons/MaterialIcons";
 import FontAwesome from "@expo/vector-icons/FontAwesome";
-import Ionicons from "@expo/vector-icons/Ionicons";
+import Feather from "@expo/vector-icons/Feather";
+import MaterialCommunityIcons from "@expo/vector-icons/MaterialCommunityIcons";
 import { Image } from "expo-image";
 import { useRouter } from "expo-router";
-import { useState } from "react";
 import { colors } from "@constants/global";
 import CalendarComponent from "@components/Calendar";
 
 const Booking = () => {
   const router = useRouter();
-  const [sharing, setSharing] = useState(1);
-  function increment() {
-    setSharing(sharing + 1);
-  }
-  function decrement() {
-    if (sharing > 1) {
-      setSharing(sharing - 1);
-    }
-  }
   return (
     <SafeAreaView style={styles.safeArea2}>
       <ScrollView>
         <View style={styles.container}>
           <View style={styles.propertyDetailsHeaderContainer}>
-            <TouchableOpacity onPress={() => router.back()}>
+            <TouchableOpacity
+              style={styles.backButton}
+              onPress={() => router.back()}
+            >
               <FontAwesome name="angle-left" size={26} color="black" />
             </TouchableOpacity>
             <View style={styles.propertyDetailsHeaderTextContainer}>
-              <Text style={styles.bookingHeaderText}>Booking </Text>
+              <Text style={styles.propertyDetailsHeaderText}>
+                Booking{" "}
+              </Text>
             </View>
+            <View style={styles.propertyDetailsEmptySpace} />
           </View>
           <View style={styles.propertyDetailsHeading2}>
-            <Text style={styles.cardsSimpleText}>Home </Text>
+            <Text style={styles.smallGrayFont}>Home</Text>
             <Entypo
               name="chevron-small-right"
-              size={22}
+              size={20}
               color="gray"
-              style={{ includeFontPadding: false }}
+              style={styles.fontPadding}
             />
-            <Text style={styles.cardsSimpleText}>Property Details </Text>
+            <Text style={styles.smallGrayFont}>Details </Text>
             <Entypo
               name="chevron-small-right"
-              size={22}
+              size={20}
               color="gray"
-              style={{ includeFontPadding: false }}
+              style={styles.fontPadding}
             />
-            <Text>Booking </Text>
+            <Text style={styles.smallFont}>Booking </Text>
           </View>
 
           <View style={styles.propertyDetailsContentContainer}>
-            <View style={styles.bookingImgAndDetailsContainer}>
+            <View style={styles.relativePosition}>
               <Image
-                source="https://tse2.mm.bing.net/th?id=OIP.ix8gl1euNehctcXK-QTxFwHaE7&pid=Api&P=0&h=220"
-                style={styles.bookingImg}
+                source="https://i.dawn.com/large/2020/10/5f7c08a595ece.jpg"
+                style={styles.propertyMainImage}
                 contentFit="cover"
               />
-              <View style={styles.bookingImgDetailsContainer}>
-                <View>
-                  <Text style={styles.cardsHeadingText}>Aroma Hostel </Text>
-                  <View style={styles.locationContainer}>
-                    <Ionicons name="location-outline" size={20} color="gray" />
-                    <Text style={styles.cardsSimpleText}>Islamabad </Text>
-                  </View>
+              <TouchableOpacity style={styles.heartIconContainer}>
+                <MaterialCommunityIcons
+                  name="cards-heart-outline"
+                  style={styles.propertyDetailsLike}
+                />
+              </TouchableOpacity>
+            </View>
+            <View style={styles.pillsContainer}>
+              <ScrollView horizontal showsHorizontalScrollIndicator={false}>
+                <View style={styles.pills}>
+                  <AntDesign name="star" size={18} color={colors.ratingStar} />
+                  <Text>4.8 </Text>
                 </View>
-                <View style={styles.propertyRatingContainer}>
-                  <Text style={styles.cardsHeadingText}>
-                    <AntDesign name="star" size={16} color={colors.ratingStar} /> 8.5
-                    rating{" "}
-                  </Text>
-                  <Text style={styles.cardsSimpleText}> (1234 reviews)</Text>
+                <View style={styles.pills}>
+                  <Feather name="wifi" size={22} color="black" />
+                  <Text>WIFI </Text>
                 </View>
-              </View>
+                <View style={styles.pills}>
+                  <AntDesign name="Safety" size={22} color="black" />
+                  <Text>Security </Text>
+                </View>
+                <View style={styles.pills}>
+                  <MaterialIcons
+                    name="local-laundry-service"
+                    size={22}
+                    color="black"
+                  />
+                  <Text style={styles.servicesText}>Laundry </Text>
+                </View>
+              </ScrollView>
             </View>
 
-            <View style={styles.servicesContainer}>
+            <View style={styles.detailContainer}>
               <Text style={styles.cardsHeadingText}>
-                {"  "}User Details{"  "}
+                {"  "}Room Details{"  "}
               </Text>
               <View style={styles.bookingDetailsContainer}>
-                <Text>Name</Text>
-                <TextInput
-                  style={styles.bookingDetailsTextInput}
-                  placeholder="Enter your name"
-                ></TextInput>
-              </View>
-              <View style={styles.bookingDetailsContainer}>
-                <Text>ID Proof</Text>
-                <TextInput
-                  style={styles.bookingDetailsTextInput}
-                  placeholder="ID Proof"
-                ></TextInput>
-              </View>
-            </View>
-            <Text style={styles.cardsHeadingText}>{"  "}Room Details</Text>
-            <View style={styles.bookingDetailsContainer}>
-              <View style={styles.bookingDetailsContainerDouble}>
-                <View>
-                  <Text>Room Type</Text>
+                <Text>Select Room Type </Text>
+                <View style={{ flexDirection: "row" }}>
                   <View style={styles.radioContainer}>
                     <View style={styles.radio} />
                     <Text>AC</Text>
-                    <View style={styles.radio} />
-                    <Text>Non AC </Text>
                   </View>
-                </View>
-                <View style={styles.intermediateLine2} />
-                <View style={styles.bookingDetailsContainer2}>
-                  <Text>Room Sharing </Text>
-                  <View style={styles.sharingContainer}>
-                    <TouchableOpacity
-                      style={styles.operatorsContainer}
-                      onPress={increment}
-                    >
-                      <Text style={styles.operators}>+</Text>
-                    </TouchableOpacity>
-                    <Text style={styles.extraVerticalMargin}>{sharing}</Text>
-                    <TouchableOpacity
-                      style={styles.operatorsContainer}
-                      onPress={decrement}
-                    >
-                      <Text style={styles.operators}>-</Text>
-                    </TouchableOpacity>
+                  <View style={styles.radioContainer}>
+                    <View style={styles.radio} />
+                    <Text>Fan </Text>
+                  </View>
+                  <View style={styles.radioContainer}>
+                    <View style={styles.radio} />
+                    <Text>Cooler </Text>
                   </View>
                 </View>
               </View>
             </View>
-            <Text> </Text>
-            <Text style={styles.cardsHeadingText}>
+            
+            <View style={styles.detailContainer}>
+              <Text style={styles.cardsHeadingText}>
               {"  "}Stay Duration{"  "}
             </Text>
             <View style={styles.bookingDetailsContainer}>
-              <Text>Date</Text>
+              <Text>From Date </Text>
               <CalendarComponent />
+            </View>
+            <View style={styles.bookingDetailsContainer}>
+              <Text>To Date </Text>
+              <CalendarComponent />
+            </View>
             </View>
           </View>
           <View style={styles.extraPadding} />
@@ -151,7 +138,7 @@ const Booking = () => {
       <View style={styles.bookingFooterContainer}>
         <View>
           <Text style={styles.cardsSimpleText}>Total Pricing </Text>
-          <Text style={styles.cardsHeadingText}>Rs. 18000/M </Text>
+          <Text style={styles.cardsHeadingText}>Rs. 14000/M </Text>
         </View>
         <TouchableOpacity
           onPress={() => {

@@ -4,6 +4,7 @@ import { View, Text, TouchableOpacity } from "react-native";
 import Ionicons from "@expo/vector-icons/Ionicons";
 import MaterialCommunityIcons from "@expo/vector-icons/MaterialCommunityIcons";
 import Octicons from "@expo/vector-icons/Octicons";
+import AntDesign from "@expo/vector-icons/AntDesign";
 import { Image } from "expo-image";
 import { useRouter } from "expo-router";
 import { colors } from "@constants/global";
@@ -26,11 +27,11 @@ const CurrentStayCard = () => {
               />
             </View>
           </TouchableOpacity>
-          <TouchableOpacity>
+          {/* <TouchableOpacity>
             <View style={styles.cardImgIconRoundContainer}>
               <Octicons name="share-android" style={styles.shareIcon} />
             </View>
-          </TouchableOpacity>
+          </TouchableOpacity> */}
         </View>
         <View style={styles.stayButton}>
           <Text>On Going Stay </Text>
@@ -49,52 +50,33 @@ const CurrentStayCard = () => {
         </View>
         <View style={styles.nameAndLocContainer}>
           <View>
-            <Text style={styles.cardsHeadingText}>Aroma Hostel </Text>
+            <Text style={styles.cardsHeadingText}>Al-Fateh Girls Hostel </Text>
             <View style={styles.locationContainer}>
               <Ionicons name="location-outline" size={20} color="gray" />
-              <Text style={styles.cardsSimpleText}>Islamabad </Text>
+              <Text style={styles.cardsSimpleText}>Near Central Park, Faisalabad </Text>
             </View>
           </View>
-          <View style={styles.cardsPriceContainer}>
+          {/* <View style={styles.cardsPriceContainer}>
             <Text style={styles.cardsSimpleText}>Starts from </Text>
             <Text>
               <Text style={styles.cardsHeadingText}>Rs 18000 </Text>
               <Text style={styles.cardsSimpleText}>/mo* </Text>
             </Text>
-          </View>
+          </View> */}
         </View>
-        <View style={styles.daysLeftContainer}>
+        <Text>{" "}</Text>
+        <View style={styles.currentCardsCategoryButtonContainer}>
           <Text style={styles.cardsSimpleText}>Joined on: 1-July-2024 </Text>
-          <View style={styles.currentDaysLeftButton}>
-            <Text>20 Days Left</Text>
-          </View>
+          
         </View>
         <View style={styles.currentCardsCategoryButtonContainer}>
-          <TouchableOpacity>
-            <View style={styles.currentCardsCategoryButton}>
-              <MaterialCommunityIcons
-                name="bed-queen"
-                size={24}
-                color={colors.primary}
-              />
-              <Text style={styles.cardsCategoryButtonText}>Single </Text>
-            </View>
+          <TouchableOpacity style={styles.cardsCategoryButton}>
+              <AntDesign name="star" size={18} color={colors.ratingStar} />
+                  <Text>4.8 </Text>
           </TouchableOpacity>
-          <TouchableOpacity>
-            <View style={styles.currentCardsCategoryButton}>
-              <MaterialCommunityIcons
-                name="bed-queen"
-                size={24}
-                color={colors.primary}
-              />
-              <Text style={styles.cardsCategoryButtonText}>Double </Text>
-            </View>
-          </TouchableOpacity>
-          <TouchableOpacity>
-            <View style={[styles.currentCardsCategoryButton, styles.extraWidth]}>
-              <Text style={styles.cardsCategoryButtonText}>+ 2</Text>
-            </View>
-          </TouchableOpacity>
+          <View style={styles.currentDaysLeftButton}>
+            <Text>20 Days Left!</Text>
+          </View>
         </View>
 
         <TouchableOpacity

@@ -3,6 +3,7 @@ import styles from "@styles/global";
 import { View, Text, TouchableOpacity } from "react-native";
 import Ionicons from "@expo/vector-icons/Ionicons";
 import Feather from "@expo/vector-icons/Feather";
+import AntDesign from "@expo/vector-icons/AntDesign";
 import FontAwesome6 from "@expo/vector-icons/FontAwesome6";
 import MaterialIcons from "@expo/vector-icons/MaterialIcons";
 import MaterialCommunityIcons from "@expo/vector-icons/MaterialCommunityIcons";
@@ -29,13 +30,13 @@ const ViewingCard = () => {
               />
             </View>
           </TouchableOpacity>
-          <TouchableOpacity>
+          {/* <TouchableOpacity>
             <View style={styles.cardImgIconRoundContainer}>
               <Octicons name="share-android" style={styles.shareIcon} />
             </View>
-          </TouchableOpacity>
+          </TouchableOpacity> */}
         </View>
-        <View style={[styles.viewingPeopleContainer, styles.extraTopMargin]}>
+        <View style={[styles.viewingPeopleContainer]}>
           <Ionicons
             name="eye"
             size={18}
@@ -67,32 +68,12 @@ const ViewingCard = () => {
           <MaterialIcons name="hotel" size={24} color="gray" />
         </View>
         <View style={styles.cardsCategoryButtonContainer}>
-          <TouchableOpacity>
-            <View style={styles.cardsCategoryButton}>
-              <MaterialCommunityIcons
-                name="bed-queen"
-                size={24}
-                color={colors.primary}
-              />
-              <Text style={styles.cardsCategoryButtonText}>Single </Text>
-            </View>
-          </TouchableOpacity>
-          <TouchableOpacity>
-            <View style={styles.cardsCategoryButton}>
-              <MaterialCommunityIcons
-                name="bed-queen"
-                size={24}
-                color={colors.primary}
-              />
-              <Text style={styles.cardsCategoryButtonText}>Double </Text>
-            </View>
+          <TouchableOpacity style={styles.cardsCategoryButton}>
+            <AntDesign name="star" size={18} color={colors.ratingStar} />
+            <Text>4.8 </Text>
           </TouchableOpacity>
         </View>
-        <TouchableOpacity>
-          <View style={styles.cardsSmallButton}>
-            <Text style={styles.cardsCategoryButtonText}>+ 2</Text>
-          </View>
-        </TouchableOpacity>
+
         <TouchableOpacity
           onPress={() => {
             alert("Schedule visit feature is coming soon!");

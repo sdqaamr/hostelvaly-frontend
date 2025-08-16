@@ -16,7 +16,7 @@ const SortbyBottomSheet = ({ bottomSheetRef, closeBottomSheet }) => {
     { id: 5, name: "Distance - Near to Far" },
     { id: 6, name: "Distance - Far to Near" },
   ];
-  const snapPoints = useMemo(() => ["25%", "40%", "51%"], []);
+  const snapPoints = useMemo(() => ["25%", "58%", "60%"], []);
   const renderBackdrop = useCallback(
     (props) => (
       <BottomSheetBackdrop

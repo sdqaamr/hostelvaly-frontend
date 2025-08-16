@@ -11,7 +11,7 @@ const SortbyPill = (props) => {
         style={styles.categoryButton}
         onPress={openSortBottomSheet}
       >
-        <Text style={styles.categoryButtonText}>Sort by</Text>
+        <Text style={styles.categoryButtonText}>Sort</Text>
         <Entypo name="chevron-small-down" size={24} color="gray" />
       </TouchableOpacity>
     </View>

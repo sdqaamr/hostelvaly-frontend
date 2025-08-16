@@ -12,7 +12,7 @@ import AntDesign from "@expo/vector-icons/AntDesign";
 import CalendarComponent from "./Calendar";
 
 const ScheduleBottomSheet = ({ bottomSheetRef, closeBottomSheet }) => {
-  const snapPoints = useMemo(() => ["25%", "60%", "70%"], []);
+  const snapPoints = useMemo(() => ["25%", "65%", "82%"], []);
   const renderBackdrop = useCallback(
     (props) => (
       <BottomSheetBackdrop

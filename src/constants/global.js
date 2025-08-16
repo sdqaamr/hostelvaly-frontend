@@ -10,6 +10,7 @@ export const colors = {
   facebook: "#1877F2",
   eye: "#888",
   textInput: "#E0E1E6",
-  radio: "#c7c7c7",
+  radio: "#b3b3b3ff",
   lightText: "#666",
+  pills: "#E2E6E9",
 };

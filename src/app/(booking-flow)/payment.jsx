@@ -17,37 +17,51 @@ const Payment = () => {
       <ScrollView>
         <View style={styles.container}>
           <View style={styles.propertyDetailsHeaderContainer}>
-            <TouchableOpacity onPress={() => router.back()}>
+            <TouchableOpacity
+              style={styles.backButton}
+              onPress={() => router.back()}
+            >
               <FontAwesome name="angle-left" size={26} color="black" />
             </TouchableOpacity>
             <View style={styles.propertyDetailsHeaderTextContainer}>
-              <Text style={styles.bookingHeaderText}>Payment </Text>
+              <Text style={styles.propertyDetailsHeaderText}>
+                Payment{" "}
+              </Text>
             </View>
+            <View style={styles.propertyDetailsEmptySpace} />
           </View>
           <View style={styles.propertyDetailsHeading2}>
-            <Text style={styles.cardsSimpleText}>Home </Text>
+            <Text style={styles.smallGrayFont}>Home</Text>
             <Entypo
               name="chevron-small-right"
               size={20}
               color="gray"
               style={styles.fontPadding}
             />
-            <Text style={styles.cardsSimpleText}>Property Details </Text>
+            <Text style={styles.smallGrayFont}>Details </Text>
             <Entypo
               name="chevron-small-right"
               size={20}
               color="gray"
               style={styles.fontPadding}
             />
-            <Text style={styles.cardsSimpleText}>Booking </Text>
+            <Text style={styles.smallGrayFont}>Booking </Text>
             <Entypo
               name="chevron-small-right"
               size={20}
               color="gray"
               style={styles.fontPadding}
             />
-            <Text>Checkout </Text>
+            <Text style={styles.smallGrayFont}>Checkout </Text>
+            <Entypo
+              name="chevron-small-right"
+              size={20}
+              color="gray"
+              style={styles.fontPadding}
+            />
+            <Text style={styles.smallFont}>Payment </Text>
           </View>
+
           <View style={styles.propertyDetailsContentContainer}>
             <View style={styles.bookingImgAndDetailsContainer}>
               <Image
@@ -57,11 +71,12 @@ const Payment = () => {
               />
               <View style={styles.bookingImgDetailsContainer}>
                 <Text style={styles.cardsHeadingText}>Aroma Hostel </Text>
-                <View style={styles.locationContainer}>
+                
+                <View>
+                  <View style={styles.locationContainer}>
                   <Ionicons name="location-outline" size={20} color="gray" />
                   <Text style={styles.cardsSimpleText}> Islamabad </Text>
                 </View>
-                <View>
                   <View style={styles.locationContainer}>
                     <EvilIcons name="calendar" size={22} color="gray" />
                     <Text style={styles.cardsSimpleText}>
@@ -70,11 +85,7 @@ const Payment = () => {
                   </View>
                   <View style={styles.locationContainer}>
                     <Feather name="home" size={20} color="gray" />
-                    <Text style={styles.cardsSimpleText}> AC Room Type </Text>
-                  </View>
-                  <View style={styles.locationContainer}>
-                    <Ionicons name="bed-outline" size={21} color="gray" />
-                    <Text style={styles.cardsSimpleText}>1 Room Sharing </Text>
+                    <Text style={styles.cardsSimpleText}> Cooler Room Type </Text>
                   </View>
                 </View>
               </View>

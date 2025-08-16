@@ -7,14 +7,14 @@ import AntDesign from "@expo/vector-icons/AntDesign";
 import FontAwesome from "@expo/vector-icons/FontAwesome";
 import Ionicons from "@expo/vector-icons/Ionicons";
 import RecommendedHostels from "@components/RecommendedHostels";
-import ListReview from "@components/ListReview";
+import ScheduleCard from "@components/ScheduleCard";
 import { Image } from "expo-image";
 import { colors } from "@constants/global";
 
-const Reviews = () => {
+const MySchedules = () => {
   const router = useRouter();
   return (
-    <SafeAreaView style={styles.safeArea2} edges={["top", "right", "left"]}>
+    <SafeAreaView style={styles.safeArea2}>
       <ScrollView>
         <View style={styles.container}>
           <View style={styles.propertyDetailsHeaderContainer}>
@@ -26,7 +26,7 @@ const Reviews = () => {
             </TouchableOpacity>
             <View style={styles.propertyDetailsHeaderTextContainer}>
               <Text style={styles.propertyDetailsHeaderText}>
-                My Reviews{" "}
+                My Schedules{" "}
               </Text>
             </View>
             <View style={styles.propertyDetailsEmptySpace} />
@@ -34,18 +34,18 @@ const Reviews = () => {
 
           <View style={styles.hostelsListContainer}>
             
-            <ListReview />
-            <ListReview />
-            <ListReview />
-            <ListReview />
-            <ListReview />
+            <ScheduleCard />
+            <ScheduleCard />
+            <ScheduleCard />
+            <ScheduleCard />
+            <ScheduleCard />
           </View>
 
           <RecommendedHostels />
-          <View style={styles.extraPadding} />
+          <View style={styles.extraPadding}></View>
         </View>
       </ScrollView>
     </SafeAreaView>
   );
 };
-export default Reviews;
+export default MySchedules;

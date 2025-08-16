@@ -6,7 +6,7 @@ import Feather from "@expo/vector-icons/Feather";
 import FontAwesome6 from "@expo/vector-icons/FontAwesome6";
 import MaterialIcons from "@expo/vector-icons/MaterialIcons";
 import MaterialCommunityIcons from "@expo/vector-icons/MaterialCommunityIcons";
-import Octicons from "@expo/vector-icons/Octicons";
+import AntDesign from "@expo/vector-icons/AntDesign";
 import { Image } from "expo-image";
 import { useRouter } from "expo-router";
 import { colors } from "@constants/global";
@@ -21,26 +21,19 @@ const HostelCard = ({ openBottomSheet }) => {
           style={styles.cardImage}
         />
         <View style={styles.cardImgIconsContainer}>
-          <TouchableOpacity>
-            <View style={styles.cardImgIconRoundContainer}>
+          <TouchableOpacity style={styles.cardImgIconRoundContainer}>
               <MaterialCommunityIcons
                 name="cards-heart-outline"
                 style={styles.likeIcon}
               />
-            </View>
-          </TouchableOpacity>
-          <TouchableOpacity>
-            <View style={styles.cardImgIconRoundContainer}>
-              <Octicons name="share-android" style={styles.shareIcon} />
-            </View>
           </TouchableOpacity>
         </View>
         <View style={styles.nameAndLocContainer}>
         <View>
-          <Text style={styles.cardsHeadingText}>Aroma Hostel </Text>
+          <Text style={styles.cardsHeadingText}>Al-Fateh Girls Hostel </Text>
           <View style={styles.locationContainer}>
             <Ionicons name="location-outline" size={20} color="gray" />
-            <Text style={styles.cardsSimpleText}>Islamabad </Text>
+            <Text style={styles.cardsSimpleText}>Near Central Park, Faisalabad </Text>
           </View>
         </View>
         </View>
@@ -55,32 +48,11 @@ const HostelCard = ({ openBottomSheet }) => {
           <MaterialIcons name="hotel" size={24} color="gray" />
         </View>
         <View style={styles.cardsCategoryButtonContainer}>
-          <TouchableOpacity>
-            <View style={styles.cardsCategoryButton}>
-              <MaterialCommunityIcons
-                name="bed-queen"
-                size={24}
-                color={colors.primary}
-              />
-              <Text style={styles.cardsCategoryButtonText}>Single </Text>
-            </View>
-          </TouchableOpacity>
-          <TouchableOpacity>
-            <View style={styles.cardsCategoryButton}>
-              <MaterialCommunityIcons
-                name="bed-queen"
-                size={24}
-                color={colors.primary}
-              />
-              <Text style={styles.cardsCategoryButtonText}>Double </Text>
-            </View>
+          <TouchableOpacity style={styles.cardsCategoryButton}>
+              <AntDesign name="star" size={18} color={colors.ratingStar} />
+                  <Text>4.8 </Text>
           </TouchableOpacity>
         </View>
-        <TouchableOpacity>
-          <View style={styles.cardsSmallButton}>
-            <Text style={styles.cardsCategoryButtonText}> + 2 </Text>
-          </View>
-        </TouchableOpacity>
         <TouchableOpacity onPress={openBottomSheet}>
           <Text style={styles.cardsPrimaryButton}>SCHEDULE VISIT</Text>
         </TouchableOpacity>

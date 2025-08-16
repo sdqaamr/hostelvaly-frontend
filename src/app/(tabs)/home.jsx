@@ -57,7 +57,7 @@ const Home = () => {
             />
             <RecommendedHostels openBottomSheet={openBottomSheet} />
             <ViewedHostels />
-            <View style={{ padding: 10 }} />
+            <View style={{ padding: 20 }} />
           </View>
         </ScrollView>
         <ScheduleBottomSheet
