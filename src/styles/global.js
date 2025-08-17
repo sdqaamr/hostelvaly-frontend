@@ -163,7 +163,7 @@ const styles = StyleSheet.create({
   },
   textInput: {
     width: 330,
-    paddingVertical: 13,
+    paddingVertical: 12,
     color: "black",
     backgroundColor: colors.textInput,
     borderRadius: 10,
@@ -1150,8 +1150,9 @@ const styles = StyleSheet.create({
     paddingVertical: 10,
   },
   homeTabBar: {
-    backgroundColor: "white",
-    height: 100,
+    position: "absolute",
+    height: 50,
+    paddingBottom: 4,
   },
   tabBarLabel: {
     fontSize: 11,
@@ -1359,5 +1360,71 @@ const styles = StyleSheet.create({
     fontSize: 16,
     color: "red",
   },
+  addHostelHeadingText: {
+    width: 330,
+    alignSelf: "center",
+    fontSize: 17,
+    justifyContent: "center",
+    alignItems: "left",
+    marginBottom: 10,
+  },
+  dashedLine: {
+    width: 340,
+    borderWidth: 1,
+    borderStyle: "dashed",
+    marginVertical: 20,
+    alignSelf: "center",
+  },
+  amenitiesContainer: {
+    width: 330, flexDirection: "row", position: "relative",
+  },
+  amenitiesInner1stContainer: {
+    gap: 6,
+    flex: 1
+  },
+  amenity: {
+    flexDirection: "row", gap: 5, alignItems: "center",
+  },
+  padding13: {
+    padding: 13,
+  },
+  mainImgUploader: {
+    height: 155,
+    width: 330,
+    borderWidth: 1.3,
+    borderStyle: "dashed",
+    borderRadius: 8,
+    alignItems: "center",
+    justifyContent: "center",
+  },
+  smallImgUploader: {
+    height: 85,
+    width: 104.5,
+    borderRadius: 8,
+    borderWidth: 1.3,
+    borderStyle: "dashed",
+    alignItems: "center",
+    justifyContent: "center",
+    margin: 4.5,
+    marginTop: 10
+  },
+  amenitiesTextContainer: {
+    flexDirection: "row",
+    gap: 15,
+    paddingVertical: 3,
+    width: 340,
+    alignSelf: "center",
+    alignItems: "center",
+  },
+  selectFromButton: {
+    paddingVertical: 10,
+    width: 340,
+    alignSelf: "center",
+    alignitems: "center",
+    backgroundColor: "white",
+    borderRadius: 8,
+    marginTop: 10,
+    justifyContent: "center"
+  }
 });
 export default styles;

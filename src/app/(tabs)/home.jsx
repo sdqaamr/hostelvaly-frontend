@@ -47,7 +47,7 @@ const Home = () => {
   };
 
   return (
-    <SafeAreaView style={styles.safeArea2} edges={["left", "right", "top"]}>
+    <SafeAreaView style={styles.safeArea2}>
       <GestureHandlerRootView style={styles.container}>
         <ScrollView>
           <View style={styles.container}>
@@ -57,7 +57,7 @@ const Home = () => {
             />
             <RecommendedHostels openBottomSheet={openBottomSheet} />
             <ViewedHostels />
-            <View style={{ padding: 20 }} />
+            <View style={{ padding: 50 }} />
           </View>
         </ScrollView>
         <ScheduleBottomSheet

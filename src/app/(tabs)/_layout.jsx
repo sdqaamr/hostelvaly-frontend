@@ -5,8 +5,10 @@ import AntDesign from "@expo/vector-icons/AntDesign";
 import styles from "@styles/global";
 import { colors } from "@constants/global";
 import { TouchableOpacity } from "react-native";
+import { useSafeAreaInsets } from "react-native-safe-area-context";
 
 const TabLayout = () => {
+  const insets = useSafeAreaInsets();
   return (
     <Tabs
       screenOptions={{
@@ -14,7 +16,11 @@ const TabLayout = () => {
         tabBarActiveTintColor: colors.primary,
         tabBarInactiveTintColor: colors.secondary,
         tabBarLabelStyle: styles.tabBarLabel,
-        tabBarStyle: styles.homeTabBar,
+        tabBarStyle: {
+          ...styles.homeTabBar,
+          height: 50 + insets.bottom,   // dynamic height
+          paddingBottom: insets.bottom, // ensures it never hides under nav bar
+        },
         tabBarBadgeStyle: {
           backgroundColor: colors.primary,
           color: "white",

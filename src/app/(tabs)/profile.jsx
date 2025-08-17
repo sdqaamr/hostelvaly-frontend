@@ -5,6 +5,7 @@ import FontAwesome from "@expo/vector-icons/FontAwesome";
 import AntDesign from "@expo/vector-icons/AntDesign";
 import Ionicons from "@expo/vector-icons/Ionicons";
 import Entypo from "@expo/vector-icons/Entypo";
+import MaterialCommunityIcons from '@expo/vector-icons/MaterialCommunityIcons';
 import FontAwesome5 from "@expo/vector-icons/FontAwesome5";
 import { SafeAreaView } from "react-native-safe-area-context";
 import { Image } from "expo-image";
@@ -127,6 +128,26 @@ const Profile = () => {
           }}
           >
             <View style={styles.flexAndAlign}>
+              <MaterialCommunityIcons name="home-city-outline" size={30} color="black" />
+              <Text style={styles.myScheduleButtonText}>
+                {"  "}My Properties{"  "}
+              </Text>
+            </View>
+            <Entypo
+              name="chevron-small-right"
+              size={28}
+              color="black"
+              style={styles.fontPadding}
+            />
+          </TouchableOpacity>
+
+          <TouchableOpacity
+            style={styles.mySchedulesButton}
+            onPress={() => {
+            router.navigate("/my-schedules");
+          }}
+          >
+            <View style={styles.flexAndAlign}>
               <AntDesign name="calendar" size={30} color="black" />
               <Text style={styles.myScheduleButtonText}>
                 {"  "}My Schedules{"  "}
@@ -161,6 +182,7 @@ const Profile = () => {
           </TouchableOpacity>
 
           <View style={styles.extraPadding} />
+          <View style={{ padding: 50 }} />
         </View>
       </ScrollView>
 

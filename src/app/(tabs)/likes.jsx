@@ -43,6 +43,7 @@ const Likes = () => {
 
           <RecommendedHostels />
           <View style={styles.extraPadding}></View>
+          <View style={{ padding: 50 }} />
         </View>
       </ScrollView>
     </SafeAreaView>

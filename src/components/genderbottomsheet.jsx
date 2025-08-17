@@ -1,19 +1,34 @@
-import React, { useMemo, useCallback } from "react";
+import React, { useMemo, useCallback, useState, useEffect } from "react";
 import styles from "@styles/global";
-import { View, Text } from "react-native";
+import { View, Text, TouchableOpacity } from "react-native";
 import BottomSheet, {
   BottomSheetBackdrop,
   BottomSheetView,
 } from "@gorhom/bottom-sheet";
 import AntDesign from "@expo/vector-icons/AntDesign";
+import MaterialCommunityIcons from "@expo/vector-icons/MaterialCommunityIcons";
+import { colors } from "@constants/global";
 
-const GenderBottomSheet = ({ bottomSheetRef, closeBottomSheet }) => {
+const GenderBottomSheet = ({ bottomSheetRef, closeBottomSheet, onSelectAmenities }) => {
+  const [selectedAmenities, setSelectedAmenities] = useState([]);
   const gender = [
-    { name: "Male", id: 1 },
-    { name: "Female", id: 2 },
-    { name: "All", id: 3 },
+    { name: "Wi-Fi", id: 1 },
+    { name: "Laundry", id: 2 },
+    { name: "Mess", id: 3 },
+    { name: "Common Lounge", id: 4 },
+    { name: "Fire Extinguishers", id: 5 },
+    { name: "CCTV", id: 6 },
+    { name: "Parking", id: 7 },
+    { name: "Geyser", id: 8 },
+    { name: "Gym", id: 9 },
+    { name: "Filtered Water", id: 10 },
+    { name: "Reception", id: 11 },
+    { name: "Guest Rooms", id: 12 },
   ];
-  const snapPoints = useMemo(() => ["25%", "35%", "40%"], []);
+  useEffect(() => {
+    onSelectAmenities?.(selectedAmenities);
+  }, [selectedAmenities]);
+  const snapPoints = useMemo(() => ["30%", "80%", "85%"], []);
   const renderBackdrop = useCallback(
     (props) => (
       <BottomSheetBackdrop
@@ -24,6 +39,13 @@ const GenderBottomSheet = ({ bottomSheetRef, closeBottomSheet }) => {
     ),
     []
   );
+  const toggleAmenity = (id) => {
+  setSelectedAmenities((prev) =>
+    prev.includes(id) 
+      ? prev.filter((a) => a !== id)   // remove if already selected
+      : [...prev, id]                  // add if not selected
+  );
+};
   return (
     <BottomSheet
       snapPoints={snapPoints}
@@ -35,7 +57,7 @@ const GenderBottomSheet = ({ bottomSheetRef, closeBottomSheet }) => {
     >
       <BottomSheetView style={styles.scheduleContainer}>
         <View style={styles.cardsHeadingContainer}>
-          <Text style={styles.cardsHeadingText}>Gender:{"  "}</Text>
+          <Text style={styles.cardsHeadingText}>Select Amenities{"  "}</Text>
           <AntDesign
             onPress={closeBottomSheet}
             name="close"
@@ -45,8 +67,21 @@ const GenderBottomSheet = ({ bottomSheetRef, closeBottomSheet }) => {
         </View>
         <View style={styles.sortItemsContainer}>
           {gender.map((option) => {
+            const isSelected = selectedAmenities.includes(option.id);
             return (
-              <View key={option.id} style={styles.sortTextContainer}>
+              <View key={option.id} style={styles.amenitiesTextContainer}>
+                <TouchableOpacity
+                key={option.id}
+                style={styles.amenitiesTextContainer}
+                onPress={() => toggleAmenity(option.id)}
+              >
+                <MaterialCommunityIcons
+                  name={isSelected ? "checkbox-marked" : "checkbox-blank-outline"}
+                  size={24}
+                  color={isSelected ? colors.primary : "black"}
+                />
+                <Text style={styles.sortText}>{option.name}</Text>
+              </TouchableOpacity>
                 <Text style={styles.sortText}>{option.name}</Text>
               </View>
             );

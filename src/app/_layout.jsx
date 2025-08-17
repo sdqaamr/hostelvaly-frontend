@@ -18,7 +18,7 @@ const _layout = () => {
       />
       <Stack screenOptions={{ headerShown: false, statusBarTranslucent: true }}>
         {/* <Stack.Screen name="profile" /> */}
-        
+        <Stack.Screen name="(tabs)" />
         <Stack.Screen name="index" />
         <Stack.Screen name="onboarding" />
         <Stack.Screen name="account-entry" />
@@ -28,7 +28,7 @@ const _layout = () => {
         <Stack.Screen name="register" />
         <Stack.Screen name="otp" />
         <Stack.Screen name="verify" />
-        <Stack.Screen name="(tabs)" />
+        
         <Stack.Screen name="logout" />
         <Stack.Screen name="property-details" />
         <Stack.Screen name="booking" />

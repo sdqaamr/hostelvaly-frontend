@@ -43,6 +43,7 @@ const Reviews = () => {
 
           <RecommendedHostels />
           <View style={styles.extraPadding} />
+          <View style={{ padding: 50 }} />
         </View>
       </ScrollView>
     </SafeAreaView>
