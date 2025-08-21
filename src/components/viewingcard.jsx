@@ -7,7 +7,6 @@ import AntDesign from "@expo/vector-icons/AntDesign";
 import FontAwesome6 from "@expo/vector-icons/FontAwesome6";
 import MaterialIcons from "@expo/vector-icons/MaterialIcons";
 import MaterialCommunityIcons from "@expo/vector-icons/MaterialCommunityIcons";
-import Octicons from "@expo/vector-icons/Octicons";
 import { Image } from "expo-image";
 import { useRouter } from "expo-router";
 import { colors } from "@constants/global";
@@ -30,11 +29,6 @@ const ViewingCard = () => {
               />
             </View>
           </TouchableOpacity>
-          {/* <TouchableOpacity>
-            <View style={styles.cardImgIconRoundContainer}>
-              <Octicons name="share-android" style={styles.shareIcon} />
-            </View>
-          </TouchableOpacity> */}
         </View>
         <View style={[styles.viewingPeopleContainer]}>
           <Ionicons

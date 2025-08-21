@@ -1,4 +1,3 @@
-
 export const colors = {
   primary: "#8100d1",
   secondary: "#ce80ff",
@@ -13,4 +12,7 @@ export const colors = {
   radio: "#b3b3b3ff",
   lightText: "#666",
   pills: "#E2E6E9",
+  dropDownPlaceholder: "#676767ff",
+  intermediateText: "#999999",
+  backButton: "#E2E6E9",
 };

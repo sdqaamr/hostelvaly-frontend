@@ -1,10 +1,10 @@
 import React, { useState } from "react";
-import { View, TextInput, Modal, TouchableOpacity, Text, Platform } from "react-native";
+import { View, TextInput, Modal, TouchableOpacity, Text } from "react-native";
 import { Calendar } from "react-native-calendars";
 import { colors } from "@constants/global"; // customize colors as needed
 import styles from "@styles/global";
 
-export default function CalendarComponent() {
+const CalendarComponent = () => {
   const [selectedDate, setSelectedDate] = useState(""); // format: 'YYYY-MM-DD'
   const [isCalendarVisible, setIsCalendarVisible] = useState(false);
 
@@ -38,7 +38,10 @@ export default function CalendarComponent() {
             <Calendar
               onDayPress={handleDayPress}
               markedDates={{
-                [selectedDate]: { selected: true, selectedColor: colors.primary },
+                [selectedDate]: {
+                  selected: true,
+                  selectedColor: colors.primary,
+                },
               }}
               theme={{
                 textSectionTitleColor: colors.primary,
@@ -60,4 +63,5 @@ export default function CalendarComponent() {
       </Modal>
     </View>
   );
-}
+};
+export default CalendarComponent;

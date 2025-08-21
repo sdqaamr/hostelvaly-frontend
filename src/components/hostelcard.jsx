@@ -22,20 +22,22 @@ const HostelCard = ({ openBottomSheet }) => {
         />
         <View style={styles.cardImgIconsContainer}>
           <TouchableOpacity style={styles.cardImgIconRoundContainer}>
-              <MaterialCommunityIcons
-                name="cards-heart-outline"
-                style={styles.likeIcon}
-              />
+            <MaterialCommunityIcons
+              name="cards-heart-outline"
+              style={styles.likeIcon}
+            />
           </TouchableOpacity>
         </View>
         <View style={styles.nameAndLocContainer}>
-        <View>
-          <Text style={styles.cardsHeadingText}>Al-Fateh Girls Hostel </Text>
-          <View style={styles.locationContainer}>
-            <Ionicons name="location-outline" size={20} color="gray" />
-            <Text style={styles.cardsSimpleText}>Near Central Park, Faisalabad </Text>
+          <View>
+            <Text style={styles.cardsHeadingText}>Al-Fateh Girls Hostel </Text>
+            <View style={styles.locationContainer}>
+              <Ionicons name="location-outline" size={20} color="gray" />
+              <Text style={styles.cardsSimpleText}>
+                Near Central Park, Faisalabad{" "}
+              </Text>
+            </View>
           </View>
-        </View>
         </View>
         <View style={styles.cardIconsContainer}>
           <Feather name="wifi" size={24} color="gray" />
@@ -49,8 +51,8 @@ const HostelCard = ({ openBottomSheet }) => {
         </View>
         <View style={styles.cardsCategoryButtonContainer}>
           <TouchableOpacity style={styles.cardsCategoryButton}>
-              <AntDesign name="star" size={18} color={colors.ratingStar} />
-                  <Text>4.8 </Text>
+            <AntDesign name="star" size={18} color={colors.ratingStar} />
+            <Text>4.8 </Text>
           </TouchableOpacity>
         </View>
         <TouchableOpacity onPress={openBottomSheet}>

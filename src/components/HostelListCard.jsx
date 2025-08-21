@@ -1,12 +1,8 @@
 import React from "react";
 import styles from "@styles/global";
-import { View, Text, ScrollView, TouchableOpacity } from "react-native";
-import { SafeAreaView } from "react-native-safe-area-context";
-import { useRouter } from "expo-router";
+import { View, Text, TouchableOpacity } from "react-native";
 import AntDesign from "@expo/vector-icons/AntDesign";
-import FontAwesome from "@expo/vector-icons/FontAwesome";
 import Ionicons from "@expo/vector-icons/Ionicons";
-import RecommendedHostels from "@components/RecommendedHostels";
 import { Image } from "expo-image";
 import { colors } from "@constants/global";
 

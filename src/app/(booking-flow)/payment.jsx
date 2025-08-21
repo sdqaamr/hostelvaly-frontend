@@ -24,9 +24,7 @@ const Payment = () => {
               <FontAwesome name="angle-left" size={26} color="black" />
             </TouchableOpacity>
             <View style={styles.propertyDetailsHeaderTextContainer}>
-              <Text style={styles.propertyDetailsHeaderText}>
-                Payment{" "}
-              </Text>
+              <Text style={styles.propertyDetailsHeaderText}>Payment </Text>
             </View>
             <View style={styles.propertyDetailsEmptySpace} />
           </View>
@@ -71,12 +69,12 @@ const Payment = () => {
               />
               <View style={styles.bookingImgDetailsContainer}>
                 <Text style={styles.cardsHeadingText}>Aroma Hostel </Text>
-                
+
                 <View>
                   <View style={styles.locationContainer}>
-                  <Ionicons name="location-outline" size={20} color="gray" />
-                  <Text style={styles.cardsSimpleText}> Islamabad </Text>
-                </View>
+                    <Ionicons name="location-outline" size={20} color="gray" />
+                    <Text style={styles.cardsSimpleText}> Islamabad </Text>
+                  </View>
                   <View style={styles.locationContainer}>
                     <EvilIcons name="calendar" size={22} color="gray" />
                     <Text style={styles.cardsSimpleText}>
@@ -85,7 +83,10 @@ const Payment = () => {
                   </View>
                   <View style={styles.locationContainer}>
                     <Feather name="home" size={20} color="gray" />
-                    <Text style={styles.cardsSimpleText}> Cooler Room Type </Text>
+                    <Text style={styles.cardsSimpleText}>
+                      {" "}
+                      Cooler Room Type{" "}
+                    </Text>
                   </View>
                 </View>
               </View>

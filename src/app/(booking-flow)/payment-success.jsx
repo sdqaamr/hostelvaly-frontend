@@ -26,5 +26,5 @@ const PaymentSuccess = () => {
       </View>
     </SafeAreaView>
   );
-}
+};
 export default PaymentSuccess;

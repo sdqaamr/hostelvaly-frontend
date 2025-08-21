@@ -120,7 +120,7 @@ const styles = StyleSheet.create({
   },
   primaryButtonText: {
     fontSize: 16,
-    color: "#fff",
+    color: "white",
     textAlign: "center",
     paddingBottom: 1,
   },
@@ -207,7 +207,7 @@ const styles = StyleSheet.create({
     marginTop: 11,
   },
   intermediateText: {
-    color: "#999999",
+    color: colors.intermediateText,
   },
   allIconsContainer: {
     flexDirection: "row",
@@ -268,6 +268,41 @@ const styles = StyleSheet.create({
     flexDirection: "column",
     width: 345,
     paddingTop: 5,
+  },
+  homeHeaderImgContainer: {
+    height: 52,
+    width: 52,
+    borderRadius: 30,
+    borderWidth: 1,
+    borderColor: colors.primary,
+    justifyContent: "center",
+    alignItems: "center",
+    overflow: "hidden",
+    marginBottom: 23,
+    marginTop: 3,
+  },
+  homeHeaderImg: {
+    height: 52,
+    width: 52,
+  },
+  homeHeaderSearchContainer: {
+    flexDirection: "row",
+    position: "relative",
+  },
+  homeHeaderSearchTextInput: {
+    paddingVertical: 7.6,
+    width: 240,
+    borderRadius: 9,
+    borderColor: "black",
+    borderWidth: 0.7,
+    position: "absolute",
+    left: 10,
+    zIndex: 1,
+    alignSelf: "center",
+    paddingLeft: 42,
+    paddingRight: 3,
+    fontSize: 15,
+    backgroundColor: "white",
   },
   locationContainer: {
     flexDirection: "row",
@@ -618,7 +653,7 @@ const styles = StyleSheet.create({
     alignItems: "center",
     justifyContent: "center",
     paddingRight: 2,
-    backgroundColor: "#E2E6E9",
+    backgroundColor: colors.backButton,
   },
   propertyDetailsEmptySpace: {
     width: 20,
@@ -683,7 +718,7 @@ const styles = StyleSheet.create({
     alignSelf: "center",
   },
   pills: {
-    backgroundColor: "#E2E6E9",
+    backgroundColor: colors.pills,
     borderRadius: 8,
     paddingVertical: 8,
     flexDirection: "row",
@@ -979,6 +1014,12 @@ const styles = StyleSheet.create({
   extraPadding: {
     padding: 30,
   },
+  padding50: {
+    padding: 50,
+  },
+  paddingBottom300: {
+    paddingBottom: 300,
+  },
   calendarContainer: {
     flex: 1,
     justifyContent: "center",
@@ -1150,9 +1191,13 @@ const styles = StyleSheet.create({
     paddingVertical: 10,
   },
   homeTabBar: {
-    position: "absolute",
-    height: 50,
     paddingBottom: 4,
+    position: "fixed",
+    bottom: 0,
+    left: 0,
+    right: 0,
+    zIndex: 100,
+    backgroundColor: "white",
   },
   tabBarLabel: {
     fontSize: 11,
@@ -1203,6 +1248,23 @@ const styles = StyleSheet.create({
   },
   flex: {
     flex: 1,
+  },
+  selfAlign: {
+    alignSelf: "center",
+  },
+  extraPadding50: {
+    padding: 50,
+  },
+  flexStart: {
+    justifyContent: "flex-start",
+  },
+  home2Container: {
+    justifyContent: "center",
+    paddingBottom: 70,
+    backgroundColor: colors.background,
+  },
+  bottomPadding100: {
+    paddingBottom: 100,
   },
   notFoundButton: {
     width: 200,
@@ -1376,14 +1438,18 @@ const styles = StyleSheet.create({
     alignSelf: "center",
   },
   amenitiesContainer: {
-    width: 330, flexDirection: "row", position: "relative",
+    width: 330,
+    flexDirection: "row",
+    position: "relative",
   },
   amenitiesInner1stContainer: {
     gap: 6,
-    flex: 1
+    flex: 1,
   },
   amenity: {
-    flexDirection: "row", gap: 5, alignItems: "center",
+    flexDirection: "row",
+    gap: 5,
+    alignItems: "center",
   },
   padding13: {
     padding: 13,
@@ -1406,7 +1472,7 @@ const styles = StyleSheet.create({
     alignItems: "center",
     justifyContent: "center",
     margin: 4.5,
-    marginTop: 10
+    marginTop: 10,
   },
   amenitiesTextContainer: {
     flexDirection: "row",
@@ -1424,7 +1490,51 @@ const styles = StyleSheet.create({
     backgroundColor: "white",
     borderRadius: 8,
     marginTop: 10,
-    justifyContent: "center"
-  }
+    justifyContent: "center",
+  },
+  reviewInputContainer: {
+    width: 355,
+    backgroundColor: "white",
+    padding: 10,
+    alignSelf: "center",
+    borderRadius: 9,
+    marginTop: 10,
+  },
+  horizontalMargin2: {
+    marginHorizontal: 2,
+  },
+  citySelector: {
+    width: 330,
+    color: "black",
+    backgroundColor: colors.textInput,
+    borderRadius: 10,
+    paddingLeft: 11,
+    paddingRight: 5,
+    marginTop: 8,
+    height: 45,
+    alignItems: "center",
+    justifyContent: "center",
+  },
+  dropDown: {
+    fontSize: 15,
+    paddingHorizontal: 10,
+    paddingVertical: 8,
+    borderColor: "gray",
+    paddingRight: 30,
+    marginBottom: 16,
+    backgroundColor: "transparent",
+    inputWeb: {
+      fontSize: 15,
+      paddingHorizontal: 6,
+      color: "black",
+      backgroundColor: "transparent", // let container bg show
+      borderWidth: 0, // remove native <select> border
+      outline: "none", // remove focus ring
+    },
+    placeholder: {
+      color: colors.dropDownPlaceholder,
+      fontWeight: 100,
+    },
+  },
 });
 export default styles;

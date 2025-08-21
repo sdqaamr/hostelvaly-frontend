@@ -17,7 +17,6 @@ const Register = () => {
     <SafeAreaView style={styles.safeArea}>
       <View style={styles.container}>
         <Text style={styles.loginHeading}>Hello! Register to get started </Text>
-        <Text></Text>
         <TextInput style={styles.textInput} placeholder="Full Name" />
         <TextInput style={styles.textInput} placeholder="Email" />
         <View style={styles.passwordOuterContainer}>
@@ -30,7 +29,9 @@ const Register = () => {
             <TouchableOpacity
               onPress={() => setShowPassword((prev) => !prev)}
               style={styles.eyeContainer}
-              accessibilityLabel={showPassword ? "Hide password" : "Show password"}
+              accessibilityLabel={
+                showPassword ? "Hide password" : "Show password"
+              }
             >
               <Feather
                 name={showPassword ? "eye" : "eye-off"}
@@ -50,7 +51,9 @@ const Register = () => {
             <TouchableOpacity
               onPress={() => setShowConfirmPassword((prev) => !prev)}
               style={styles.eyeContainer}
-              accessibilityLabel={showConfirmPassword ? "Hide password" : "Show password"}
+              accessibilityLabel={
+                showConfirmPassword ? "Hide password" : "Show password"
+              }
             >
               <Feather
                 name={showConfirmPassword ? "eye" : "eye-off"}
@@ -60,9 +63,12 @@ const Register = () => {
             </TouchableOpacity>
           </View>
         </View>
-        <TouchableOpacity onPress={() => {
-          router.navigate("otp");
-        }} style={styles.primaryButton}>
+        <TouchableOpacity
+          onPress={() => {
+            router.navigate("otp");
+          }}
+          style={styles.primaryButton}
+        >
           <Text style={styles.primaryButtonText}>Register</Text>
         </TouchableOpacity>
         <View style={styles.intermediateContainer}>
@@ -91,9 +97,11 @@ const Register = () => {
         </View>
         <View style={styles.footerContainer}>
           <Text>Already have an account? </Text>
-          <TouchableOpacity onPress={() => {
-          router.navigate("login");
-        }}>
+          <TouchableOpacity
+            onPress={() => {
+              router.navigate("login");
+            }}
+          >
             <Text style={styles.footerText}>Login Now </Text>
           </TouchableOpacity>
         </View>

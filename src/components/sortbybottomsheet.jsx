@@ -9,12 +9,12 @@ import AntDesign from "@expo/vector-icons/AntDesign";
 
 const SortbyBottomSheet = ({ bottomSheetRef, closeBottomSheet }) => {
   const sortOptions = [
-    { id: 1, name: "Price - Low to High" },
-    { id: 2, name: "Price - High to Low" },
-    { id: 3, name: "Rating - High to Low" },
-    { id: 4, name: "Rating - Low to High" },
-    { id: 5, name: "Distance - Near to Far" },
-    { id: 6, name: "Distance - Far to Near" },
+    { id: 1, name: "Price - Low to High " },
+    { id: 2, name: "Price - High to Low " },
+    { id: 3, name: "Rating - High to Low " },
+    { id: 4, name: "Rating - Low to High " },
+    { id: 5, name: "Distance - Near to Far " },
+    { id: 6, name: "Distance - Far to Near " },
   ];
   const snapPoints = useMemo(() => ["25%", "58%", "60%"], []);
   const renderBackdrop = useCallback(

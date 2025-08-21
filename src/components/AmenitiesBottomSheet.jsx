@@ -9,7 +9,11 @@ import AntDesign from "@expo/vector-icons/AntDesign";
 import MaterialCommunityIcons from "@expo/vector-icons/MaterialCommunityIcons";
 import { colors } from "@constants/global";
 
-const GenderBottomSheet = ({ bottomSheetRef, closeBottomSheet, onSelectAmenities }) => {
+const AmenitiesBottomSheet = ({
+  bottomSheetRef,
+  closeBottomSheet,
+  onSelectAmenities,
+}) => {
   const [selectedAmenities, setSelectedAmenities] = useState([]);
   const gender = [
     { name: "Wi-Fi", id: 1 },
@@ -40,12 +44,13 @@ const GenderBottomSheet = ({ bottomSheetRef, closeBottomSheet, onSelectAmenities
     []
   );
   const toggleAmenity = (id) => {
-  setSelectedAmenities((prev) =>
-    prev.includes(id) 
-      ? prev.filter((a) => a !== id)   // remove if already selected
-      : [...prev, id]                  // add if not selected
-  );
-};
+    setSelectedAmenities(
+      (prev) =>
+        prev.includes(id)
+          ? prev.filter((a) => a !== id) // remove if already selected
+          : [...prev, id] // add if not selected
+    );
+  };
   return (
     <BottomSheet
       snapPoints={snapPoints}
@@ -71,17 +76,19 @@ const GenderBottomSheet = ({ bottomSheetRef, closeBottomSheet, onSelectAmenities
             return (
               <View key={option.id} style={styles.amenitiesTextContainer}>
                 <TouchableOpacity
-                key={option.id}
-                style={styles.amenitiesTextContainer}
-                onPress={() => toggleAmenity(option.id)}
-              >
-                <MaterialCommunityIcons
-                  name={isSelected ? "checkbox-marked" : "checkbox-blank-outline"}
-                  size={24}
-                  color={isSelected ? colors.primary : "black"}
-                />
-                <Text style={styles.sortText}>{option.name}</Text>
-              </TouchableOpacity>
+                  key={option.id}
+                  style={styles.amenitiesTextContainer}
+                  onPress={() => toggleAmenity(option.id)}
+                >
+                  <MaterialCommunityIcons
+                    name={
+                      isSelected ? "checkbox-marked" : "checkbox-blank-outline"
+                    }
+                    size={24}
+                    color={isSelected ? colors.primary : "black"}
+                  />
+                  <Text style={styles.sortText}>{option.name}</Text>
+                </TouchableOpacity>
                 <Text style={styles.sortText}>{option.name}</Text>
               </View>
             );
@@ -91,4 +98,4 @@ const GenderBottomSheet = ({ bottomSheetRef, closeBottomSheet, onSelectAmenities
     </BottomSheet>
   );
 };
-export default GenderBottomSheet;
+export default AmenitiesBottomSheet;

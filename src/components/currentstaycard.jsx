@@ -3,7 +3,6 @@ import styles from "@styles/global";
 import { View, Text, TouchableOpacity } from "react-native";
 import Ionicons from "@expo/vector-icons/Ionicons";
 import MaterialCommunityIcons from "@expo/vector-icons/MaterialCommunityIcons";
-import Octicons from "@expo/vector-icons/Octicons";
 import AntDesign from "@expo/vector-icons/AntDesign";
 import { Image } from "expo-image";
 import { useRouter } from "expo-router";
@@ -27,11 +26,6 @@ const CurrentStayCard = () => {
               />
             </View>
           </TouchableOpacity>
-          {/* <TouchableOpacity>
-            <View style={styles.cardImgIconRoundContainer}>
-              <Octicons name="share-android" style={styles.shareIcon} />
-            </View>
-          </TouchableOpacity> */}
         </View>
         <View style={styles.stayButton}>
           <Text>On Going Stay </Text>
@@ -53,26 +47,20 @@ const CurrentStayCard = () => {
             <Text style={styles.cardsHeadingText}>Al-Fateh Girls Hostel </Text>
             <View style={styles.locationContainer}>
               <Ionicons name="location-outline" size={20} color="gray" />
-              <Text style={styles.cardsSimpleText}>Near Central Park, Faisalabad </Text>
+              <Text style={styles.cardsSimpleText}>
+                Near Central Park, Faisalabad{" "}
+              </Text>
             </View>
           </View>
-          {/* <View style={styles.cardsPriceContainer}>
-            <Text style={styles.cardsSimpleText}>Starts from </Text>
-            <Text>
-              <Text style={styles.cardsHeadingText}>Rs 18000 </Text>
-              <Text style={styles.cardsSimpleText}>/mo* </Text>
-            </Text>
-          </View> */}
         </View>
-        <Text>{" "}</Text>
+        <Text> </Text>
         <View style={styles.currentCardsCategoryButtonContainer}>
           <Text style={styles.cardsSimpleText}>Joined on: 1-July-2024 </Text>
-          
         </View>
         <View style={styles.currentCardsCategoryButtonContainer}>
           <TouchableOpacity style={styles.cardsCategoryButton}>
-              <AntDesign name="star" size={18} color={colors.ratingStar} />
-                  <Text>4.8 </Text>
+            <AntDesign name="star" size={18} color={colors.ratingStar} />
+            <Text>4.8 </Text>
           </TouchableOpacity>
           <View style={styles.currentDaysLeftButton}>
             <Text>20 Days Left!</Text>

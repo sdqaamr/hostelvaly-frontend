@@ -77,7 +77,9 @@ const ScheduleBottomSheet = ({ bottomSheetRef, closeBottomSheet }) => {
                 value={isEnabled}
                 onValueChange={() => setIsEnabled((prev) => !prev)}
                 trackColor={{ false: colors.secondary, true: colors.primary }}
-                thumbColor={isEnabled ? colors.switchEnabled : colors.switchDisabled}
+                thumbColor={
+                  isEnabled ? colors.switchEnabled : colors.switchDisabled
+                }
                 ios_backgroundColor={colors.secondary}
                 style={styles.switch}
               />

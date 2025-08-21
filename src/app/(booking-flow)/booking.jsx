@@ -1,11 +1,6 @@
 import React from "react";
 import styles from "@styles/global";
-import {
-  View,
-  Text,
-  TouchableOpacity,
-  ScrollView,
-} from "react-native";
+import { View, Text, TouchableOpacity, ScrollView } from "react-native";
 import { SafeAreaView } from "react-native-safe-area-context";
 import AntDesign from "@expo/vector-icons/AntDesign";
 import Entypo from "@expo/vector-icons/Entypo";
@@ -32,9 +27,7 @@ const Booking = () => {
               <FontAwesome name="angle-left" size={26} color="black" />
             </TouchableOpacity>
             <View style={styles.propertyDetailsHeaderTextContainer}>
-              <Text style={styles.propertyDetailsHeaderText}>
-                Booking{" "}
-              </Text>
+              <Text style={styles.propertyDetailsHeaderText}>Booking </Text>
             </View>
             <View style={styles.propertyDetailsEmptySpace} />
           </View>
@@ -101,7 +94,7 @@ const Booking = () => {
               </Text>
               <View style={styles.bookingDetailsContainer}>
                 <Text>Select Room Type </Text>
-                <View style={{ flexDirection: "row" }}>
+                <View style={styles.flexDirection}>
                   <View style={styles.radioContainer}>
                     <View style={styles.radio} />
                     <Text>AC</Text>
@@ -117,19 +110,19 @@ const Booking = () => {
                 </View>
               </View>
             </View>
-            
+
             <View style={styles.detailContainer}>
               <Text style={styles.cardsHeadingText}>
-              {"  "}Stay Duration{"  "}
-            </Text>
-            <View style={styles.bookingDetailsContainer}>
-              <Text>From Date </Text>
-              <CalendarComponent />
-            </View>
-            <View style={styles.bookingDetailsContainer}>
-              <Text>To Date </Text>
-              <CalendarComponent />
-            </View>
+                {"  "}Stay Duration{"  "}
+              </Text>
+              <View style={styles.bookingDetailsContainer}>
+                <Text>From Date </Text>
+                <CalendarComponent />
+              </View>
+              <View style={styles.bookingDetailsContainer}>
+                <Text>To Date </Text>
+                <CalendarComponent />
+              </View>
             </View>
           </View>
           <View style={styles.extraPadding} />
