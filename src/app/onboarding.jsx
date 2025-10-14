@@ -73,7 +73,7 @@ const Onboarding = () => {
                 onPress={() => sliderRef.current?.goToSlide(currentIndex - 1)}
                 style={styles.onboardingBackButton}
               >
-                <AntDesign name="arrowleft" size={24} color={colors.primary} />
+                <AntDesign name="arrow-left" size={24} color={colors.primary} />
               </TouchableOpacity>
             )}
             <View style={styles.onboardingTitleContainer}>
