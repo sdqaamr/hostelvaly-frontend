@@ -11,7 +11,7 @@ const SvgComponent = (props) => (
       imageRendering: "optimizeQuality",
       fillRule: "evenodd",
       clipRule: "evenodd",
-      contentFit: "cover",
+      // contentFit: "cover",
     }}
     {...props}
   >

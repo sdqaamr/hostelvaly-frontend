@@ -24,7 +24,10 @@ const styles = StyleSheet.create({
   splashLogo: {
     height: 160,
     width: 160,
-    contentFit: "contain",
+  },
+  logoDescriptionContainer: {
+    width: 300, 
+    marginTop: 10,
   },
   onboardingTitleContainer: {
     alignItems: "center",
@@ -66,12 +69,8 @@ const styles = StyleSheet.create({
     paddingVertical: 50,
   },
   onboardingImg: {
-    // height: 230,
-    // marginTop: 5,
-    // width: 280,
     width: width * 0.8,
     height: height * 0.3,
-    resizeMode: "contain",
     marginVertical: 30,
   },
   activeDotStyle: {
@@ -105,6 +104,29 @@ const styles = StyleSheet.create({
   screensImg: {
     height: 150,
     width: 300,
+  },
+  roleSelectionHeading: {
+    justifyContent: "center",
+    textAlign: "left",
+    fontSize: 30,
+    width: 305,
+    fontFamily: "Roboto-Bold",
+    paddingBottom: 13,
+    color: colors.primary,
+  },
+  roleWidget: {
+    width: 320,
+    paddingVertical: 24,
+    paddingHorizontal: 16,
+    borderRadius: 9,
+    alignItems: "center",
+    marginBottom: 20,
+    borderColor: colors.primary,
+    elevation: 2,
+  },
+  widgetLabelText: {
+    marginTop: 10,
+    fontSize: 20,
   },
   accountEntryContainer: {
     flex: 1,
@@ -442,7 +464,6 @@ const styles = StyleSheet.create({
     width: "100%",
     height: "40%",
     top: 0,
-    contentFit: "stretch",
   },
   tabIconsContainer: {
     flexDirection: "row",
@@ -1118,7 +1139,7 @@ const styles = StyleSheet.create({
     width: "100%",
     height: "40%",
     top: 0,
-    contentFit: "stretch",
+    contentFit: "fill",
   },
   viewingPeopleContainer: {
     paddingVertical: 7,

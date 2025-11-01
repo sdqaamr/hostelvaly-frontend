@@ -1,7 +1,7 @@
 import React from "react";
 import styles from "@styles/global";
 import { View, Text } from "react-native";
-import AntDesign from "@expo/vector-icons/AntDesign";
+import FontAwesome from '@expo/vector-icons/FontAwesome';
 import { colors } from "@constants/global";
 import { Image } from "expo-image";
 
@@ -17,11 +17,11 @@ const ReviewsCard = () => {
         <View style={styles.reviewsContentContainer}>
           <Text style={styles.cardsHeadingText}>Person's Name </Text>
           <View style={styles.reviewsRatingContainer}>
-            <AntDesign name="star" size={16} color={colors.ratingStar} />
-            <AntDesign name="star" size={16} color={colors.ratingStar} />
-            <AntDesign name="star" size={16} color={colors.ratingStar} />
-            <AntDesign name="star" size={16} color={colors.ratingStar} />
-            <AntDesign name="staro" size={16} color="gray" />
+            <FontAwesome name="star" size={17} color={colors.ratingStar} />
+            <FontAwesome name="star" size={17} color={colors.ratingStar} />
+            <FontAwesome name="star" size={17} color={colors.ratingStar} />
+            <FontAwesome name="star" size={17} color={colors.ratingStar} />
+            <FontAwesome name="star-o" size={17} color="gray" />
           </View>
           <Text styl={styles.reviewsCommentText}>
             lorem, ipsum jon dolor sit amet dolo elit. Commodi...

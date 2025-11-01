@@ -78,7 +78,7 @@ const Login = () => {
           </View>
           <View style={styles.iconContainer}>
             <TouchableOpacity>
-              <AntDesign name="apple1" size={35} color="black" />
+              <AntDesign name="apple" size={35} color="black" />
             </TouchableOpacity>
           </View>
         </View>

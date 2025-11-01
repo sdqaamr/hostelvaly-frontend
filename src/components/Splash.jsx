@@ -1,5 +1,5 @@
 import React, { useEffect } from "react";
-import { View } from "react-native";
+import { View, Text } from "react-native";
 import styles from "@styles/global";
 import { useRouter } from "expo-router";
 import { Image } from "expo-image";
@@ -16,11 +16,14 @@ const Splash = () => {
   return (
     <View style={styles.container}>
       <Image
-        source={require("../assets/images/logo.png")}
+        source={require("../assets/images/HostelValy.png")}
         style={styles.splashLogo}
         contentFit="contain"
         contentPosition="center"
       />
+      <View style={styles.logoDescriptionContainer}>
+        <Text style={styles.onboardingTitle}>A Hostel-Searching Mobile Application{" "}</Text>
+      </View>
     </View>
   );
 };

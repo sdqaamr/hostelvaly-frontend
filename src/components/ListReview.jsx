@@ -1,7 +1,7 @@
 import React from "react";
 import styles from "@styles/global";
 import { View, Text, TouchableOpacity } from "react-native";
-import AntDesign from "@expo/vector-icons/AntDesign";
+import FontAwesome from '@expo/vector-icons/FontAwesome';
 import { Image } from "expo-image";
 import { colors } from "@constants/global";
 
@@ -21,11 +21,11 @@ const ListReview = () => {
           <View>
             <View style={styles.flexDirection}>
               <View style={styles.reviewsRatingContainer}>
-                <AntDesign name="star" size={16} color={colors.ratingStar} />
-                <AntDesign name="star" size={16} color={colors.ratingStar} />
-                <AntDesign name="star" size={16} color={colors.ratingStar} />
-                <AntDesign name="star" size={16} color={colors.ratingStar} />
-                <AntDesign name="staro" size={16} color="gray" />
+                <FontAwesome name="star" size={17} color={colors.ratingStar} />
+                <FontAwesome name="star" size={17} color={colors.ratingStar} />
+                <FontAwesome name="star" size={17} color={colors.ratingStar} />
+                <FontAwesome name="star" size={17} color={colors.ratingStar} />
+                <FontAwesome name="star-o" size={17} color="gray" />
               </View>
             </View>
 

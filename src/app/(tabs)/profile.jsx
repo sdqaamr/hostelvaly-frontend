@@ -112,7 +112,7 @@ const Profile = () => {
           }}
         >
           <View style={styles.flexAndAlign}>
-            <AntDesign name="calendar" size={30} color="black" />
+            <FontAwesome name="calendar" size={30} color="black" />
             <Text style={styles.myScheduleButtonText}>
               {"  "}My Schedules{"  "}
             </Text>

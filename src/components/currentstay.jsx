@@ -1,7 +1,7 @@
 import React from "react";
 import styles from "@styles/global";
 import { View, Text, TouchableOpacity } from "react-native";
-import AntDesign from "@expo/vector-icons/AntDesign";
+import Ionicons from '@expo/vector-icons/Ionicons';
 import CurrentStayCard from "./CurrentStayCard";
 
 const CurrentStay = () => {
@@ -10,7 +10,7 @@ const CurrentStay = () => {
       <View style={styles.cardsHeadingContainer}>
         <Text style={styles.cardsHeadingText}>Your Current Stay{"  "}</Text>
         <TouchableOpacity>
-          <AntDesign name="arrowright" size={24} color="black" />
+          <Ionicons name="arrow-forward" size={24} color="black" />
         </TouchableOpacity>
       </View>
       <View style={styles.cardsContainer}>

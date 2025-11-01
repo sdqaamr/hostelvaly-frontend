@@ -1,6 +1,7 @@
 import { Tabs } from "expo-router";
 import Ionicons from "@expo/vector-icons/Ionicons";
 import FontAwesome5 from "@expo/vector-icons/FontAwesome5";
+import Feather from '@expo/vector-icons/Feather';
 import AntDesign from "@expo/vector-icons/AntDesign";
 import styles from "@styles/global";
 import { colors } from "@constants/global";
@@ -45,7 +46,7 @@ const TabLayout = () => {
           options={{
             tabBarLabel: "Reviews",
             tabBarIcon: ({ color, size }) => (
-              <AntDesign name="message1" size={size} color={color} />
+              <AntDesign name="message" size={size} color={color} />
             ),
             tabBarBadge: "2",
           }}
@@ -70,7 +71,7 @@ const TabLayout = () => {
           options={{
             tabBarLabel: "Favorites",
             tabBarIcon: ({ color, size }) => (
-              <AntDesign name="hearto" size={size} color={color} />
+              <Feather name="heart" size={size} color={color} />
             ),
           }}
         />

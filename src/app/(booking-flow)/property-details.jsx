@@ -71,7 +71,7 @@ const PropertyDetails = () => {
                   <Text>WIFI </Text>
                 </View>
                 <View style={styles.pills}>
-                  <AntDesign name="Safety" size={22} color="black" />
+                  <AntDesign name="safety" size={22} color="black" />
                   <Text>Security </Text>
                 </View>
                 <View style={styles.pills}>

@@ -5,7 +5,7 @@ import { useSafeAreaInsets } from "react-native-safe-area-context";
 import HomeHeader from "@components/HomeHeader";
 import RecommendedHostels from "@components/RecommendedHostels";
 import LiveViewedHostels from "@components/LiveViewedHostels";
-import AntDesign from "@expo/vector-icons/AntDesign";
+import FontAwesome from '@expo/vector-icons/FontAwesome';
 import Reviews from "@components/Reviews";
 import CurrentStay from "@components/CurrentStay";
 import { colors } from "@constants/global";
@@ -31,10 +31,10 @@ const HomePage2 = () => {
             <View style={styles.reviewsRatingContainer}>
               {[1, 2, 3, 4, 5].map((star) => (
                 <TouchableOpacity key={star}>
-                  <AntDesign
+                  <FontAwesome
                     key={star}
-                    name={star <= rating ? "star" : "staro"} // Filled or empty
-                    size={24}
+                    name={star <= rating ? "star" : "star-o"} // Filled or empty
+                    size={26}
                     color={star <= rating ? colors.ratingStar : "gray"}
                     style={styles.horizontalMargin2}
                     onPress={() => setRating(star)} // Change rating on press

@@ -23,7 +23,7 @@ const TabIcons = () => {
         />
       </TouchableOpacity>
       <TouchableOpacity>
-        <AntDesign name="message1" style={styles.tabIcons} />
+        <AntDesign name="message" style={styles.tabIcons} />
       </TouchableOpacity>
       <TouchableOpacity>
         <FontAwesome6 name="user" style={styles.tabIcons} />

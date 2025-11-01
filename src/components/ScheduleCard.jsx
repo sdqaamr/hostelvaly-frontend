@@ -3,6 +3,7 @@ import styles from "@styles/global";
 import { View, Text, TouchableOpacity } from "react-native";
 import AntDesign from "@expo/vector-icons/AntDesign";
 import Ionicons from "@expo/vector-icons/Ionicons";
+import FontAwesome from '@expo/vector-icons/FontAwesome';
 import { Image } from "expo-image";
 
 const HostelListCard = () => {
@@ -27,9 +28,9 @@ const HostelListCard = () => {
               </Text>
             </View>
             <View style={styles.locationContainer}>
-              <AntDesign name="calendar" size={20} color="gray" />
+              <FontAwesome name="calendar" size={18} color="gray" />
               <Text style={styles.cardsSimpleText}>
-                {" "}
+                {"  "}
                 25-8-2025 to 25-10-2025{" "}
               </Text>
             </View>

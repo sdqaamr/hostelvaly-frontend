@@ -4,8 +4,8 @@ import { View, Text, TouchableOpacity, ScrollView } from "react-native";
 import { SafeAreaView } from "react-native-safe-area-context";
 import Entypo from "@expo/vector-icons/Entypo";
 import Feather from "@expo/vector-icons/Feather";
+import FontAwesome from '@expo/vector-icons/FontAwesome';
 import EvilIcons from "@expo/vector-icons/EvilIcons";
-import FontAwesome from "@expo/vector-icons/FontAwesome";
 import Ionicons from "@expo/vector-icons/Ionicons";
 import { Image } from "expo-image";
 import { useRouter } from "expo-router";
@@ -76,9 +76,9 @@ const Payment = () => {
                     <Text style={styles.cardsSimpleText}> Islamabad </Text>
                   </View>
                   <View style={styles.locationContainer}>
-                    <EvilIcons name="calendar" size={22} color="gray" />
+                    <FontAwesome name="calendar" size={20} color="gray" />
                     <Text style={styles.cardsSimpleText}>
-                      5-8-25 to 5-10-25{" "}
+                      {" "}5-8-25 to 5-10-25{" "}
                     </Text>
                   </View>
                   <View style={styles.locationContainer}>

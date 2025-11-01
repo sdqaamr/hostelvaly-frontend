@@ -16,6 +16,7 @@ const CurrentStayCard = () => {
         <Image
           source="https://tse2.mm.bing.net/th?id=OIP.ix8gl1euNehctcXK-QTxFwHaE7&pid=Api&P=0&h=220"
           style={styles.currentCardImage}
+          contentFit="fill"
         />
         <View style={styles.cardImgIconsContainer}>
           <TouchableOpacity>

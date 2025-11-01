@@ -1,7 +1,8 @@
 import React, { useState, useRef } from "react";
 import { SafeAreaView } from "react-native-safe-area-context";
 import AppIntroSlider from "react-native-app-intro-slider";
-import { View, Text, Image, TouchableOpacity } from "react-native";
+import { View, Text, TouchableOpacity } from "react-native";
+import { Image } from "expo-image";
 import LogoText from "@components/LogoText";
 import onBoarding1 from "@assets/images/onboarding1.png";
 import onBoarding2 from "@assets/images/onboarding2.png";
@@ -11,6 +12,7 @@ import { useRouter } from "expo-router";
 import { colors } from "@constants/global";
 import styles from "@styles/global";
 import AntDesign from "@expo/vector-icons/AntDesign";
+import Ionicons from '@expo/vector-icons/Ionicons';
 
 const slides = [
   {
@@ -73,7 +75,7 @@ const Onboarding = () => {
                 onPress={() => sliderRef.current?.goToSlide(currentIndex - 1)}
                 style={styles.onboardingBackButton}
               >
-                <AntDesign name="arrow-left" size={24} color={colors.primary} />
+                <Ionicons name="arrow-back" size={24} color={colors.primary} />
               </TouchableOpacity>
             )}
             <View style={styles.onboardingTitleContainer}>
@@ -91,7 +93,7 @@ const Onboarding = () => {
                 <SvgComponent />
               </View>
             ) : (
-              <Image source={item.image} style={styles.onboardingImg} />
+              <Image source={item.image} style={styles.onboardingImg} contentFit="contain" />
             )}
             <Text style={styles.onboardingDescription}>{item.subtitle}</Text>
           </View>

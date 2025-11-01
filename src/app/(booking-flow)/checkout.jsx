@@ -69,9 +69,9 @@ const Checkout = () => {
                     <Text style={styles.cardsSimpleText}> Islamabad </Text>
                   </View>
                   <View style={styles.locationContainer}>
-                    <EvilIcons name="calendar" size={22} color="gray" />
+                    <FontAwesome name="calendar" size={20} color="gray" />
                     <Text style={styles.cardsSimpleText}>
-                      5-8-25 to 5-10-25{" "}
+                      {" "}5-8-25 to 5-10-25{" "}
                     </Text>
                   </View>
                   <View style={styles.locationContainer}>

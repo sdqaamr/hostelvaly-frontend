@@ -18,7 +18,7 @@ const _layout = () => {
       />
       <Stack screenOptions={{ headerShown: false, statusBarTranslucent: true }}>
         <Stack.Screen name="index" />
-        <Stack.Screen name="onboarding" />
+        {/* <Stack.Screen name="onboarding" />
         <Stack.Screen name="account-entry" />
         <Stack.Screen name="login" />
         <Stack.Screen name="password-forget" />
@@ -35,7 +35,7 @@ const _layout = () => {
         <Stack.Screen name="checkout" />
         <Stack.Screen name="payment" />
         <Stack.Screen name="payment-success" />
-        <Stack.Screen name="(tab2)" />
+        <Stack.Screen name="(tab2)" /> */}
       </Stack>
     </SafeAreaView>
   );
