@@ -2,7 +2,7 @@ import React from "react";
 import styles from "@styles/global";
 import { View, Text, TouchableOpacity } from "react-native";
 import Ionicons from '@expo/vector-icons/Ionicons';
-import CurrentStayCard from "./CurrentStayCard";
+import CurrentStayCard from "./CurrentsStayCard";
 
 const CurrentStay = () => {
   return (
