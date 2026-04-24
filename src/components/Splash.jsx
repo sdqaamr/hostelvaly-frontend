@@ -3,6 +3,7 @@ import { View, Text } from "react-native";
 import styles from "@styles/global";
 import { useRouter } from "expo-router";
 import { Image } from "expo-image";
+import { testBackend } from "../../services/api";
 
 const Splash = () => {
   const router = useRouter();
