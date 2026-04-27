@@ -41,7 +41,7 @@ const Login = () => {
 
       // 🚦 ROLE-BASED NAVIGATION
       if (role === 'admin') {
-        router.replace('/admin') // Admin panel
+        router.replace('../admin') // Admin panel
       } else {
         router.replace('/verify') // Student / Owner flow
       }
