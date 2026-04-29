@@ -495,5 +495,22 @@ export default StyleSheet.create({
     backgroundColor: '#8100d1',
     justifyContent: 'center',
     alignItems: 'center'
-  }
+  }, 
+  /* ===== FLOATING ACTION BUTTON ===== */
+fab: {
+  position: 'absolute',
+  right: 20,
+  bottom: 50,
+  width: 56,
+  height: 56,
+  borderRadius: 28,
+  backgroundColor: colors.primary,
+  justifyContent: 'center',
+  alignItems: 'center',
+  elevation: 6,
+  shadowColor: '#000',
+  shadowOffset: { width: 0, height: 4 },
+  shadowOpacity: 0.3,
+  shadowRadius: 4,
+},
 })

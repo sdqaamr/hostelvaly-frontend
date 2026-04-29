@@ -187,7 +187,7 @@ const AdminUsers = () => {
             style={styles.backBtn}
             onPress={() => router.back()}
           >
-            <Feather name='arrow-left' size={18} />
+            <Feather name='arrow-left' size={18} colors={colors.primary} />
           </TouchableOpacity>
 
           <Text style={styles.profileTitle}>Manage Users</Text>
