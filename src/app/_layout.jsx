@@ -16,7 +16,7 @@ const _layout = () => {
         translucent
         backgroundColor={colors.background}
       />
-      <Stack screenOptions={{ headerShown: false, statusBarTranslucent: true }}>
+      <Stack screenOptions={{ headerShown: false}}>
         <Stack.Screen name="index" />
         {/* <Stack.Screen name="onboarding" />
         <Stack.Screen name="account-entry" />
@@ -26,7 +26,7 @@ const _layout = () => {
         <Stack.Screen name="register" />
         <Stack.Screen name="otp" />
         <Stack.Screen name="verify" />
-        <Stack.Screen name="(tabs)" />
+        <Stack.Screen name="(home)" />
         <Stack.Screen name="my-schedules" />
         <Stack.Screen name="my-properties" />
         <Stack.Screen name="logout" />
@@ -35,7 +35,7 @@ const _layout = () => {
         <Stack.Screen name="checkout" />
         <Stack.Screen name="payment" />
         <Stack.Screen name="payment-success" />
-        <Stack.Screen name="(tab2)" /> */}
+        <Stack.Screen name="(home2)" /> */}
       </Stack>
     </SafeAreaView>
   );

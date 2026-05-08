@@ -17,7 +17,7 @@ const PaymentSuccess = () => {
 
         <TouchableOpacity
           onPress={() => {
-            router.navigate("/");
+            router.navigate("../(home2)/home-page2");
           }}
           style={styles.primaryButton}
         >

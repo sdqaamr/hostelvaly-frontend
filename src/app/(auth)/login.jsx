@@ -8,7 +8,7 @@ import GoogleIcon from '@assets/images/SVG/Google'
 import { useRouter } from 'expo-router'
 import { Feather } from '@expo/vector-icons'
 import { colors } from '@constants/global'
-import { loginUser } from '../../../services/api'
+import { BASE_URL } from '../../../services/config'
 
 const Login = () => {
   const [email, setEmail] = useState('')
@@ -22,31 +22,41 @@ const Login = () => {
     try {
       setLoading(true)
 
-      const res = await loginUser({ email, password })
+      const res = await fetch(`${BASE_URL}/auth/login`, {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json'
+        },
+        body: JSON.stringify({
+          email,
+          password
+        })
+      })
 
-      console.log('LOGIN RESPONSE:', res)
+      const data = await res.json()
 
-      if (!res.success) {
-        console.log('LOGIN ERROR:', res.error)
+      console.log('LOGIN RESPONSE:', data)
+
+      // ✅ Use backend success flag
+      if (!data.success) {
+        setErrorMessage(data.error?.[0] || data.message)
         return
       }
 
-      const { token, user } = res.data
+      const { token, user } = data.data
       const role = user.role
 
       console.log('ROLE:', role)
 
-      // 🔐 Save token later (AsyncStorage)
-      // await AsyncStorage.setItem("token", token);
-
-      // 🚦 ROLE-BASED NAVIGATION
+      // navigation based on role
       if (role === 'admin') {
-        router.replace('../admin') // Admin panel
+        router.replace('../admin')
       } else {
-        router.replace('/verify') // Student / Owner flow
+        router.replace('/verify')
       }
     } catch (err) {
       console.log('Network error:', err.message)
+      setErrorMessage(data.message)
     } finally {
       setLoading(false)
     }

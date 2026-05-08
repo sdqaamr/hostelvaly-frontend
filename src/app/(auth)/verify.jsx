@@ -16,7 +16,7 @@ const Verify = () => {
         <Text></Text>
         <TouchableOpacity
           onPress={() => {
-            router.navigate("/role-onboarding");
+            router.navigate("../(home)/home");
           }}
           style={styles.primaryButton}
         >
