@@ -1,6 +1,12 @@
 import React, { useState } from 'react'
 import styles from '@styles/global'
-import { View, Text, TouchableOpacity, TextInput } from 'react-native'
+import {
+  View,
+  Text,
+  TouchableOpacity,
+  TextInput,
+  ToastAndroid
+} from 'react-native'
 import { SafeAreaView } from 'react-native-safe-area-context'
 import FontAwesome5 from '@expo/vector-icons/FontAwesome5'
 import AntDesign from '@expo/vector-icons/AntDesign'
@@ -43,7 +49,10 @@ const Register = () => {
       console.log('REGISTER RESPONSE:', data)
 
       if (!data.success) {
-        setErrorMessage(data.error?.[0] || data.message)
+        const errorMsg = data.error?.[0] || data.message
+
+        ToastAndroid.show(errorMsg, ToastAndroid.SHORT)
+
         return
       }
 
@@ -54,7 +63,7 @@ const Register = () => {
       })
     } catch (err) {
       console.log('Network error:', err.message)
-      setErrorMessage(data.message)
+      setErrorMessage('An error occurred. Please try again.')
     } finally {
       setLoading(false)
     }

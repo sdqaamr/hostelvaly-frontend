@@ -1,6 +1,14 @@
 import React, { useState } from 'react'
 import styles from '@styles/global'
-import { View, Text, TouchableOpacity, TextInput } from 'react-native'
+import {
+  View,
+  Text,
+  TouchableOpacity,
+  TextInput,
+  Alert,
+  ToastAndroid,
+  Platform
+} from 'react-native'
 import { SafeAreaView } from 'react-native-safe-area-context'
 import FontAwesome5 from '@expo/vector-icons/FontAwesome5'
 import AntDesign from '@expo/vector-icons/AntDesign'
@@ -11,13 +19,40 @@ import { colors } from '@constants/global'
 import { BASE_URL } from '../../../services/config'
 
 const Login = () => {
+  const showToast = message => {
+    if (!message) return
+
+    if (Platform.OS === 'android') {
+      ToastAndroid.show(message, ToastAndroid.SHORT)
+    } else {
+      Alert.alert('', message)
+    }
+  }
+
   const [email, setEmail] = useState('')
   const [password, setPassword] = useState('')
-  const [errorMessage, setErrorMessage] = useState('')
-  const [errorList, setErrorList] = useState([])
   const [loading, setLoading] = useState(false)
   const router = useRouter()
   const [showPassword, setShowPassword] = useState(false)
+
+  const resendOtp = async email => {
+    try {
+      const res = await fetch(`${BASE_URL}/auth/resend-otp`, {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json'
+        },
+        body: JSON.stringify({ email })
+      })
+
+      const data = await res.json()
+      return data
+    } catch (err) {
+      console.log('Resend OTP error:', err.message)
+      return null
+    }
+  }
+
   const handleLogin = async () => {
     try {
       setLoading(true)
@@ -27,36 +62,57 @@ const Login = () => {
         headers: {
           'Content-Type': 'application/json'
         },
-        body: JSON.stringify({
-          email,
-          password
-        })
+        body: JSON.stringify({ email, password })
       })
 
       const data = await res.json()
-
       console.log('LOGIN RESPONSE:', data)
 
-      // ✅ Use backend success flag
+      // ❌ Backend error
       if (!data.success) {
-        setErrorMessage(data.error?.[0] || data.message)
+        const message = data.error?.[0] || data.message
+
+        // 🚨 Inactive account
+        if (res.status === 403) {
+          Alert.alert('Account Not Verified', message, [
+            {
+              text: 'Verify Now',
+              onPress: async () => {
+                const otpResponse = await resendOtp(email)
+
+                if (otpResponse?.success) {
+                  showToast('OTP sent to your email')
+                  router.push({
+                    pathname: '/otp',
+                    params: { email }
+                  })
+                } else {
+                  showToast(otpResponse?.error?.[0] || 'Failed to resend OTP')
+                }
+              }
+            },
+            { text: 'Cancel', style: 'cancel' }
+          ])
+          return
+        }
+
+        // ❌ All other backend errors
+        showToast(message)
         return
       }
 
-      const { token, user } = data.data
-      const role = user.role
+      // ✅ Login success
+      const { user } = data.data
+      showToast('Login successful')
 
-      console.log('ROLE:', role)
-
-      // navigation based on role
-      if (role === 'admin') {
+      if (user.role === 'admin') {
         router.replace('../admin')
       } else {
         router.replace('/verify')
       }
     } catch (err) {
       console.log('Network error:', err.message)
-      setErrorMessage(data.message)
+      showToast('Network error. Please try again.')
     } finally {
       setLoading(false)
     }

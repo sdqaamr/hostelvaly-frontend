@@ -1,31 +1,32 @@
-import React, { useEffect } from "react";
-import { View, Text } from "react-native";
-import styles from "@styles/global";
-import { useRouter } from "expo-router";
-import { Image } from "expo-image";
-import { testBackend } from "../../services/api";
+import React, { useEffect } from 'react'
+import { View, Text } from 'react-native'
+import styles from '@styles/global'
+import { useRouter } from 'expo-router'
+import { Image } from 'expo-image'
 
 const Splash = () => {
-  const router = useRouter();
+  const router = useRouter()
   useEffect(() => {
     const timer = setTimeout(() => {
-      router.navigate("onboarding");
-    }, 4000);
-    return () => clearTimeout(timer);
-  }, []);
-  console.log("Splash screen rendered");
+      router.navigate('onboarding')
+    }, 4000)
+    return () => clearTimeout(timer)
+  }, [])
+  console.log('Splash screen rendered')
   return (
     <View style={styles.container}>
       <Image
-        source={require("../assets/images/HostelValy.png")}
+        source={require('../assets/images/HostelValy.png')}
         style={styles.splashLogo}
-        contentFit="contain"
-        contentPosition="center"
+        contentFit='contain'
+        contentPosition='center'
       />
       <View style={styles.logoDescriptionContainer}>
-        <Text style={styles.onboardingTitle}>A Hostel-Searching Mobile Application{" "}</Text>
+        <Text style={styles.onboardingTitle}>
+          A Hostel-Searching Mobile Application{' '}
+        </Text>
       </View>
     </View>
-  );
-};
-export default Splash;
+  )
+}
+export default Splash

@@ -1,12 +1,37 @@
 import React, { useRef, useState } from 'react'
 import styles from '@styles/global'
-import { View, Text, TouchableOpacity, TextInput } from 'react-native'
+import {
+  View,
+  Text,
+  TouchableOpacity,
+  TextInput,
+  Alert,
+  ToastAndroid,
+  Platform
+} from 'react-native'
 import { SafeAreaView } from 'react-native-safe-area-context'
 import { useRouter } from 'expo-router'
 import { BASE_URL } from '../../../services/config'
-import { useLocalSearchParams } from "expo-router"
+import { useLocalSearchParams } from 'expo-router'
 
 const OTP = () => {
+  const showMessage = message => {
+    if (Platform.OS === 'android') {
+      ToastAndroid.show(message, ToastAndroid.SHORT)
+    } else {
+      Alert.alert('', message)
+    }
+  }
+
+  const clearOtpInputs = () => {
+    setOtp('')
+    input1.current?.clear()
+    input2.current?.clear()
+    input3.current?.clear()
+    input4.current?.clear()
+    input1.current?.focus()
+  }
+
   const router = useRouter()
   const { email } = useLocalSearchParams()
   const input1 = useRef(null)
@@ -24,39 +49,87 @@ const OTP = () => {
     setOtp(newOtp.join(''))
   }
 
-  const handleVerify = async () => {
-  try {
-    setLoading(true);
+  const resendOtp = async () => {
+    try {
+      const res = await fetch(`${BASE_URL}/auth/resend-otp`, {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json'
+        },
+        body: JSON.stringify({ email })
+      })
 
-    const res = await fetch(`${BASE_URL}/auth/verify-email`, {
-      method: "POST",
-      headers: {
-        "Content-Type": "application/json",
-      },
-      body: JSON.stringify({
-        email: email,
-        otp: otp,
-      }),
-    });
-
-    const data = await res.json();
-
-    console.log("OTP RESPONSE:", data);
-
-    if (!data.success) {
-      setErrorMessage(data.error?.[0] || data.message);
-      return;
+      return await res.json()
+    } catch (err) {
+      console.log('Resend OTP error:', err.message)
+      return null
     }
-
-    router.replace("/login");
-
-  } catch (err) {
-    console.log("Network error:", err.message);
-    setErrorMessage("Network error. Try again.");
-  } finally {
-    setLoading(false);
   }
-};
+
+  const handleVerify = async () => {
+    try {
+      setLoading(true)
+
+      const res = await fetch(`${BASE_URL}/auth/verify-email`, {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json'
+        },
+        body: JSON.stringify({
+          email: email,
+          otp: otp
+        })
+      })
+
+      const data = await res.json()
+
+      console.log('OTP RESPONSE:', data)
+
+      if (!data.success) {
+        const msg = data.message || data.error?.[0]
+
+        // 🚨 OTP expired case
+        if (msg === 'OTP expired') {
+          Alert.alert(
+            'OTP Expired',
+            'Your OTP has expired. Do you want to resend it?',
+            [
+              {
+                text: 'Resend OTP',
+                onPress: async () => {
+                  const resendResponse = await resendOtp()
+
+                  if (resendResponse?.success) {
+                    // ✅ CLEAR OLD OTP HERE
+                    clearOtpInputs()
+
+                    // ✅ DISAPPEARING MESSAGE (3–4 sec)
+                    showMessage('A new OTP has been sent to your email')
+                  } else {
+                    showMessage(
+                      resendResponse?.error?.[0] || 'Failed to resend OTP'
+                    )
+                  }
+                }
+              },
+              { text: 'Cancel', style: 'cancel' }
+            ]
+          )
+          return
+        }
+
+        showMessage(msg)
+        return
+      }
+
+      router.replace('/login')
+    } catch (err) {
+      console.log('Network error:', err.message)
+      setErrorMessage('Network error. Try again.')
+    } finally {
+      setLoading(false)
+    }
+  }
 
   return (
     <SafeAreaView style={styles.safeArea}>
