@@ -1,77 +1,148 @@
-import React, { useState } from "react";
-import styles from "@styles/global";
-import { View, Text, TouchableOpacity, TextInput } from "react-native";
-import { SafeAreaView } from "react-native-safe-area-context";
-import { useRouter } from "expo-router";
-import { Feather } from "@expo/vector-icons";
-import { colors } from "@constants/global";
+import React, { useState } from 'react'
+import styles from '@styles/global'
+import {
+  View,
+  Text,
+  TouchableOpacity,
+  TextInput,
+  ToastAndroid
+} from 'react-native'
+import { SafeAreaView } from 'react-native-safe-area-context'
+import { useRouter, useLocalSearchParams } from 'expo-router'
+import { Feather } from '@expo/vector-icons'
+import { colors } from '@constants/global'
+import { BASE_URL } from '../../../services/config'
 
 const PasswordReset = () => {
-  const router = useRouter();
-  const [showPassword, setShowPassword] = useState(false);
-  const [showConfirmPassword, setShowConfirmPassword] = useState(false);
+  const router = useRouter()
+  const { email } = useLocalSearchParams()
+
+  const [newPassword, setNewPassword] = useState('')
+  const [confirmPassword, setConfirmPassword] = useState('')
+
+  const [showPassword, setShowPassword] = useState(false)
+  const [showConfirmPassword, setShowConfirmPassword] = useState(false)
+
+  const [loading, setLoading] = useState(false)
+
+  const showToast = msg => ToastAndroid.show(msg, ToastAndroid.SHORT)
+
+  const handleResetPassword = async () => {
+    // 🔴 validations
+    if (!newPassword || !confirmPassword) {
+      showToast('All fields are required')
+      return
+    }
+
+    if (newPassword.length < 6) {
+      showToast('Password must be at least 6 characters')
+      return
+    }
+
+    if (newPassword !== confirmPassword) {
+      showToast('Passwords do not match')
+      return
+    }
+
+    try {
+      setLoading(true)
+
+      const res = await fetch(`${BASE_URL}/auth/reset-password`, {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json'
+        },
+        body: JSON.stringify({
+          email,
+          newPassword,
+          confirmPassword
+        })
+      })
+
+      const data = await res.json()
+
+      if (!data.success) {
+        showToast(data.message || 'Something went wrong')
+        return
+      }
+
+      // ✅ success
+      showToast('Password reset successfully')
+
+      router.replace('/login')
+    } catch (err) {
+      showToast('Network error')
+    } finally {
+      setLoading(false)
+    }
+  }
+
   return (
     <SafeAreaView style={styles.safeArea}>
       <View style={styles.container}>
-        <Text style={styles.loginHeading}>Reset {"\n"}Password!</Text>
-        <Text style={styles.simpleText}>
-          Please enter yout new password and then confirm it.
-        </Text>
-        <Text></Text>
+        <Text style={styles.loginHeading}>Reset {'\n'}Password!</Text>
+
+        <Text style={styles.simpleText}>Enter your new password below.</Text>
+
+        {/* NEW PASSWORD */}
         <View style={styles.passwordOuterContainer}>
           <View style={styles.passwordInnerContainer}>
             <TextInput
               style={styles.textInput}
-              placeholder="Enter Password"
+              placeholder='Enter Password'
               secureTextEntry={!showPassword}
+              value={newPassword}
+              onChangeText={setNewPassword}
             />
             <TouchableOpacity
-              onPress={() => setShowPassword((prev) => !prev)}
+              onPress={() => setShowPassword(prev => !prev)}
               style={styles.eyeContainer}
-              accessibilityLabel={
-                showPassword ? "Hide password" : "Show password"
-              }
             >
               <Feather
-                name={showPassword ? "eye" : "eye-off"}
+                name={showPassword ? 'eye' : 'eye-off'}
                 size={22}
                 color={colors.eye}
               />
             </TouchableOpacity>
           </View>
         </View>
+
+        {/* CONFIRM PASSWORD */}
         <View style={styles.passwordOuterContainer}>
           <View style={styles.passwordInnerContainer}>
             <TextInput
               style={styles.textInput}
-              placeholder="Confirm Password"
+              placeholder='Confirm Password'
               secureTextEntry={!showConfirmPassword}
+              value={confirmPassword}
+              onChangeText={setConfirmPassword}
             />
             <TouchableOpacity
-              onPress={() => setShowConfirmPassword((prev) => !prev)}
+              onPress={() => setShowConfirmPassword(prev => !prev)}
               style={styles.eyeContainer}
-              accessibilityLabel={
-                showConfirmPassword ? "Hide password" : "Show password"
-              }
             >
               <Feather
-                name={showConfirmPassword ? "eye" : "eye-off"}
+                name={showConfirmPassword ? 'eye' : 'eye-off'}
                 size={22}
                 color={colors.eye}
               />
             </TouchableOpacity>
           </View>
         </View>
+
+        {/* BUTTON */}
         <TouchableOpacity
-          onPress={() => {
-            router.navigate("login");
-          }}
+          onPress={handleResetPassword}
           style={styles.primaryButton}
+          disabled={loading}
         >
-          <Text style={styles.primaryButtonText}>Submit</Text>
+          <Text style={styles.primaryButtonText}>
+            {loading ? 'Updating...' : 'Submit'}
+          </Text>
         </TouchableOpacity>
       </View>
     </SafeAreaView>
-  );
-};
-export default PasswordReset;
+  )
+}
+
+export default PasswordReset
