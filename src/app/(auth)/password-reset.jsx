@@ -13,6 +13,8 @@ import { Feather } from '@expo/vector-icons'
 import { colors } from '@constants/global'
 import { BASE_URL } from '../../../services/config'
 
+// This screen is accessed when user is not logged in and forgets their password.
+
 const PasswordReset = () => {
   const router = useRouter()
   const { email } = useLocalSearchParams()
