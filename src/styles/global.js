@@ -1,295 +1,295 @@
-import { StyleSheet, Dimensions } from "react-native";
-import { colors } from "@constants/global";
-const { width, height } = Dimensions.get("window");
+import { StyleSheet, Dimensions } from 'react-native'
+import { colors } from '@constants/global'
+const { width, height } = Dimensions.get('window')
 
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    alignItems: "center",
-    justifyContent: "center",
-    backgroundColor: colors.background,
+    alignItems: 'center',
+    justifyContent: 'center',
+    backgroundColor: colors.background
   },
   safeArea: {
     flex: 1,
-    backgroundColor: "transparent",
+    backgroundColor: 'transparent'
   },
   safeArea2: {
     flex: 1,
-    backgroundColor: "white",
+    backgroundColor: 'white'
   },
   activityIndicator: {
     margin: 10,
-    alignSelf: "center",
+    alignSelf: 'center'
   },
   splashLogo: {
     height: 160,
-    width: 160,
+    width: 160
   },
   logoDescriptionContainer: {
-    width: 300, 
-    marginTop: 10,
+    width: 300,
+    marginTop: 10
   },
   onboardingTitleContainer: {
-    alignItems: "center",
+    alignItems: 'center'
   },
   onboardingImgContainer: {
     flex: 1,
-    justifyContent: "center",
-    alignItems: "center",
+    justifyContent: 'center',
+    alignItems: 'center'
   },
   onboardingTitle: {
     fontSize: 18,
-    textAlign: "center",
-    color: colors.lightText,
+    textAlign: 'center',
+    color: colors.lightText
   },
   mainTitle: {
-    fontFamily: "Roboto-Bold",
+    fontFamily: 'Roboto-Bold',
     fontSize: 30,
-    color: colors.primary,
+    color: colors.primary
   },
   logoText: {
-    fontFamily: "Roboto-BlackItalic",
+    fontFamily: 'Roboto-BlackItalic',
     fontSize: 25,
-    color: colors.primary,
+    color: colors.primary
   },
   logoText2: {
-    color: colors.secondary,
+    color: colors.secondary
   },
   onboardingBackButton: {
-    position: "absolute",
+    position: 'absolute',
     top: 50,
     left: 20,
-    zIndex: 10,
+    zIndex: 10
   },
   onboardingContainer: {
     flex: 1,
     paddingHorizontal: 24,
-    alignItems: "center",
-    justifyContent: "center",
-    paddingVertical: 50,
+    alignItems: 'center',
+    justifyContent: 'center',
+    paddingVertical: 50
   },
   onboardingImg: {
     width: width * 0.8,
     height: height * 0.3,
-    marginVertical: 30,
+    marginVertical: 30
   },
   activeDotStyle: {
-    backgroundColor: colors.primary,
+    backgroundColor: colors.primary
   },
   onboardingDescription: {
     fontSize: 16,
     fontWeight: 600,
     width: 300,
-    textAlign: "center",
+    textAlign: 'center',
     lineHeight: 20,
     paddingTop: 15,
-    color: colors.lightText,
+    color: colors.lightText
   },
   onboardingButton: {
     backgroundColor: colors.primary,
     paddingVertical: 8,
     paddingHorizontal: 20,
-    borderRadius: 8,
+    borderRadius: 8
   },
   onboardingLabel: {
-    color: "white",
-    fontWeight: "bold",
-    marginHorizontal: 10,
+    color: 'white',
+    fontWeight: 'bold',
+    marginHorizontal: 10
   },
   screensImgContainer: {
     flex: 1,
-    justifyContent: "center",
-    paddingTop: 150,
+    justifyContent: 'center',
+    paddingTop: 150
   },
   screensImg: {
     height: 150,
-    width: 300,
+    width: 300
   },
   roleSelectionHeading: {
-    justifyContent: "center",
-    textAlign: "left",
+    justifyContent: 'center',
+    textAlign: 'left',
     fontSize: 30,
     width: 305,
-    fontFamily: "Roboto-Bold",
+    fontFamily: 'Roboto-Bold',
     paddingBottom: 13,
-    color: colors.primary,
+    color: colors.primary
   },
   roleWidget: {
     width: 320,
     paddingVertical: 24,
     paddingHorizontal: 16,
     borderRadius: 9,
-    alignItems: "center",
+    alignItems: 'center',
     marginBottom: 20,
     borderColor: colors.primary,
-    elevation: 2,
+    elevation: 2
   },
   widgetLabelText: {
     marginTop: 10,
-    fontSize: 20,
+    fontSize: 20
   },
   accountEntryContainer: {
     flex: 1,
-    justifyContent: "center",
-    gap: 9,
+    justifyContent: 'center',
+    gap: 9
   },
   primaryButton: {
     width: 325,
     borderRadius: 8,
     backgroundColor: colors.primary,
     paddingVertical: 10,
-    marginTop: 30,
+    marginTop: 30
   },
   primaryButtonText: {
     fontSize: 16,
-    color: "white",
-    textAlign: "center",
-    paddingBottom: 1,
+    color: 'white',
+    textAlign: 'center',
+    paddingBottom: 1
   },
   primaryLightButton: {
     width: 325,
     borderRadius: 8,
-    backgroundColor: "transparent",
+    backgroundColor: 'transparent',
     paddingVertical: 7.5,
     borderColor: colors.primary,
-    borderStyle: "solid",
-    borderWidth: 2,
+    borderStyle: 'solid',
+    borderWidth: 2
   },
   primaryLightButtonText: {
     fontSize: 16,
     color: colors.primary,
-    textAlign: "center",
-    paddingBottom: 1,
+    textAlign: 'center',
+    paddingBottom: 1
   },
   footerContainer: {
-    position: "absolute",
+    position: 'absolute',
     bottom: 10,
     left: 0,
     right: 0,
-    alignItems: "center",
-    flexDirection: "row",
-    justifyContent: "center",
+    alignItems: 'center',
+    flexDirection: 'row',
+    justifyContent: 'center'
   },
   footerText: {
     fontSize: 15,
-    textAlign: "center",
-    color: colors.secondary,
+    textAlign: 'center',
+    color: colors.secondary
   },
   loginHeading: {
-    justifyContent: "center",
-    textAlign: "left",
+    justifyContent: 'center',
+    textAlign: 'left',
     fontSize: 27,
     width: 310,
-    fontFamily: "Roboto-Bold",
-    paddingBottom: 20,
+    fontFamily: 'Roboto-Bold',
+    paddingBottom: 20
   },
   textInput: {
     width: 330,
     paddingVertical: 12,
-    color: "black",
+    color: 'black',
     backgroundColor: colors.textInput,
     borderRadius: 10,
     paddingLeft: 20,
     fontSize: 15,
-    marginTop: 8,
+    marginTop: 8
   },
   passwordOuterContainer: {
-    width: "100%",
-    alignItems: "center",
+    width: '100%',
+    alignItems: 'center'
   },
   passwordInnerContainer: {
     width: 330,
-    position: "relative",
+    position: 'relative'
   },
   eyeContainer: {
-    position: "absolute",
+    position: 'absolute',
     right: 20,
     top: 22,
-    zIndex: 1,
+    zIndex: 1
   },
   additionalTextContainer: {
     width: 300,
-    alignItems: "flex-end",
-    marginTop: 8,
+    alignItems: 'flex-end',
+    marginTop: 8
   },
   additionalText: {
     color: colors.secondary,
-    fontSize: 15,
+    fontSize: 15
   },
   intermediateContainer: {
-    flexDirection: "row",
+    flexDirection: 'row',
     gap: 10,
-    paddingVertical: 20,
+    paddingVertical: 20
   },
   intermediateLine: {
     width: 95,
     height: 2,
     backgroundColor: colors.radio,
     borderRadius: 40,
-    marginTop: 11,
+    marginTop: 11
   },
   intermediateText: {
-    color: colors.intermediateText,
+    color: colors.intermediateText
   },
   allIconsContainer: {
-    flexDirection: "row",
+    flexDirection: 'row',
     gap: 10,
-    marginTop: 10,
+    marginTop: 10
   },
   iconContainer: {
     paddingVertical: 10,
     borderRadius: 5,
-    borderStyle: "solid",
+    borderStyle: 'solid',
     borderColor: colors.radio,
     borderWidth: 1,
     width: 90,
-    alignItems: "center",
-    justifyContent: "center",
+    alignItems: 'center',
+    justifyContent: 'center'
   },
   icon: {
     height: 40,
-    width: 40,
+    width: 40
   },
   simpleText: {
-    justifyContent: "center",
-    textAlign: "left",
+    justifyContent: 'center',
+    textAlign: 'left',
     fontSize: 15,
     width: 300,
-    fontFamily: "NotoSans-SemiBold",
+    fontFamily: 'NotoSans-SemiBold'
   },
   otpBoxesContainer: {
-    flexDirection: "row",
-    alignItems: "center",
-    gap: 10,
+    flexDirection: 'row',
+    alignItems: 'center',
+    gap: 10
   },
   otpTextInput: {
     height: 60,
     width: 60,
-    borderStyle: "solid",
+    borderStyle: 'solid',
     borderWidth: 1,
     borderRadius: 10,
     borderColor: colors.primary,
     fontSize: 30,
-    fontFamily: "NotoSans-SemiBold",
+    fontFamily: 'NotoSans-SemiBold',
     marginVertical: 30,
-    textAlign: "center",
-    justifyContent: "center",
+    textAlign: 'center',
+    justifyContent: 'center',
     paddingTop: 10,
-    textAlignVertical: "center",
-    includeFontPadding: false,
+    textAlignVertical: 'center',
+    includeFontPadding: false
   },
   verifyText: {
-    justifyContent: "center",
-    textAlign: "center",
+    justifyContent: 'center',
+    textAlign: 'center',
     fontSize: 15,
     width: 300,
-    fontFamily: "NotoSans-SemiBold",
-    paddingTop: 15,
+    fontFamily: 'NotoSans-SemiBold',
+    paddingTop: 15
   },
   homeHeaderContainer: {
-    flexDirection: "column",
+    flexDirection: 'column',
     width: 345,
-    paddingTop: 5,
+    paddingTop: 5
   },
   homeHeaderImgContainer: {
     height: 52,
@@ -297,49 +297,49 @@ const styles = StyleSheet.create({
     borderRadius: 30,
     borderWidth: 1,
     borderColor: colors.primary,
-    justifyContent: "center",
-    alignItems: "center",
-    overflow: "hidden",
+    justifyContent: 'center',
+    alignItems: 'center',
+    overflow: 'hidden',
     marginBottom: 23,
-    marginTop: 3,
+    marginTop: 3
   },
   homeHeaderImg: {
     height: 52,
-    width: 52,
+    width: 52
   },
   homeHeaderSearchContainer: {
-    flexDirection: "row",
-    position: "relative",
+    flexDirection: 'row',
+    position: 'relative'
   },
   homeHeaderSearchTextInput: {
     paddingVertical: 7.6,
     width: 240,
     borderRadius: 9,
-    borderColor: "black",
+    borderColor: 'black',
     borderWidth: 0.7,
-    position: "absolute",
+    position: 'absolute',
     left: 10,
     zIndex: 1,
-    alignSelf: "center",
+    alignSelf: 'center',
     paddingLeft: 42,
     paddingRight: 3,
     fontSize: 15,
-    backgroundColor: "white",
+    backgroundColor: 'white'
   },
   locationContainer: {
-    flexDirection: "row",
-    paddingTop: 5,
+    flexDirection: 'row',
+    paddingTop: 5
   },
   iconLocationOutline: {
     fontSize: 22,
-    color: "black",
+    color: 'black'
   },
   logotextAndSearchContainer: {
-    flexDirection: "row",
-    alignItems: "center",
-    justifyContent: "space-between",
-    width: "97%",
-    alignSelf: "center",
+    flexDirection: 'row',
+    alignItems: 'center',
+    justifyContent: 'space-between',
+    width: '97%',
+    alignSelf: 'center'
   },
   searchButton: {
     height: 39.5,
@@ -347,283 +347,298 @@ const styles = StyleSheet.create({
     backgroundColor: colors.primary,
     borderTopLeftRadius: 9,
     borderBottomLeftRadius: 9,
-    zIndex: 2,
+    zIndex: 2
   },
   searchIcon: {
     fontSize: 24,
-    color: "white",
-    justifyContent: "center",
-    alignSelf: "center",
+    color: 'white',
+    justifyContent: 'center',
+    alignSelf: 'center',
     paddingTop: 7,
-    zIndex: 3,
+    zIndex: 3
   },
   categoryButtonsContainer: {
-    flexDirection: "row",
-    alignItems: "center",
-    justifyContent: "space-between",
-    width: "97%",
-    alignSelf: "center",
-    paddingBottom: 10,
+    flexDirection: 'row',
+    alignItems: 'center',
+    justifyContent: 'space-between',
+    width: '97%',
+    alignSelf: 'center',
+    paddingBottom: 10
   },
   categoryButton: {
     height: 39.5,
     width: 70,
     borderRadius: 9,
-    borderStyle: "solid",
+    borderStyle: 'solid',
     borderWidth: 0.7,
-    borderColor: "black",
-    alignItems: "center",
-    flexDirection: "row",
-    justifyContent: "center",
-    backgroundColor: "white",
+    borderColor: 'black',
+    alignItems: 'center',
+    flexDirection: 'row',
+    justifyContent: 'center',
+    backgroundColor: 'white'
   },
   sliderIcon: {
-    color: "gray",
-    fontSize: 18,
+    color: 'gray',
+    fontSize: 18
   },
   categoryButtonText: {
-    color: "gray",
+    color: 'gray',
     fontSize: 16,
     paddingLeft: 7,
-    paddingBottom: 2,
+    paddingBottom: 2
   },
   cardsHeadingContainer: {
-    flexDirection: "row",
+    flexDirection: 'row',
     width: 350,
-    alignItems: "center",
-    justifyContent: "space-between",
+    alignItems: 'center',
+    justifyContent: 'space-between',
     marginTop: 20,
     marginLeft: 15,
-    alignSelf: "center",
+    alignSelf: 'center'
   },
   cardsHeadingText: {
-    fontSize: 17,
+    fontSize: 17
   },
   sortItemsContainer: {
-    alignSelf: "center",
-    width: "90%",
+    alignSelf: 'center',
+    width: '90%',
     marginTop: 40,
-    paddingBottom: 10,
+    paddingBottom: 10
   },
   sortTextContainer: {
-    borderStyle: "solid",
+    borderStyle: 'solid',
     borderWidth: 0.5,
-    borderTopColor: "gray",
-    borderBottomColor: "transparent",
-    borderRightColor: "transparent",
-    borderLeftColor: "transparent",
-    flexDirection: "row",
-    justifyContent: "space-between",
-    paddingVertical: 10,
+    borderTopColor: 'gray',
+    borderBottomColor: 'transparent',
+    borderRightColor: 'transparent',
+    borderLeftColor: 'transparent',
+    flexDirection: 'row',
+    justifyContent: 'space-between',
+    paddingVertical: 10
   },
   sortText: {
     fontSize: 16,
-    fontFamily: "Roboto-Medium",
-    paddingLeft: 10,
+    fontFamily: 'Roboto-Medium',
+    paddingLeft: 10
   },
   checkbox: {
     height: 20,
     width: 20,
     borderWidth: 1,
-    borderColor: "black",
+    borderColor: 'black',
     borderRadius: 5,
-    alignItems: "center",
-    justifyContent: "center",
-    marginRight: 10,
+    alignItems: 'center',
+    justifyContent: 'center',
+    marginRight: 10
   },
   sortRadio: {
     height: 20,
     width: 20,
     borderWidth: 1.5,
-    borderColor: "black",
+    borderColor: 'black',
     borderRadius: 20,
-    alignItems: "center",
-    justifyContent: "center",
+    alignItems: 'center',
+    justifyContent: 'center',
     marginRight: 10,
-    marginTop: 2,
+    marginTop: 2
   },
   recommendationsContainer: {
     width: 383,
-    paddingTop: 10,
+    paddingTop: 10
   },
   cardsContainer: {
-    flexDirection: "row",
+    flexDirection: 'row',
     paddingHorizontal: 15,
-    gap: 15,
+    gap: 15
   },
   card: {
     height: 455,
     width: 260,
-    borderStyle: "solid",
-    backgroundColor: "white",
+    borderStyle: 'solid',
+    backgroundColor: 'white',
     borderRadius: 10,
-    overflow: "hidden",
-    position: "relative",
+    overflow: 'hidden',
+    position: 'relative'
   },
   cardImage: {
-    width: "100%",
-    height: "40%",
-    top: 0,
+    width: '100%',
+    height: '40%',
+    top: 0
   },
   tabIconsContainer: {
-    flexDirection: "row",
-    justifyContent: "center",
+    flexDirection: 'row',
+    justifyContent: 'center',
     paddingTop: 8,
     paddingBottom: 5,
-    gap: 50,
+    gap: 50
   },
   tabIcons: {
     fontSize: 26,
-    color: colors.primary,
+    color: colors.primary
   },
   cardImgIconsContainer: {
-    flexDirection: "row-reverse",
+    flexDirection: 'row-reverse',
     gap: 15,
-    position: "absolute",
+    position: 'absolute',
     right: 0,
-    margin: 10,
+    margin: 10
   },
   cardImgIconRoundContainer: {
     height: 35,
     width: 35,
     borderRadius: 35,
-    backgroundColor: "rgba(255, 255, 255, 0.6)",
+    backgroundColor: 'rgba(255, 255, 255, 0.6)'
   },
   likeIcon: {
-    justifyContent: "center",
+    justifyContent: 'center',
     fontSize: 26,
-    color: "red",
-    textAlign: "center",
-    paddingTop: 5,
+    color: 'red',
+    textAlign: 'center',
+    paddingTop: 5
   },
   shareIcon: {
-    justifyContent: "center",
+    justifyContent: 'center',
     fontSize: 24,
-    color: "blue",
-    textAlign: "center",
+    color: 'blue',
+    textAlign: 'center',
     paddingTop: 6,
-    paddingRight: 3,
+    paddingRight: 3
   },
   //card data below image is is started here:
   nameAndLocContainer: {
-    flexDirection: "row",
+    flexDirection: 'row',
     paddingHorizontal: 8,
     paddingTop: 10,
-    width: "100%",
-    justifyContent: "space-between",
+    width: '100%',
+    justifyContent: 'space-between'
   },
   cardsSimpleText: {
-    color: "gray",
-    fontSize: 14,
+    color: 'gray',
+    fontSize: 14
   },
   cardsPriceContainer: {
-    justifyContent: "center",
-    alignItems: "flex-end",
+    justifyContent: 'center',
+    alignItems: 'flex-end'
   },
   cardIconsContainer: {
-    flexDirection: "row",
+    flexDirection: 'row',
     gap: 20,
-    padding: 15,
+    padding: 15
   },
   cardsCategoryButtonContainer: {
     paddingLeft: 15,
-    paddingBottom: 10,
+    paddingBottom: 10
   },
   cardsCategoryButton: {
     paddingVertical: 6,
     width: 80,
-    borderStyle: "solid",
+    borderStyle: 'solid',
     borderWidth: 0.8,
     borderColor: colors.primary,
     borderRadius: 40,
     backgroundColor: colors.background,
-    flexDirection: "row",
+    flexDirection: 'row',
     gap: 5,
-    justifyContent: "center",
-    alignItems: "center",
-    alignSelf: "left",
+    justifyContent: 'center',
+    alignItems: 'center',
+    alignSelf: 'left'
+  },
+  availbilityButton: {
+    paddingVertical: 6,
+    paddingLeft: 15,
+    paddingRight: 10,
+    borderStyle: 'solid',
+    borderWidth: 0.8,
+    borderColor: colors.primary,
+    borderRadius: 40,
+    backgroundColor: colors.background,
+    flexDirection: 'row',
+    gap: 5,
+    justifyContent: 'center',
+    alignItems: 'center',
+    alignSelf: 'left'
   },
   cardsCategoryButtonText: {
     color: colors.primary,
-    textAlign: "center",
-    justifyContent: "center",
-    fontFamily: "Roboto-Medium",
+    textAlign: 'center',
+    justifyContent: 'center',
+    fontFamily: 'Roboto-Medium'
   },
   cardsSmallButton: {
     height: 38,
     width: 55,
-    borderStyle: "solid",
+    borderStyle: 'solid',
     borderWidth: 1.2,
     borderColor: colors.primary,
     borderRadius: 40,
     backgroundColor: colors.background,
-    justifyContent: "center",
-    alignItems: "center",
+    justifyContent: 'center',
+    alignItems: 'center',
     marginLeft: 15,
-    marginVertical: 10,
+    marginVertical: 10
   },
   cardsPrimaryButton: {
-    color: "white",
+    color: 'white',
     backgroundColor: colors.primary,
     paddingVertical: 7,
-    width: "90%",
+    width: '90%',
     borderRadius: 10,
     margin: 10,
-    alignSelf: "center",
-    textAlign: "center",
+    alignSelf: 'center',
+    textAlign: 'center',
     fontSize: 16,
     letterSpacing: 0.5,
-    fontFamily: "Roboto-Regular",
+    fontFamily: 'Roboto-Regular'
   },
   cardsSecondaryButton: {
     color: colors.primary,
     borderColor: colors.primary,
     paddingVertical: 6,
-    width: "90%",
+    width: '90%',
     borderRadius: 10,
-    borderStyle: "solid",
+    borderStyle: 'solid',
     borderWidth: 1.5,
     borderColor: colors.primary,
-    alignSelf: "center",
-    textAlign: "center",
+    alignSelf: 'center',
+    textAlign: 'center',
     fontSize: 15,
     letterSpacing: 0.5,
-    fontFamily: "Roboto-Medium",
+    fontFamily: 'Roboto-Medium'
   },
   scheduleContainer: {
-    alignSelf: "center",
-    backgroundColor: "white",
-    alignItems: "center",
-    flexDirection: "column",
-    justifyContent: "space-between",
+    alignSelf: 'center',
+    backgroundColor: 'white',
+    alignItems: 'center',
+    flexDirection: 'column',
+    justifyContent: 'space-between'
   },
   scheduleInnerContainer: {
     width: 350,
     backgroundColor: colors.darkBackground,
     marginTop: 25,
-    alignItems: "center",
+    alignItems: 'center',
     padding: 8,
     borderRadius: 10,
     paddingHorizontal: 15,
-    alignSelf: "center",
+    alignSelf: 'center',
     marginBottom: 10,
-    paddingTop: 9,
+    paddingTop: 9
   },
   scheduleTextInput: {
     width: 320,
     paddingVertical: 10,
-    color: "black",
-    backgroundColor: "white",
+    color: 'black',
+    backgroundColor: 'white',
     borderRadius: 7,
     paddingHorizontal: 20,
     fontSize: 15,
-    marginBottom: 8,
+    marginBottom: 8
   },
   scheduleFooter: {
-    alignItems: "center",
-    justifyContent: "center",
+    alignItems: 'center',
+    justifyContent: 'center',
     paddingTop: 58,
-    paddingBottom: 10,
+    paddingBottom: 10
   },
   scheduleButton: {
     width: 325,
@@ -631,242 +646,242 @@ const styles = StyleSheet.create({
     backgroundColor: colors.primary,
     paddingVertical: 9.5,
     marginTop: 4,
-    alignSelf: "center",
+    alignSelf: 'center'
   },
   scheduleFooterUpContainer: {
-    flexDirection: "row",
-    justifyContent: "space-between",
+    flexDirection: 'row',
+    justifyContent: 'space-between',
     width: 330,
-    alignItems: "center",
+    alignItems: 'center'
   },
   whatsAppContainer: {
-    flexDirection: "row",
+    flexDirection: 'row',
     gap: 5,
-    justifyContent: "center",
+    justifyContent: 'center'
   },
   whatsAppText: {
-    alignSelf: "center",
+    alignSelf: 'center'
   },
   switch: {
     transform: [{ scaleX: 1.0 }, { scaleY: 1.1 }],
-    marginVertical: 10,
+    marginVertical: 10
   },
   handleIndicatorStyle: {
     backgroundColor: colors.primary,
     height: 5,
     width: 50,
-    borderRadius: 5,
+    borderRadius: 5
   },
   propertyDetailsHeaderContainer: {
-    flexDirection: "row",
+    flexDirection: 'row',
     width: 345,
     paddingTop: 15,
-    justifyContent: "space-between",
+    justifyContent: 'space-between'
   },
   relativePosition: {
-    position: "relative",
+    position: 'relative'
   },
   backButton: {
     borderColor: colors.radio,
     borderRadius: 8,
     height: 32,
     width: 32,
-    alignItems: "center",
-    justifyContent: "center",
+    alignItems: 'center',
+    justifyContent: 'center',
     paddingRight: 2,
-    backgroundColor: colors.backButton,
+    backgroundColor: colors.backButton
   },
   propertyDetailsEmptySpace: {
     width: 20,
-    backgroundColor: colors.background,
+    backgroundColor: colors.background
   },
   propertyDetailsHeaderTextContainer: {
     flex: 1,
-    alignItems: "center",
-    justifyContent: "center",
+    alignItems: 'center',
+    justifyContent: 'center'
   },
   propertyDetailsHeaderText: {
-    fontSize: 18,
+    fontSize: 18
   },
   propertyMainImage: {
     width: 355,
     height: 215,
     borderRadius: 10,
-    alignSelf: "center",
-    marginBottom: 10,
+    alignSelf: 'center',
+    marginBottom: 10
   },
   heartIconContainer: {
     height: 38,
     width: 38,
     borderRadius: 20,
-    backgroundColor: "rgba(255, 255, 255, 0.6)",
-    position: "absolute",
+    backgroundColor: 'rgba(255, 255, 255, 0.6)',
+    position: 'absolute',
     right: 5,
     margin: 12,
-    alignItems: "center",
-    justifyContent: "center",
-    paddingTop: 2,
+    alignItems: 'center',
+    justifyContent: 'center',
+    paddingTop: 2
   },
   propertyDetailsLike: {
     fontSize: 26,
-    color: "red",
+    color: 'red'
   },
   propertyDetailsHeading2: {
-    flexDirection: "row",
-    alignItems: "center",
+    flexDirection: 'row',
+    alignItems: 'center',
     width: 345,
     paddingTop: 40,
-    paddingBottom: 10,
+    paddingBottom: 10
   },
   smallFont: {
-    fontSize: 13,
+    fontSize: 13
   },
   smallGrayFont: {
     fontSize: 12,
-    color: "gray",
+    color: 'gray'
   },
   propertyImgContainer: {
-    flexDirection: "row",
+    flexDirection: 'row',
     gap: 10,
     width: 360,
-    alignSelf: "center",
+    alignSelf: 'center'
   },
   pillsContainer: {
-    flexDirection: "row",
+    flexDirection: 'row',
     gap: 10,
     width: 355,
     marginTop: 5,
-    alignSelf: "center",
+    alignSelf: 'center'
   },
   pills: {
     backgroundColor: colors.pills,
     borderRadius: 8,
     paddingVertical: 8,
-    flexDirection: "row",
+    flexDirection: 'row',
     gap: 5,
-    alignItems: "center",
-    justifyContent: "center",
+    alignItems: 'center',
+    justifyContent: 'center',
     paddingHorizontal: 10,
-    marginRight: 8,
+    marginRight: 8
   },
   detailContainer: {
     width: 345,
-    alignSelf: "center",
-    marginTop: 18,
+    alignSelf: 'center',
+    marginTop: 18
   },
   contentDescriptionContainer: {
-    color: "gray",
+    color: 'gray',
     fontSize: 14,
     lineHeight: 17,
     marginTop: 10,
-    textAlign: "justify",
+    textAlign: 'justify'
   },
   roomTypesContainer: {
     gap: 10,
     width: 355,
-    alignSelf: "center",
+    alignSelf: 'center'
   },
   roomTypesHeading: {
-    flexDirection: "row",
-    justifyContent: "space-between",
+    flexDirection: 'row',
+    justifyContent: 'space-between',
     paddingRight: 15,
     marginBottom: 10,
-    alignItems: "center",
-    marginTop: 8,
+    alignItems: 'center',
+    marginTop: 8
   },
   roomTypeButtonContainer: {
     height: 38,
     paddingHorizontal: 10,
-    borderStyle: "solid",
+    borderStyle: 'solid',
     borderWidth: 1.2,
     borderColor: colors.primary,
     borderTopRightRadius: 40,
     borderBottomRightRadius: 40,
     backgroundColor: colors.background,
-    justifyContent: "center",
-    alignItems: "center",
+    justifyContent: 'center',
+    alignItems: 'center',
     paddingBottom: 2,
-    marginLeft: 3,
+    marginLeft: 3
   },
   roomTypeDescription: {
-    color: "gray",
-    textAlign: "justify",
-    paddingHorizontal: 5,
+    color: 'gray',
+    textAlign: 'justify',
+    paddingHorizontal: 5
   },
   availabilityText: {
     paddingHorizontal: 5,
     paddingBottom: 10,
-    paddingTop: 5,
+    paddingTop: 5
   },
   grayText: {
-    color: "gray",
+    color: 'gray'
   },
   readMoreText: {
-    color: "blue",
-    alignSelf: "center",
+    color: 'blue',
+    alignSelf: 'center'
   },
   previewContainer: {
     fontSize: 17,
     padding: 7,
-    paddingTop: 9,
+    paddingTop: 9
   },
   propertyImg: {
     height: 95,
     width: 110,
     margin: 5,
-    borderRadius: 10,
+    borderRadius: 10
   },
   contactText: {
-    color: "gray",
+    color: 'gray',
     fontSize: 14,
     lineHeight: 17,
     marginTop: 10,
-    textAlign: "justify",
+    textAlign: 'justify'
   },
   phoneNum: {
-    color: "blue",
-    textDecorationLine: "underline",
+    color: 'blue',
+    textDecorationLine: 'underline'
   },
   propertyDetailsContentContainer: {
-    width: 370,
+    width: 370
   },
   propertyRatingContainer: {
     paddingVertical: 10,
-    paddingLeft: 5,
+    paddingLeft: 5
   },
   servicesContainer: {
-    paddingBottom: 20,
+    paddingBottom: 20
   },
   servicesInnerContainer: {
-    flexDirection: "row",
+    flexDirection: 'row',
     gap: 15,
     paddingLeft: 10,
-    paddingTop: 10,
+    paddingTop: 10
   },
   servicesContentContainer: {
-    flexDirection: "row",
-    gap: 5,
+    flexDirection: 'row',
+    gap: 5
   },
   servicesText: {
-    paddingTop: 3,
+    paddingTop: 3
   },
   reviewsCardsContainer: {
-    flexDirection: "row",
+    flexDirection: 'row',
     width: 380,
     paddingVertical: 8,
-    paddingLeft: 5,
+    paddingLeft: 5
   },
   reviewsCard: {
     height: 100,
     width: 265,
-    backgroundColor: "white",
+    backgroundColor: 'white',
     borderRadius: 10,
-    margin: 7,
+    margin: 7
   },
   reviewsCardContentContainer: {
-    flexDirection: "row",
-    justifyContent: "space-between",
-    width: "100%",
+    flexDirection: 'row',
+    justifyContent: 'space-between',
+    width: '100%'
   },
   reviewsUserImg: {
     marginTop: 8,
@@ -874,139 +889,139 @@ const styles = StyleSheet.create({
     height: 55,
     width: 55,
     borderRadius: 50,
-    backgroundColor: "gray",
+    backgroundColor: 'gray'
   },
   reviewsContentContainer: {
     width: 200,
-    flexDirection: "column",
+    flexDirection: 'column',
     gap: 3,
     paddingHorizontal: 8,
-    paddingTop: 4,
+    paddingTop: 4
   },
   reviewsRatingContainer: {
-    flexDirection: "row",
-    gap: 3,
+    flexDirection: 'row',
+    gap: 3
   },
   reviewsRatingText: {
-    color: "gray",
+    color: 'gray'
   },
   reviewsCommentText: {
-    fontSize: 10,
+    fontSize: 10
   },
 
   propertyDetailsLocationContainer: {
-    flexDirection: "row",
+    flexDirection: 'row',
     gap: 10,
     padding: 10,
-    paddingTop: 30,
+    paddingTop: 30
   },
   propertyDetailsGoogleMap: {
     height: 230,
     width: 350,
-    alignSelf: "center",
+    alignSelf: 'center',
     marginTop: 5,
     marginBottom: 50,
-    borderStyle: "dashed",
+    borderStyle: 'dashed',
     borderWidth: 0.3,
-    borderColor: "gray",
+    borderColor: 'gray'
   },
   propertyDetailsButtonsContainer: {
-    flexDirection: "row",
-    justifyContent: "center",
+    flexDirection: 'row',
+    justifyContent: 'center',
     gap: 10,
     paddingVertical: 5,
-    backgroundColor: "white",
+    backgroundColor: 'white'
   },
   propertyDetailsPrimaryButton: {
     paddingVertical: 8,
     width: 178,
     backgroundColor: colors.primary,
-    borderRadius: 8,
+    borderRadius: 8
   },
   propertyDetailsPrimaryButtonText: {
     fontSize: 16,
-    color: "white",
-    textAlign: "center",
-    paddingTop: 2,
+    color: 'white',
+    textAlign: 'center',
+    paddingTop: 2
   },
   propertyDetailsSecondaryButton: {
     paddingVertical: 8,
     width: 175,
     borderRadius: 8,
-    borderStyle: "solid",
+    borderStyle: 'solid',
     borderWidth: 2,
-    borderColor: colors.primary,
+    borderColor: colors.primary
   },
   propertyDetailsSecondaryButtonText: {
     fontSize: 16,
     color: colors.primary,
-    textAlign: "center",
+    textAlign: 'center'
   },
   bookingHeaderText: {
-    fontSize: 18,
+    fontSize: 18
   },
   bookingImgAndDetailsContainer: {
-    flexDirection: "row",
-    width: 345,
+    flexDirection: 'row',
+    width: 345
   },
   bookingImgDetailsContainer: {
-    flexDirection: "column",
+    flexDirection: 'column',
     gap: 10,
     paddingTop: 15,
-    paddingLeft: 5,
+    paddingLeft: 5
   },
   bookingImg: {
     height: 130,
     width: 160,
     margin: 8,
     marginBottom: 15,
-    borderRadius: 10,
+    borderRadius: 10
   },
   bookingDetailsContainer: {
     paddingVertical: 5,
     width: 350,
-    backgroundColor: "white",
-    alignSelf: "center",
+    backgroundColor: 'white',
+    alignSelf: 'center',
     borderRadius: 7,
     paddingHorizontal: 10,
     marginTop: 10,
-    justifyContent: "center",
+    justifyContent: 'center'
   },
   bookingDetailsTextInput: {
     marginVertical: 5,
-    borderStyle: "solid",
+    borderStyle: 'solid',
     borderWidth: 1,
     borderRadius: 7,
     borderColor: colors.background,
     paddingHorizontal: 12,
     paddingVertical: 10,
-    backgroundColor: "white",
+    backgroundColor: 'white',
     width: 330,
-    alignSelf: "center",
+    alignSelf: 'center'
   },
   bookingDetailsContainerDouble: {
-    flexDirection: "row",
-    justifyContent: "space-between",
+    flexDirection: 'row',
+    justifyContent: 'space-between'
   },
   bookingDetailsContainer2: {
-    width: 152,
+    width: 152
   },
   intermediateLine2: {
     width: 1.5,
     height: 60,
     backgroundColor: colors.radio,
     borderRadius: 40,
-    position: "absolute",
-    top: "50%",
-    left: "50%",
+    position: 'absolute',
+    top: '50%',
+    left: '50%',
     marginLeft: -1,
-    marginTop: -30,
+    marginTop: -30
   },
   radioContainer: {
-    flexDirection: "row",
-    alignItems: "center",
+    flexDirection: 'row',
+    alignItems: 'center',
     marginVertical: 13,
-    paddingLeft: 10,
+    paddingLeft: 10
   },
   radio: {
     width: 18,
@@ -1014,11 +1029,11 @@ const styles = StyleSheet.create({
     borderWidth: 1.5,
     borderColor: colors.radio,
     borderRadius: 10,
-    marginHorizontal: 6,
+    marginHorizontal: 6
   },
   sharingContainer: {
-    flexDirection: "row",
-    gap: 10,
+    flexDirection: 'row',
+    gap: 10
   },
   operatorsContainer: {
     height: 25,
@@ -1026,80 +1041,80 @@ const styles = StyleSheet.create({
     borderRadius: 6,
     borderWidth: 1,
     borderColor: colors.radio,
-    marginVertical: 8,
+    marginVertical: 8
   },
   operators: {
     fontSize: 16,
-    textAlign: "center",
+    textAlign: 'center'
   },
   extraPadding: {
-    padding: 30,
+    padding: 30
   },
   padding50: {
-    padding: 50,
+    padding: 50
   },
   paddingBottom300: {
-    paddingBottom: 300,
+    paddingBottom: 300
   },
   calendarContainer: {
     flex: 1,
-    justifyContent: "center",
-    backgroundColor: colors.darkBackground,
+    justifyContent: 'center',
+    backgroundColor: colors.darkBackground
   },
   calendar: {
     margin: 20,
-    backgroundColor: "white",
+    backgroundColor: 'white',
     borderRadius: 10,
-    padding: 15,
+    padding: 15
   },
   calendarCloseText: {
     fontSize: 16,
     color: colors.primary,
-    textAlign: "center",
+    textAlign: 'center',
     paddingBottom: 2,
     paddingTop: 10,
-    fontWeight: 400,
+    fontWeight: 400
   },
   bookingFooterContainer: {
     padding: 5,
     width: 380,
-    alignSelf: "center",
-    flexDirection: "row",
-    justifyContent: "space-between",
-    backgroundColor: "white",
+    alignSelf: 'center',
+    flexDirection: 'row',
+    justifyContent: 'space-between',
+    backgroundColor: 'white'
   },
   bookingButton: {
     paddingVertical: 12,
     width: 120,
     backgroundColor: colors.primary,
-    borderRadius: 8,
+    borderRadius: 8
   },
   checkoutContainer: {
     paddingHorizontal: 10,
-    flexDirection: "column",
+    flexDirection: 'column',
     gap: 5,
-    paddingTop: 10,
+    paddingTop: 10
   },
   checkoutAllPaymentsContainer: {
     paddingHorizontal: 10,
-    flexDirection: "column",
+    flexDirection: 'column',
     gap: 10,
-    paddingTop: 20,
+    paddingTop: 20
   },
   checkoutPaymentContainer: {
-    flexDirection: "row",
+    flexDirection: 'row'
   },
   checkoutPaymentText: {
-    fontSize: 15,
+    fontSize: 15
   },
   checkoutPriceText: {
     fontSize: 15,
     marginLeft: 170,
-    position: "absolute",
+    position: 'absolute'
   },
   checkoutFooterContainer: {
-    alignItems: "center",
-    paddingVertical: 15,
+    alignItems: 'center',
+    paddingVertical: 15
   },
   paymentButton: {
     width: 345,
@@ -1108,129 +1123,129 @@ const styles = StyleSheet.create({
     paddingVertical: 8,
     paddingHorizontal: 20,
     marginVertical: 10,
-    alignSelf: "center",
+    alignSelf: 'center'
   },
   paymentButtonTextContainer: {
-    flexDirection: "row",
-    justifyContent: "space-between",
+    flexDirection: 'row',
+    justifyContent: 'space-between'
   },
   paymentMethodsContainer: {
     paddingVertical: 10,
     paddingHorizontal: 10,
-    flexDirection: "row",
-    justifyContent: "space-between",
+    flexDirection: 'row',
+    justifyContent: 'space-between'
   },
   paymentSuccessText: {
     fontSize: 20,
     fontWeight: 600,
-    fontStyle: "italic",
+    fontStyle: 'italic'
   },
   currentCard: {
     height: 455,
     width: 355,
-    borderStyle: "solid",
-    backgroundColor: "white",
+    borderStyle: 'solid',
+    backgroundColor: 'white',
     borderRadius: 10,
-    overflow: "hidden",
-    position: "relative",
-    marginTop: 10,
+    overflow: 'hidden',
+    position: 'relative',
+    marginTop: 10
   },
   currentCardImage: {
-    width: "100%",
-    height: "40%",
+    width: '100%',
+    height: '40%',
     top: 0,
-    contentFit: "fill",
+    contentFit: 'fill'
   },
   viewingPeopleContainer: {
     paddingVertical: 7,
-    width: "100%",
-    position: "absolute",
+    width: '100%',
+    position: 'absolute',
     marginTop: 145,
-    backgroundColor: "rgba(114, 2, 170, 0.8)",
-    alignItems: "center",
-    alignSelf: "center",
-    flexDirection: "row",
-    justifyContent: "center",
+    backgroundColor: 'rgba(114, 2, 170, 0.8)',
+    alignItems: 'center',
+    alignSelf: 'center',
+    flexDirection: 'row',
+    justifyContent: 'center'
   },
   stayButton: {
     paddingVertical: 7,
     paddingHorizontal: 12,
     borderTopRightRadius: 30,
     borderBottomRightRadius: 30,
-    backgroundColor: "rgba(234, 195, 37, 0.6)",
-    alignItems: "center",
-    position: "absolute",
-    marginTop: 10,
+    backgroundColor: 'rgba(234, 195, 37, 0.6)',
+    alignItems: 'center',
+    position: 'absolute',
+    marginTop: 10
   },
   daysLeftContainer: {
-    flexDirection: "row",
+    flexDirection: 'row',
     paddingHorizontal: 8,
     paddingTop: 10,
-    width: "100%",
-    justifyContent: "space-between",
+    width: '100%',
+    justifyContent: 'space-between',
     marginTop: 4,
     marginBottom: 18,
-    alignItems: "center",
+    alignItems: 'center'
   },
   currentDaysLeftButton: {
     paddingVertical: 6,
     paddingHorizontal: 15,
-    borderStyle: "solid",
+    borderStyle: 'solid',
     borderWidth: 0.8,
     borderColor: colors.primary,
     borderRadius: 40,
     backgroundColor: colors.background,
-    flexDirection: "row",
+    flexDirection: 'row',
     gap: 5,
-    justifyContent: "center",
-    alignItems: "center",
-    alignSelf: "left",
+    justifyContent: 'center',
+    alignItems: 'center',
+    alignSelf: 'left'
   },
   currentCardsCategoryButtonContainer: {
-    flexDirection: "row",
+    flexDirection: 'row',
     gap: 10,
     paddingLeft: 18,
-    paddingBottom: 10,
+    paddingBottom: 10
   },
   currentCardsCategoryButton: {
     height: 38,
     paddingHorizontal: 10,
-    borderStyle: "solid",
+    borderStyle: 'solid',
     borderWidth: 1.2,
     borderColor: colors.primary,
     borderRadius: 40,
     backgroundColor: colors.background,
-    flexDirection: "row",
+    flexDirection: 'row',
     gap: 5,
-    justifyContent: "center",
-    alignItems: "center",
+    justifyContent: 'center',
+    alignItems: 'center'
   },
   currentStayButtonsContainer: {
-    flexDirection: "row",
-    justifyContent: "center",
+    flexDirection: 'row',
+    justifyContent: 'center',
     gap: 10,
-    paddingVertical: 10,
+    paddingVertical: 10
   },
   homeTabBar: {
     paddingBottom: 4,
-    position: "fixed",
+    position: 'fixed',
     bottom: 0,
     left: 0,
     right: 0,
     zIndex: 100,
-    backgroundColor: "white",
+    backgroundColor: 'white'
   },
   tabBarLabel: {
     fontSize: 11,
-    fontWeight: "bold",
+    fontWeight: 'bold'
   },
   customTabButton: {
-    position: "absolute",
+    position: 'absolute',
     bottom: 4.5,
-    left: "50%",
+    left: '50%',
     transform: [{ translateX: -28 }], // half of width
-    justifyContent: "center",
-    alignItems: "center",
+    justifyContent: 'center',
+    alignItems: 'center',
     backgroundColor: colors.primary,
     borderRadius: 32,
     width: 54,
@@ -1240,52 +1255,52 @@ const styles = StyleSheet.create({
     shadowOpacity: 0.3,
     shadowRadius: 3,
     elevation: 3,
-    zIndex: 10,
+    zIndex: 10
   },
   tabBarBadgeStyle: {
     backgroundColor: colors.primary,
-    color: "white",
+    color: 'white'
   },
   selfAlignment: {
-    alignSelf: "center",
+    alignSelf: 'center'
   },
   extraWidth: {
-    width: 50,
+    width: 50
   },
   extraTopMargin: {
-    marginTop: 132,
+    marginTop: 132
   },
   extraVerticalMargin: {
-    marginVertical: 8,
+    marginVertical: 8
   },
   extraVerticalPadding: {
-    paddingVertical: 50,
+    paddingVertical: 50
   },
   fontPadding: {
-    includeFontPadding: false,
+    includeFontPadding: false
   },
   flexDirection: {
-    flexDirection: "row",
+    flexDirection: 'row'
   },
   flex: {
-    flex: 1,
+    flex: 1
   },
   selfAlign: {
-    alignSelf: "center",
+    alignSelf: 'center'
   },
   extraPadding50: {
-    padding: 50,
+    padding: 50
   },
   flexStart: {
-    justifyContent: "flex-start",
+    justifyContent: 'flex-start'
   },
   home2Container: {
-    justifyContent: "center",
+    justifyContent: 'center',
     paddingBottom: 70,
-    backgroundColor: colors.background,
+    backgroundColor: colors.background
   },
   bottomPadding100: {
-    paddingBottom: 100,
+    paddingBottom: 100
   },
   notFoundButton: {
     width: 200,
@@ -1293,63 +1308,63 @@ const styles = StyleSheet.create({
     backgroundColor: colors.primary,
     paddingVertical: 8.5,
     marginTop: 20,
-    alignSelf: "center",
+    alignSelf: 'center'
   },
   hostelsListContainer: {
     marginTop: 60,
     marginBottom: 30,
-    alignitems: "Center",
-    justifyContent: "center",
-    gap: 10,
+    alignitems: 'Center',
+    justifyContent: 'center',
+    gap: 10
   },
   listCard: {
     width: 350,
-    backgroundColor: "white",
+    backgroundColor: 'white',
     padding: 10,
     borderRadius: 9,
-    flexDirection: "row",
-    alignItems: "center",
-    justifyContent: "left",
-    gap: 9,
+    flexDirection: 'row',
+    alignItems: 'center',
+    justifyContent: 'left',
+    gap: 9
   },
   listImgContainer: {
     height: 90,
     width: 90,
     borderRadius: 9,
-    overflow: "hidden",
-    alignItems: "center",
-    justifyContent: "center",
+    overflow: 'hidden',
+    alignItems: 'center',
+    justifyContent: 'center'
   },
   listImage: {
     height: 90,
-    width: 90,
+    width: 90
   },
   listPill: {
     backgroundColor: colors.background,
     borderRadius: 8,
     paddingVertical: 5,
-    flexDirection: "row",
+    flexDirection: 'row',
     gap: 5,
-    alignItems: "center",
-    justifyContent: "center",
+    alignItems: 'center',
+    justifyContent: 'center',
     width: 60,
     marginRight: 8,
     marginTop: 5,
-    marginLeft: 3,
+    marginLeft: 3
   },
   ratingTextInput: {
     marginVertical: 5,
-    borderStyle: "solid",
+    borderStyle: 'solid',
     borderWidth: 1.1,
     borderRadius: 7,
-    borderColor: "gray",
+    borderColor: 'gray',
     paddingHorizontal: 12,
     paddingVertical: 8,
-    backgroundColor: "white",
+    backgroundColor: 'white',
     width: 330,
-    alignSelf: "center",
+    alignSelf: 'center',
     fontSize: 16,
-    marginTop: 5,
+    marginTop: 5
   },
   profileImgContainer: {
     marginTop: 50,
@@ -1358,42 +1373,42 @@ const styles = StyleSheet.create({
     height: 120,
     width: 120,
     borderRadius: 60,
-    borderColor: "white",
-    overflow: "hidden",
+    borderColor: 'white',
+    overflow: 'hidden'
   },
   profileImg: {
     height: 120,
-    width: 150,
+    width: 150
   },
   profileImgEditor: {
-    position: "absolute",
+    position: 'absolute',
     right: 0,
     top: 130,
     backgroundColor: colors.primary,
     borderRadius: 7,
     paddingVertical: 4,
-    paddingHorizontal: 5,
+    paddingHorizontal: 5
   },
   profileDetailContainer: {
     width: 330,
-    marginBottom: 30,
+    marginBottom: 30
   },
   profileDetailText: {
-    color: "gray",
+    color: 'gray',
     fontSize: 13,
-    marginBottom: 5,
+    marginBottom: 5
   },
   fontFifteen: {
-    fontSize: 15,
+    fontSize: 15
   },
   profileDescriptionBottomLine: {
-    width: "100%",
+    width: '100%',
     height: 1,
     borderWidth: 1,
     marginTop: 2,
     borderColor: colors.radio,
     borderRadius: 10,
-    backgroundColor: colors.radio,
+    backgroundColor: colors.radio
   },
   profileSaveButton: {
     backgroundColor: colors.primary,
@@ -1401,161 +1416,161 @@ const styles = StyleSheet.create({
     width: 100,
     paddingVertical: 9,
     marginVertical: 20,
-    flexDirection: "row",
-    justifyContent: "center",
-    alignItems: "center",
+    flexDirection: 'row',
+    justifyContent: 'center',
+    alignItems: 'center'
   },
   mySchedulesButton: {
-    flexDirection: "row",
+    flexDirection: 'row',
     paddingVertical: 13,
     paddingHorizontal: 15,
-    backgroundColor: "white",
-    alignSelf: "center",
-    alignItems: "center",
+    backgroundColor: 'white',
+    alignSelf: 'center',
+    alignItems: 'center',
     gap: 15,
     marginTop: 10,
     width: 345,
     borderRadius: 10,
-    justifyContent: "space-between",
+    justifyContent: 'space-between'
   },
   flexAndAlign: {
-    flexDirection: "row",
-    alignItems: "center",
+    flexDirection: 'row',
+    alignItems: 'center'
   },
   myScheduleButtonText: {
     fontSize: 16,
-    color: "black",
+    color: 'black'
   },
   logoutButton: {
-    flexDirection: "row",
+    flexDirection: 'row',
     paddingVertical: 10,
     paddingHorizontal: 15,
-    backgroundColor: "white",
-    alignSelf: "center",
-    alignItems: "center",
+    backgroundColor: 'white',
+    alignSelf: 'center',
+    alignItems: 'center',
     gap: 15,
     marginTop: 10,
     width: 345,
     borderRadius: 10,
-    justifyContent: "space-between",
+    justifyContent: 'space-between'
   },
   logoutButtonText: {
     fontSize: 16,
-    color: "red",
+    color: 'red'
   },
   addHostelHeadingText: {
     width: 330,
-    alignSelf: "center",
+    alignSelf: 'center',
     fontSize: 17,
-    justifyContent: "center",
-    alignItems: "left",
-    marginBottom: 10,
+    justifyContent: 'center',
+    alignItems: 'left',
+    marginBottom: 10
   },
   dashedLine: {
     width: 340,
     borderWidth: 1,
-    borderStyle: "dashed",
+    borderStyle: 'dashed',
     marginVertical: 20,
-    alignSelf: "center",
+    alignSelf: 'center'
   },
   amenitiesContainer: {
     width: 330,
-    flexDirection: "row",
-    position: "relative",
+    flexDirection: 'row',
+    position: 'relative'
   },
   amenitiesInner1stContainer: {
     gap: 6,
-    flex: 1,
+    flex: 1
   },
   amenity: {
-    flexDirection: "row",
+    flexDirection: 'row',
     gap: 5,
-    alignItems: "center",
+    alignItems: 'center'
   },
   padding13: {
-    padding: 13,
+    padding: 13
   },
   mainImgUploader: {
     height: 155,
     width: 330,
     borderWidth: 1.3,
-    borderStyle: "dashed",
+    borderStyle: 'dashed',
     borderRadius: 8,
-    alignItems: "center",
-    justifyContent: "center",
+    alignItems: 'center',
+    justifyContent: 'center'
   },
   smallImgUploader: {
     height: 85,
     width: 104.5,
     borderRadius: 8,
     borderWidth: 1.3,
-    borderStyle: "dashed",
-    alignItems: "center",
-    justifyContent: "center",
+    borderStyle: 'dashed',
+    alignItems: 'center',
+    justifyContent: 'center',
     margin: 4.5,
-    marginTop: 10,
+    marginTop: 10
   },
   amenitiesTextContainer: {
-    flexDirection: "row",
+    flexDirection: 'row',
     gap: 15,
     paddingVertical: 3,
     width: 340,
-    alignSelf: "center",
-    alignItems: "center",
+    alignSelf: 'center',
+    alignItems: 'center'
   },
   selectFromButton: {
     paddingVertical: 10,
     width: 340,
-    alignSelf: "center",
-    alignitems: "center",
-    backgroundColor: "white",
+    alignSelf: 'center',
+    alignitems: 'center',
+    backgroundColor: 'white',
     borderRadius: 8,
     marginTop: 10,
-    justifyContent: "center",
+    justifyContent: 'center'
   },
   reviewInputContainer: {
     width: 355,
-    backgroundColor: "white",
+    backgroundColor: 'white',
     padding: 10,
-    alignSelf: "center",
+    alignSelf: 'center',
     borderRadius: 9,
-    marginTop: 10,
+    marginTop: 10
   },
   horizontalMargin2: {
-    marginHorizontal: 2,
+    marginHorizontal: 2
   },
   citySelector: {
     width: 330,
-    color: "black",
+    color: 'black',
     backgroundColor: colors.textInput,
     borderRadius: 10,
     paddingLeft: 11,
     paddingRight: 5,
     marginTop: 8,
     height: 45,
-    alignItems: "center",
-    justifyContent: "center",
+    alignItems: 'center',
+    justifyContent: 'center'
   },
   dropDown: {
     fontSize: 15,
     paddingHorizontal: 10,
     paddingVertical: 8,
-    borderColor: "gray",
+    borderColor: 'gray',
     paddingRight: 30,
     marginBottom: 16,
-    backgroundColor: "transparent",
+    backgroundColor: 'transparent',
     inputWeb: {
       fontSize: 15,
       paddingHorizontal: 6,
-      color: "black",
-      backgroundColor: "transparent", // let container bg show
+      color: 'black',
+      backgroundColor: 'transparent', // let container bg show
       borderWidth: 0, // remove native <select> border
-      outline: "none", // remove focus ring
+      outline: 'none' // remove focus ring
     },
     placeholder: {
       color: colors.dropDownPlaceholder,
-      fontWeight: 100,
-    },
-  },
-});
-export default styles;
+      fontWeight: 100
+    }
+  }
+})
+export default styles

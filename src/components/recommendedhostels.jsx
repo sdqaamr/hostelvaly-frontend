@@ -1,29 +1,38 @@
-import React from "react";
-import styles from "@styles/global";
-import { View, Text, TouchableOpacity, ScrollView } from "react-native";
-import AntDesign from "@expo/vector-icons/AntDesign";
-import Ionicons from '@expo/vector-icons/Ionicons';
-import HostelCard from "./HostelCard";
+import React from 'react'
+import styles from '@styles/global'
+import { View, Text, TouchableOpacity, ScrollView } from 'react-native'
+import AntDesign from '@expo/vector-icons/AntDesign'
+import Ionicons from '@expo/vector-icons/Ionicons'
+import HostelCard from './HostelCard'
 
-const RecommendedHostels = ({ openBottomSheet }) => {
+const RecommendedHostels = ({
+  hostels = [],
+  openBottomSheet,
+  loadMoreHostels
+}) => {
   return (
     <>
       <View style={styles.cardsHeadingContainer}>
-        <Text style={styles.cardsHeadingText}>Recommended Hostel's{"  "}</Text>
-        <TouchableOpacity>
-          <Ionicons name="arrow-forward" size={24} color="black" />
+        <Text style={styles.cardsHeadingText}>Recommended Hostel's{'  '}</Text>
+        <TouchableOpacity onPress={loadMoreHostels}>
+          <Ionicons name='arrow-forward' size={24} color='black' />
         </TouchableOpacity>
       </View>
 
       <View style={styles.recommendationsContainer}>
         <ScrollView horizontal showsHorizontalScrollIndicator={false}>
           <View style={styles.cardsContainer}>
-            <HostelCard openBottomSheet={openBottomSheet} />
-            <HostelCard openBottomSheet={openBottomSheet} />
+            {hostels.map(item => (
+              <HostelCard
+                key={`${item._id}-${Math.random()}`}
+                hostel={item}
+                openBottomSheet={openBottomSheet}
+              />
+            ))}
           </View>
         </ScrollView>
       </View>
     </>
-  );
-};
-export default RecommendedHostels;
+  )
+}
+export default RecommendedHostels

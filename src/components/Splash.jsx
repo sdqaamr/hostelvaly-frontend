@@ -23,7 +23,7 @@ const Splash = () => {
       />
       <View style={styles.logoDescriptionContainer}>
         <Text style={styles.onboardingTitle}>
-          A Hostel-Searching Mobile Application{' '}
+          A Hostel-Finding Mobile-Based Application{' '}
         </Text>
       </View>
     </View>
