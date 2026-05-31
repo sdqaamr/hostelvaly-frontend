@@ -546,7 +546,7 @@ const styles = StyleSheet.create({
   availbilityButton: {
     paddingVertical: 6,
     paddingLeft: 15,
-    paddingRight: 10,
+    paddingRight: 13,
     borderStyle: 'solid',
     borderWidth: 0.8,
     borderColor: colors.primary,

@@ -80,6 +80,11 @@ export const AMENITY_ICONS = [
     keywords: ['cooler'],
     icon: MaterialCommunityIcons,
     name: 'fan'
+  },
+  {
+    keywords: ['common', 'lounge'],
+    icon: MaterialCommunityIcons,
+    name: 'sofa'
   }
 ]
 

@@ -20,6 +20,8 @@ const Home = () => {
   const [search, setSearch] = useState('')
   const pathname = usePathname()
   const [bottomSheetKey, setBottomSheetKey] = useState(0)
+  const [viewedHostels, setViewedHostels] = useState([])
+  const [viewedPage, setViewedPage] = useState(1)
 
   useEffect(() => {
     if (pathname === '/home') {
@@ -86,6 +88,51 @@ const Home = () => {
     getHostels(nextPage, true)
   }
 
+  const getViewedHostels = async (page = 1, append = false) => {
+    try {
+      let url = `${BASE_URL}/hostels?page=${page}&limit=15`
+
+      const res = await fetch(url)
+      const data = await res.json()
+
+      if (data.success) {
+        let filtered = data.data
+
+        // sort high → low rating
+        filtered = filtered.sort((a, b) => (b.rating || 0) - (a.rating || 0))
+
+        if (append) {
+          setViewedHostels(prev => {
+            const combined = [...prev, ...filtered]
+
+            // remove duplicates
+            const map = new Map()
+            combined.forEach(item => map.set(item._id, item))
+
+            // final sort again (important for pagination consistency)
+            return Array.from(map.values()).sort(
+              (a, b) => (b.rating || 0) - (a.rating || 0)
+            )
+          })
+        } else {
+          setViewedHostels(filtered)
+        }
+      }
+    } catch (error) {
+      console.log('MOST VIEWED ERROR:', error)
+    }
+  }
+
+  useEffect(() => {
+    getViewedHostels(1, false)
+  }, [])
+
+  const loadMoreViewedHostels = () => {
+    const nextPage = viewedPage + 1
+    setViewedPage(nextPage)
+    getViewedHostels(nextPage, true)
+  }
+
   useEffect(() => {
     setPage(1)
     getHostels(1, false)
@@ -105,7 +152,11 @@ const Home = () => {
             openBottomSheet={openBottomSheet}
             loadMoreHostels={loadMoreHostels}
           />
-          <ViewedHostels />
+          <ViewedHostels
+            hostels={viewedHostels}
+            openBottomSheet={openBottomSheet}
+            loadMoreViewedHostels={loadMoreViewedHostels}
+          />
           <View style={styles.extraPadding} />
         </View>
       </ScrollView>

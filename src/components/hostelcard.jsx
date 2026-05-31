@@ -61,7 +61,7 @@ const HostelCard = ({ hostel, openBottomSheet }) => {
         </View>
         <View style={{ flexDirection: 'row' }}>
           <View style={styles.cardsCategoryButtonContainer}>
-            <TouchableOpacity style={styles.cardsCategoryButton}>
+            <TouchableOpacity style={styles.availbilityButton}>
               <AntDesign name='star' size={18} color={colors.ratingStar} />
               <Text>{hostel.rating || 0}</Text>
             </TouchableOpacity>
