@@ -1033,7 +1033,7 @@ const styles = StyleSheet.create({
     flexDirection: 'row',
     alignItems: 'center',
     marginVertical: 13,
-    paddingLeft: 10
+    paddingLeft: 8
   },
   radio: {
     width: 18,
@@ -1041,7 +1041,15 @@ const styles = StyleSheet.create({
     borderWidth: 1.5,
     borderColor: colors.radio,
     borderRadius: 10,
-    marginHorizontal: 6
+    marginHorizontal: 6,
+    alignItems: 'center',
+    justifyContent: 'center'
+  },
+  radioDot: {
+    width: 10,
+    height: 10,
+    backgroundColor: colors.radio,
+    borderRadius: 5
   },
   sharingContainer: {
     flexDirection: 'row',

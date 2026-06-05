@@ -279,7 +279,10 @@ const PropertyDetails = () => {
       <View style={styles.propertyDetailsButtonsContainer}>
         <TouchableOpacity
           onPress={() => {
-            router.navigate('booking')
+            router.navigate({
+              pathname: 'booking',
+              params: { hostelId: hostel?._id }
+            })
           }}
           style={styles.propertyDetailsPrimaryButton}
         >

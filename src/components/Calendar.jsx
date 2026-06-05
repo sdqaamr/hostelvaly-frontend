@@ -1,17 +1,20 @@
-import React, { useState } from "react";
-import { View, TextInput, Modal, TouchableOpacity, Text } from "react-native";
-import { Calendar } from "react-native-calendars";
-import { colors } from "@constants/global"; // customize colors as needed
-import styles from "@styles/global";
+import React, { useState } from 'react'
+import { View, TextInput, Modal, TouchableOpacity, Text } from 'react-native'
+import { Calendar } from 'react-native-calendars'
+import { colors } from '@constants/global' // customize colors as needed
+import styles from '@styles/global'
 
-const CalendarComponent = () => {
-  const [selectedDate, setSelectedDate] = useState(""); // format: 'YYYY-MM-DD'
-  const [isCalendarVisible, setIsCalendarVisible] = useState(false);
+const CalendarComponent = ({ onSelect }) => {
+  const [selectedDate, setSelectedDate] = useState('') // format: 'YYYY-MM-DD'
+  const [isCalendarVisible, setIsCalendarVisible] = useState(false)
 
   const handleDayPress = (day) => {
-    setSelectedDate(day.dateString); // example: '2025-08-03'
-    setIsCalendarVisible(false);
-  };
+  setSelectedDate(day.dateString)
+  setIsCalendarVisible(false)
+  if (onSelect) {
+    onSelect(day.dateString)
+  }
+}
 
   return (
     <View>
@@ -20,16 +23,16 @@ const CalendarComponent = () => {
         <TextInput
           style={styles.bookingDetailsTextInput}
           value={selectedDate}
-          placeholder="Select Date"
+          placeholder='Select Date'
           editable={false} // prevent manual editing
-          pointerEvents="none" // allows TouchableOpacity to handle press
+          pointerEvents='none' // allows TouchableOpacity to handle press
         />
       </TouchableOpacity>
 
       {/* Modal Calendar */}
       <Modal
         visible={isCalendarVisible}
-        animationType="slide"
+        animationType='slide'
         transparent={true}
         onRequestClose={() => setIsCalendarVisible(false)}
       >
@@ -40,8 +43,8 @@ const CalendarComponent = () => {
               markedDates={{
                 [selectedDate]: {
                   selected: true,
-                  selectedColor: colors.primary,
-                },
+                  selectedColor: colors.primary
+                }
               }}
               theme={{
                 textSectionTitleColor: colors.primary,
@@ -50,9 +53,9 @@ const CalendarComponent = () => {
                 dayTextColor: colors.lightText,
                 arrowColor: colors.primary,
                 monthTextColor: colors.primary,
-                textDayFontWeight: "bold",
-                textMonthFontWeight: "bold",
-                textDayHeaderFontWeight: "bold",
+                textDayFontWeight: 'bold',
+                textMonthFontWeight: 'bold',
+                textDayHeaderFontWeight: 'bold'
               }}
             />
             <TouchableOpacity onPress={() => setIsCalendarVisible(false)}>
@@ -62,6 +65,6 @@ const CalendarComponent = () => {
         </View>
       </Modal>
     </View>
-  );
-};
-export default CalendarComponent;
+  )
+}
+export default CalendarComponent
