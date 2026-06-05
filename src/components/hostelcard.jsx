@@ -18,12 +18,15 @@ const HostelCard = ({ hostel, openBottomSheet }) => {
     <View>
       <View style={styles.card}>
         <Image
-          source={
-            hostel.images?.[0] ||
-            'https://tse2.mm.bing.net/th?id=OIP.ix8gl1euNehctcXK-QTxFwHaE7&pid=Api&P=0&h=220'
-          }
+          source={{
+            uri:
+              hostel.images?.[0] ??
+              'https://res.cloudinary.com/djr88us3q/image/upload/v1780557323/sb2etivm8cgmntd7u48b.png'
+          }}
           style={styles.cardImage}
-          contentFit='fill'
+          contentFit='cover'
+          transition={300}
+          placeholder={require('@assets/images/dummy.png')}
         />
         <View style={styles.cardImgIconsContainer}>
           <TouchableOpacity style={styles.cardImgIconRoundContainer}>
@@ -39,7 +42,7 @@ const HostelCard = ({ hostel, openBottomSheet }) => {
             <View style={styles.locationContainer}>
               <Ionicons name='location-outline' size={20} color='gray' />
               <Text style={styles.cardsSimpleText}>
-                {hostel.address}, {hostel.tehsil}
+                {hostel.address}, {hostel.tehsil}{' '}
               </Text>
             </View>
           </View>
@@ -91,10 +94,13 @@ const HostelCard = ({ hostel, openBottomSheet }) => {
         </TouchableOpacity>
         <TouchableOpacity
           onPress={() => {
-            router.navigate('(booking-flow)/property-details')
+            router.push({
+              pathname: '(booking-flow)/property-details',
+              params: { id: hostel._id }
+            })
           }}
         >
-          <Text style={styles.cardsSecondaryButton}>BOOK NOW</Text>
+          <Text style={styles.cardsSecondaryButton}>VIEW DETAILS</Text>
         </TouchableOpacity>
       </View>
     </View>

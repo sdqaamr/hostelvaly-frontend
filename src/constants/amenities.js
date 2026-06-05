@@ -9,82 +9,98 @@ export const AMENITY_ICONS = [
   {
     keywords: ['wifi', 'internet'],
     icon: Feather,
-    name: 'wifi'
+    name: 'wifi',
+    label: "Wi-Fi"
   },
   {
     keywords: ['laundry', 'washing'],
     icon: MaterialCommunityIcons,
-    name: 'washing-machine'
+    name: 'washing-machine',
+    label: "Laundry"
   },
   {
     keywords: ['mess', 'food', 'meal', 'dining'],
     icon: MaterialCommunityIcons,
-    name: 'food-fork-drink'
+    name: 'food-fork-drink',
+    label: "Mess"
   },
   {
     keywords: ['water', 'filtered', 'drinking'],
     icon: FontAwesome6,
-    name: 'bottle-water'
+    name: 'bottle-water',
+    label: "Filtered Water"
   },
   {
     keywords: ['parking'],
     icon: MaterialIcons,
-    name: 'garage'
+    name: 'garage',
+    label: "Parking"
   },
   {
     keywords: ['cctv', 'security', 'camera'],
     icon: MaterialCommunityIcons,
-    name: 'cctv'
+    name: 'cctv',
+    label: "CCTV"
   },
   {
     keywords: ['geyser', 'hot water'],
     icon: MaterialCommunityIcons,
-    name: 'water-boiler'
+    name: 'water-boiler',
+    label: "Hot Water"
   },
   {
     keywords: ['reception', 'room service', 'front desk'],
     icon: MaterialIcons,
-    name: 'room-service'
+    name: 'countertops',
+    label: "  Reception"
   },
   {
     keywords: ['fire', 'extinguisher'],
     icon: MaterialCommunityIcons,
-    name: 'fire-extinguisher'
+    name: 'fire-extinguisher',
+    label: "Fire Extinguisher"
   },
   {
     keywords: ['gym', 'fitness'],
     icon: MaterialCommunityIcons,
-    name: 'dumbbell'
+    name: 'dumbbell',
+    label: "Gym"
   },
   {
     keywords: ['study', 'study room'],
     icon: MaterialCommunityIcons,
-    name: 'book-open-variant'
+    name: 'book-open-variant',
+    label: "Study Room"
   },
   {
-    keywords: ['guest room', 'guest', 'rooms'],
+    keywords: ['guest room', 'guest'],
     icon: MaterialCommunityIcons,
-    name: 'door-closed-lock'
+    name: 'door-closed-lock',
+    label: "Guest Room"
   },
   {
     keywords: ['ac', 'air condition', 'air conditioning'],
     icon: MaterialIcons,
-    name: 'ac-unit'
+    name: 'ac-unit',
+    label: "Air Conditioning"
   },
   {
     keywords: ['fan'],
     icon: MaterialIcons,
-    name: 'mode-fan-off'
+    name: 'mode-fan-off',
+    label: "Fan"
   },
   {
     keywords: ['cooler'],
     icon: MaterialCommunityIcons,
-    name: 'fan'
+    name: 'fan',
+    label: "Cooler"
   },
   {
     keywords: ['common', 'lounge'],
     icon: MaterialCommunityIcons,
-    name: 'sofa'
+    name: 'sofa',
+    label: "Common Lounge"
   }
 ]
 

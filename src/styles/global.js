@@ -906,9 +906,21 @@ const styles = StyleSheet.create({
     color: 'gray'
   },
   reviewsCommentText: {
-    fontSize: 10
+    fontSize: 12,
+    color: '#555',
+    lineHeight: 18,
+    flexShrink: 1
   },
-
+  noReviewsContainer: {
+    paddingVertical: 16,
+    alignItems: 'center',
+    justifyContent: 'center'
+  },
+  noReviewsText: {
+    fontSize: 13,
+    color: '#777',
+    fontStyle: 'italic'
+  },
   propertyDetailsLocationContainer: {
     flexDirection: 'row',
     gap: 10,
