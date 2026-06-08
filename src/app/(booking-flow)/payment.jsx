@@ -124,16 +124,16 @@ Total: Rs ${parsedBooking?.totalAmount}`
           <View style={styles.propertyDetailsContentContainer}>
             <View style={styles.bookingImgAndDetailsContainer}>
               <Image
-                              source={{
-                                uri:
-                                  parsedBooking?.hostel?.images?.[0] ||
-                                  'https://via.placeholder.com/300'
-                              }}
-                              style={styles.bookingImg}
-                              contentFit='cover'
-                              placeholder={require('@assets/images/dummy.png')}
-                              transition={300}
-                            />
+                source={{
+                  uri:
+                    parsedBooking?.hostel?.images?.[0] ||
+                    'https://via.placeholder.com/300'
+                }}
+                style={styles.bookingImg}
+                contentFit='cover'
+                placeholder={require('@assets/images/dummy.png')}
+                transition={300}
+              />
               <View style={styles.bookingImgDetailsContainer}>
                 <Text style={styles.cardsHeadingText}>
                   {parsedBooking?.hostel?.name || 'Hostel'}{' '}
@@ -224,7 +224,10 @@ Total: Rs ${parsedBooking?.totalAmount}`
         </View>
       </ScrollView>
       <View style={styles.checkoutFooterContainer}>
-        <TouchableOpacity onPress={() => router.navigate('home-page2')} style={styles.primaryButton}>
+        <TouchableOpacity
+          onPress={() => router.navigate('home-page2')}
+          style={styles.primaryButton}
+        >
           <Text style={styles.primaryButtonText}>Return to Home</Text>
         </TouchableOpacity>
       </View>

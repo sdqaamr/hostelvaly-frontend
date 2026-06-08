@@ -115,3 +115,5 @@ This project is licensed under the **ISC License**.
 | 🧑‍💻 Author | [Saddiqa](https://github.com/sdqaamr) – Developer of HostelValy Mobile App    |
 | 🧑‍💻 Author | [Ayesha](https://github.com/ayeshanr) – Developer of HostelValy Mobile App    |
 | 🎓 Mentor    | [Ms. Saroosh Jaffar](https://github.com/sarooshjafar) – Project Supervisor |
+| 🎓 Mentor    | [Sir Allah Rakha](https://github.com/sudo-allahrakha) – Co-Supervisor |
+
