@@ -17,8 +17,14 @@ import { useRouter } from 'expo-router'
 import { Feather } from '@expo/vector-icons'
 import { colors } from '@constants/global'
 import { BASE_URL } from '../../../services/config'
+import { saveToken, saveUser } from '../../../services/authStorage'
+import { authFetch } from '../../../services/api'
+import { useContext } from 'react'
+import { AuthContext } from '../../../context/authContext'
 
 const Login = () => {
+  const { setUser, setToken } = useContext(AuthContext)
+
   const showToast = message => {
     if (!message) return
 
@@ -64,7 +70,6 @@ const Login = () => {
         },
         body: JSON.stringify({ email, password })
       })
-
       const data = await res.json()
       console.log('LOGIN RESPONSE:', data)
 
@@ -102,11 +107,19 @@ const Login = () => {
       }
 
       // ✅ Login success
-      const { user } = data.data
+      const { token, user } = data.data
+
+      // after success
+      await saveToken(token)
+      await saveUser(user)
+
+      setToken(token)
+      setUser(user)
       showToast('Login successful')
 
+      // ✅ Role-based navigation
       if (user.role === 'admin') {
-        router.replace('../admin')
+        router.replace('/admin')
       } else {
         router.replace('/verify')
       }

@@ -43,5 +43,5 @@ yarn-error.*
 # Ignore lockfile
 package-lock.json
 
-# Ignore services
-services/
+# Ignore config file from services
+/services/config.js

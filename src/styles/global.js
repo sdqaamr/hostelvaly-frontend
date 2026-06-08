@@ -979,12 +979,12 @@ const styles = StyleSheet.create({
   bookingImgDetailsContainer: {
     flexDirection: 'column',
     gap: 10,
-    paddingTop: 15,
+    paddingTop: 10,
     paddingLeft: 5
   },
   bookingImg: {
-    height: 130,
-    width: 160,
+    height: 120,
+    width: 145,
     margin: 8,
     marginBottom: 15,
     borderRadius: 10

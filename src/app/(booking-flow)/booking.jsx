@@ -15,6 +15,7 @@ import CalendarComponent from '@components/Calendar'
 import { useLocalSearchParams } from 'expo-router'
 import { BASE_URL } from '../../../services/config'
 import { getAmenityIcon } from '@constants/amenities'
+import { authFetch } from '../../../services/api'
 
 const Booking = () => {
   const router = useRouter()
@@ -52,6 +53,7 @@ const Booking = () => {
     return months * selectedRoom.monthlyRent
   }
   const totalAmount = calculateTotal()
+
   const createBooking = async () => {
     if (!selectedRoom || !fromDate || !toDate) {
       alert('Please select room and dates')
@@ -59,26 +61,26 @@ const Booking = () => {
     }
 
     try {
-      const res = await fetch(`${BASE_URL}/bookings`, {
+      const res = await authFetch('/bookings', {
         method: 'POST',
-        headers: {
-          'Content-Type': 'application/json',
-          Authorization: `Bearer ${token}` // IMPORTANT
-        },
         body: JSON.stringify({
           hostel: hostel._id,
           roomType: selectedRoom._id,
           fromDate,
           toDate,
-          totalAmount
+          totalAmount: totalPrice
         })
       })
 
       const data = await res.json()
 
       if (data.success) {
-        alert('Booking successful! Status: Pending')
-        router.navigate('checkout')
+        router.replace({
+          pathname: '/checkout',
+          params: {
+            booking: JSON.stringify(data.data)
+          }
+        })
       } else {
         alert(data.message)
       }

@@ -2,7 +2,7 @@
 
 > A smart and seamless hostel-finding app built using React Native and Expo.
 
-HostelValy is a modern mobile application designed to help users easily browse, explore, and book hostels — especially for students and travelers seeking affordable stays. With a user-friendly interface and features like onboarding, OTP-based login, and property detail screens, HostelValy aims to make accommodation hunting easier, faster, and more reliable.
+HostelValy is a modern mobile application designed to help users easily browse, explore, and book hostels — especially for students seeking affordable stays. With a user-friendly interface and features like onboarding, OTP-based login, and property detail screens, HostelValy aims to make accommodation hunting easier, faster, and more reliable.
 
 ---
 
@@ -21,7 +21,7 @@ HostelValy is a modern mobile application designed to help users easily browse, 
 
 ## 🧑‍💻 Tech Stack
 
-* **React Native** (via **Expo SDK 53**)
+* **React Native** (via **Expo SDK 54**)
 * **expo-router** for navigation
 * **expo-font** for using custom fonts
 * **expo-image** for high-performance image loading
@@ -29,7 +29,8 @@ HostelValy is a modern mobile application designed to help users easily browse, 
 * **react-native-vector-icons** for rich iconography
 * **react-native-svg** for SVG usage in the app
 * **react-native-app-intro-slider** for onboarding slides
-* **Safe Area Context**, **ScrollViews**, and modern React Hooks (`useState`, `useRouter`, `useCallback`)
+* **react-native-calendars** for date selection
+* **Safe Area Context**, **ScrollViews**, and modern React Hooks (`useState`, `useRouter`, `useCallback`, `useRef`)
 
 ---
 
@@ -37,6 +38,12 @@ HostelValy is a modern mobile application designed to help users easily browse, 
 
 ```
 HostelValy/                  # Routing and navigation structure
+├── context/                 # To store tokens
+|   └── authContext
+├── services/                # For API calls from backend app
+│   ├── api.js
+│   ├── authStorage
+|   └── config
 ├── src/
 │   ├── app/                 # Screens (onboarding, auth, booking-screens, etc.)  
 |   ├── assets/              # Images and static assets
@@ -106,4 +113,5 @@ This project is licensed under the **ISC License**.
 | Role         | Name                                                                          |
 | ------------ | ----------------------------------------------------------------------------- |
 | 🧑‍💻 Author | [Saddiqa](https://github.com/sdqaamr) – Developer of HostelValy Mobile App    |
-| 🎓 Mentor    | [Sir Allah Rakha](https://github.com/sudo-allahrakha) – Project Supervisor |
+| 🧑‍💻 Author | [Ayesha](https://github.com/ayeshanr) – Developer of HostelValy Mobile App    |
+| 🎓 Mentor    | [Ms. Saroosh Jaffar](https://github.com/sarooshjafar) – Project Supervisor |

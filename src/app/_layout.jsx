@@ -1,24 +1,26 @@
-import React from "react";
-import { Stack } from "expo-router";
-import { SafeAreaView } from "react-native-safe-area-context";
-import useCustomFonts from "@components/UseCustomFonts";
-import { StatusBar } from "react-native";
-import { colors } from "@constants/global";
-import styles from "@styles/global";
+import React from 'react'
+import { Stack } from 'expo-router'
+import { SafeAreaView } from 'react-native-safe-area-context'
+import useCustomFonts from '@components/UseCustomFonts'
+import { StatusBar } from 'react-native'
+import { colors } from '@constants/global'
+import styles from '@styles/global'
+import { AuthProvider } from '../../context/authContext'
 
 const _layout = () => {
-  useCustomFonts();
-  console.log("App loaded");
+  useCustomFonts()
+  console.log('App loaded')
   return (
-    <SafeAreaView style={styles.flex} edges={["left", "right"]}>
-      <StatusBar
-        barStyle="dark-content"
-        translucent
-        backgroundColor={colors.background}
-      />
-      <Stack screenOptions={{ headerShown: false}}>
-        <Stack.Screen name="index" />
-        {/* <Stack.Screen name="onboarding" />
+    <AuthProvider>
+      <SafeAreaView style={styles.flex} edges={['left', 'right']}>
+        <StatusBar
+          barStyle='dark-content'
+          translucent
+          backgroundColor={colors.background}
+        />
+        <Stack screenOptions={{ headerShown: false }}>
+          <Stack.Screen name='index' />
+          {/* <Stack.Screen name="onboarding" />
         <Stack.Screen name="account-entry" />
         <Stack.Screen name="login" />
         <Stack.Screen name="password-forget" />
@@ -36,8 +38,9 @@ const _layout = () => {
         <Stack.Screen name="payment" />
         <Stack.Screen name="payment-success" />
         <Stack.Screen name="(home2)" /> */}
-      </Stack>
-    </SafeAreaView>
-  );
-};
-export default _layout;
+        </Stack>
+      </SafeAreaView>
+    </AuthProvider>
+  )
+}
+export default _layout
